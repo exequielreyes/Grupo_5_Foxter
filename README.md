@@ -38,3 +38,7 @@ para que Foxter sea funcional al usuario y pueda cumplir con los
 requerimientos pedidos, sin perder puntos  importantes como ser
 estéticamente agradable y fácil de usar.
 
+---------------------------------------------------
+Enlace a los tablero de trabajo(trello)
+Sprint 1: https://trello.com/b/eBqRVm7r/sprint1
+
