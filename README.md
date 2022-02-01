@@ -6,41 +6,14 @@ Descripción del público al que apunta el sitio:
 
 Apuntamos a atletas de cualquier tipo. Foxter es el hogar del corredor, del jugador de básquet, del joven futbolista y del entusiasta del fitness. Del aventurero que escapa de la ciudad los fines de semana. De la instructora de yoga que enseña nuevas posturas.
 
+
 Descripcion de los integrandes del grupo:
 
-Cortes, Roberto Misael
+Cortes, Roberto Misael -- DNI:42.358.047 -- EDAD:22 años -- Estudiante de ingeniería en sistemas
 
-DNI:42.358.047
+Alaniz, Eliana Soledad -- DNI:34.803.885 -- EDAD:31 años -- Licenciada en Sistemas -- Docente
 
-EDAD:22 años
+Reyes, Jonathan Exequiel -- DNI:40.775.497 -- EDAD:23 Años -- Estudiante de Ingenieria en Sistemas
 
-Estudiante de ingeniería en sistemas
-
-
-Alaniz, Eliana Soledad
-
-DNI:34.803.885
-
-EDAD:31 años
-
-Licenciada en Sistemas- Docente
-
-
-Reyes, Jonathan Exequiel 
-
-DNI:40.775.497
-
-EDAD:23 Años
-
-Estudiante de Ingenieria en Sistemas
-
-
-
-Palacios,Shirley
-
-DNI:39298462
-
-EDAD:26
-
-Traductora literaria y tecnico cientifica en ingles/docente
+Palacios,Shirley -- DNI:39298462 -- EDAD:26 --Traductora literaria y tecnico cientifica en ingles/docente
 
