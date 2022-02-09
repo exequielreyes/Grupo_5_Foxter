@@ -3,8 +3,11 @@ const app = express();
 const path = require('path');
 
 
-const pathStatic = path.resolve(__dirname , "./public")
-app.use( express.static(pathStatic))
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// const pathStatic = path.resolve(__dirname , "./public")
+// app.use( express.static(pathStatic))
 
 app.listen(3000 , () => console.log('server running on port 3000'));
 
