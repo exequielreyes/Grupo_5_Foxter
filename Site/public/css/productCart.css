@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.main-cart {
+  /* width: 100%;
+  padding: 0 15px;
+  margin: 0 auto; */
+  padding: 0 20px;
+}
+
+.cart-title-conteiner .cart-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.cart-title-conteiner {
+  display: flex;
+  width: 100%;
+  margin-top: 13px;
+  align-items: center;
+}
+
+.continue-shopping-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* .card-text {
+  display: flex;
+  flex-direction: column;
+} */
+
+.img-zapas {
+  max-width: 110px;
+}
+
+.container-zapas {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.container-cart {
+  padding: 20px 20px;
+}
