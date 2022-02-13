@@ -22,3 +22,8 @@ app.get("/login", (req, res) => {
 app.get("/productCart", (req, res) => {
   res.sendFile(path.join(__dirname, "/src/views/carrito/productCart.html"));
 });
+
+//register 
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "/src/views/usuario/register.html"));
+});

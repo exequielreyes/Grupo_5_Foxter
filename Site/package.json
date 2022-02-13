@@ -1,17 +1,31 @@
 {
- 
+ 
   "name": "site",
+ 
   "version": "1.0.0",
+ 
   "main": "app.js",
-  "devDependencies": {},
+ 
   "scripts": {
-    "start": "nodemon app.js"
+ 
+   
+  "start": "nodemon app.js"
+ 
   },
+ 
   "author": "",
+ 
   "license": "ISC",
+ 
   "description": "",
+ 
   "dependencies": {
-    "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+ 
+   
+  "express": "^4.17.2",
+ 
+   
+  "nodemon": "^2.0.15"
+ 
   }
 }
