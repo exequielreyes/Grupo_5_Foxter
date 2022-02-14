@@ -1,0 +1,58 @@
+:root {
+    --dark: #212121;
+    --purple: #7900FF;
+    --lightblue:#548cff;
+    --white:#ffffff; 
+  }
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-family: 'Shrikhand', cursive;
+}
+/*******************************fondos************************************/
+.bg-purple{
+    background-color: var(--purple);
+}
+.bg-celeste{
+    background-color: var(--lightblue);
+}
+/*******************************header************************************/
+
+
+ .form-control{
+    border-radius: 0px!important;
+    border: none !important;
+    border-top-left-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;
+    outline: none;
+ }
+
+.fa-search{
+padding: .375rem .75rem;
+background-color: var(--white);
+display: flex !important;
+align-items: center;
+border: none;
+border-top-right-radius: .25rem;
+border-bottom-right-radius: .25rem;
+color: #495057;
+cursor: pointer;
+}
+
+
+.far, .fas {
+    font-size: 22px;
+    color: var(--white);
+   
+}
+
+nav img, footer img{
+ width: 70px;
+}
+
+.nav-link{
+    font-family: 'Anton', sans-serif;
+}

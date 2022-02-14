@@ -1,0 +1,29 @@
+/*******************************OFERTAS************************************/
+#ofertas .h4{
+    font-family: 'Anton', sans-serif;
+}
+
+
+/*******************************PRODUCTOS************************************/
+.h3{
+    font-family: 'Anton', sans-serif;
+    color: var(--lightblue)
+}
+.product .title{
+    font-size: 20px;
+    font-weight: 700;
+}
+.product .price{
+    font-size: 25px;
+    font-weight: 700;
+}
+.product:hover{
+    box-shadow: 1px 1px 14px var(--purple);
+}
+a{
+    color: var(--dark);
+    text-decoration: none;
+}
+a:hover{
+    color:var(--purple)
+}
