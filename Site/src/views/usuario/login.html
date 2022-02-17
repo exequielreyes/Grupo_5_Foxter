@@ -22,18 +22,25 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- <script src="https://kit.fontawesome.com/7ee373755c.js" crossorigin="anonymous"></script> -->
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <!-- <a class="navbar-brand" href="#">Foxter</a> -->
-          <div class="contenedor">
-            <img src="/images/logo.png" alt="" />
-            <h1>Foxter</h1>
+          <div
+            class="col-lg-3 d-flex justify-content-center align-items-center"
+          >
+            <img src="/images/logo.png" class="img-fluid" alt="" />
+            <h1 class="text-white">Foxter</h1>
           </div>
-
           <button
             class="navbar-toggler"
             type="button"
@@ -47,24 +54,21 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="contenedor2">
+            <div class="col-lg-8">
               <form class="d-flex">
-                <!-- <div class="d-flex__formulario"> -->
                 <input
-                  class="form-control me-2"
+                  class="form-control mr-0"
                   type="search"
-                  placeholder="Search"
+                  placeholder="Buscar..."
                   aria-label="Search"
                 />
                 <i class="fa fa-search"></i>
-                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                <!-- </div> -->
               </form>
             </div>
-            <div class="contenedor3">
-              <div class="iconos">
+            <div class="col-lg-3">
+              <div class="iconos d-flex justify-content-end">
                 <a href="#">
-                  <i class="far fa-user"></i>
+                  <i class="far fa-user me-3"></i>
                 </a>
                 <a href="#">
                   <i class="fas fa-cart-arrow-down"></i>
@@ -74,8 +78,43 @@
           </div>
         </div>
       </nav>
-    </header>
 
+      <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+        <div class="container-fluid text-center">
+          <div
+            class="collapse navbar-collapse d-flex justify-content-center align-items-cente"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">REMERAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MUSCULOSAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PANTALONES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CAMPERAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SHORT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">BUZOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CALZAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MALLAS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <main>
       <form action="#" method="post" class="form">
         <div class="form__title">
@@ -85,10 +124,10 @@
           <div class="form__container-control">
             <ul>
               <li><a class="link" href="#">Iniciar Sesión</a></li>
-              <li><a class="register" href="#">Registrame</a></li>
+              <li>
+                <a class="register" href="register">Registrame</a>
+              </li>
             </ul>
-            <!-- <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-                    <label for="reg-log"></label> -->
           </div>
 
           <div class="form__control">
@@ -124,16 +163,32 @@
       </form>
     </main>
 
-    <footer class="pie-pagina">
+    <footer class="bg-dark">
       <section class="footer_card">
-        <article>
-          <div class="iconos1">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-3 d-flex justify-content-center align-items-center"
+            >
+              <img src="/images/logo.png" class="img-fluid" alt="" />
+              <h1 class="text-white">Foxter</h1>
+            </div>
+            <div class="col-lg-5"></div>
+
+            <div
+              class="col-lg-4 text-white d-flex justify-content-center align-items-center"
+            >
+              <div class="iconos">
+                <i class="fab fa-facebook me-2"></i>
+                <i class="fab fa-twitter me-2"></i>
+                <i class="fab fa-instagram"></i>
+              </div>
+            </div>
+            <div class="col-lg-12 text-white text-center">
+              <p class="copyrigth">Copyrigth © 2020 Foxter S.R.L.</p>
+            </div>
           </div>
-          <p class="copyrigth">Copyrigth © 2020 Foxter S.R.L.</p>
-        </article>
+        </div>
       </section>
     </footer>
   </body>
