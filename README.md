@@ -41,4 +41,5 @@ estéticamente agradable y fácil de usar.
 ---------------------------------------------------
 Enlace a los tablero de trabajo(trello)
 Sprint 1: https://trello.com/b/eBqRVm7r/sprint1
+Sprint 2: https://trello.com/b/ivu0fzHx/sprint2
 
