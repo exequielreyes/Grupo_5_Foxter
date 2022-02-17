@@ -4,50 +4,152 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Roboto, sans-serif;
+.container-title {
+  padding: 15px 20px;
 }
 
-.main-cart {
-  /* width: 100%;
-  padding: 0 15px;
-  margin: 0 auto; */
-  padding: 0 20px;
+.titulo-producto i {
+  color: #000;
 }
 
-.cart-title-conteiner .cart-title {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.cart-title-conteiner {
+.titulo-producto {
   display: flex;
-  width: 100%;
-  margin-top: 13px;
   align-items: center;
+  justify-content: space-between;
 }
 
-.continue-shopping-link {
-  font-size: 12px;
-  font-weight: 500;
-  color: #444;
+.mb-3 {
+  margin: 15px;
 }
 
-/* .card-text {
+.card-title {
+  font-weight: 900;
+}
+
+.container-cantidad-precio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-cantidad-productos {
   display: flex;
   flex-direction: column;
-} */
-
-.img-zapas {
-  max-width: 110px;
+}
+.container-cantidad-productos select {
+  padding: 8px;
 }
 
-.container-zapas {
+.precio-product {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+article select {
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+main article .img-fluid {
+  display: block;
+  margin: auto;
+}
+
+/* resumen pedido */
+
+.titulo-pedido {
+  margin-left: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container-pedido {
+  padding: 0 15px;
+}
+
+.subtotal {
+  width: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  justify-content: space-between;
+}
+.envio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* resumen pedido */
+
+/* Calcular envio */
+.titulo-envio {
+  padding: 0 15px;
 }
 
-.container-cart {
-  padding: 20px 20px;
+.container-envio {
+  padding: 0 15px;
+}
+
+.calcular-envio {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.input-calcular-envio {
+  border: 1px solid grey;
+  padding: 9.5px 0px 9.5px 8.8px;
+  outline: none;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-right: none;
+}
+
+.btn-envio {
+  margin: auto !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+/* Calculaar envio */
+
+@media (min-width: 769px) {
+  .mb-3 {
+    max-width: 1200px;
+  }
+
+  .mb-3 p {
+    margin-bottom: 0rem;
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .container-articles {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+  }
+
+  .container-title {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .titulo-envio {
+    margin-top: 15px;
+  }
+
+  .fa-edit {
+    margin-right: 8px;
+  }
 }
