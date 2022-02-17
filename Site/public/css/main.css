@@ -12,6 +12,8 @@ body{
 h1{
     font-family: 'Shrikhand', cursive;
 }
+
+
 /*******************************fondos************************************/
 .bg-purple{
     background-color: var(--purple);
@@ -55,4 +57,48 @@ nav img, footer img{
 
 .nav-link{
     font-family: 'Anton', sans-serif;
+}
+
+.text-white{
+    margin-bottom: 0px;
+}
+
+.nav-item{
+padding: 0px 5px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    text-transform:lowercase;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+ 
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    
+    color: rgba(255, 255, 255, 0.568);
+}
+
+
+
+.navbar-light .navbar-nav .nav-link::first-letter {
+    text-transform: uppercase;
+}
+main{
+    margin-bottom: 30px;
+}
+
+footer div.iconos i{
+     font-size: 19px;
+     padding: 0px 8px !important;
+}
+
+@media (max-width: 991px){
+    .copyrigth{
+        margin-top: 15px;
+    }
+    /* div.iconos i{
+        padding: 0px 8px !important;
+        
+    } */
 }

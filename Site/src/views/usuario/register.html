@@ -7,53 +7,88 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/login.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&family=Shrikhand&display=swap"
+    rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/7ee373755c.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <!-- <a class="navbar-brand" href="#">Foxter</a> -->
-          <div class="contenedor">
-          <img src="/images/logo.png" alt="">
-          <h1>Foxter</h1>
-          </div>
 
-          
-
-         
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="contenedor2">
-            <form class="d-flex">
-              <!-- <div class="d-flex__formulario"> -->
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <i class="fa fa-search"></i>
-              <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-              <!-- </div> -->
-            </form>
-          </div>
-            <div class="contenedor3">
-            <div class="iconos">
-                <a href="#">
-                    <i class="far fa-user"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fas fa-cart-arrow-down"></i>
-                  </a>
-              </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <div class="col-lg-3 d-flex justify-content-center  align-items-center">
+                    <img src="/images/logo.png" class="img-fluid" alt="">
+                    <h1 class="text-white">Foxter</h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="col-lg-8">
+                        <form class="d-flex">
+                            <input class="form-control mr-0" type="search" placeholder="Buscar..." aria-label="Search">
+                            <i class="fa fa-search"></i>
+    
+                        </form>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="iconos d-flex justify-content-end">
+                            <a href="#">
+                                <i class="far fa-user me-3"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+            <div class="container-fluid text-center">
+    
+                <div class="collapse  navbar-collapse  d-flex justify-content-center  align-items-cente" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">REMERAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MUSCULOSAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PANTALONES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CAMPERAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SHORT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BUZOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CALZAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MALLAS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
     </header>
 
     <main>
@@ -66,7 +101,7 @@
             <div class="form__container-control">
                 <ul>
                     <li><a class="link" href="#">Iniciar Sesión</a></li>
-                    <li><a class="register" href="#">Registrame</a></li>
+                    <li><a class="register" href="#">Registrarme</a></li>
                     
                 </ul>
               
@@ -74,41 +109,36 @@
             
             <div class="form__control">
                 <label for="text">Nombre</label>
-                <input type="email" name="text" id="text" class="control"></div>
+                <input type="email" name="text" id="text" class="control" required>
+            </div>
 
             <div class="form__control">
                 <label for="text">Apellido</label>
-                <input type="text" name="password" id="text" class="control"></div>
+                <input type="text" name="password" id="text" class="control" required></div>
 
             <div class="form__control">
                 <label for="date">Fecha de nacimiento</label>
-                <input type="date" name="date" id="date" class="control"></div>
+                <input type="date" name="date" id="date" class="control" required></div>
                 
             <div class="form__control">
-                <label for="email">Correo</label>
-                <input type="email" name="email" id="email" class="control"></div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="control" required></div>
 
             <div class="form__control">
                 <label for="password">Contraseña(minimo 8 caracteres)</label>
-                <input type="password" name="password" id="password" class="control"></div>
+                <input type="password" name="password" id="password" class="control" required></div>
                 
             <div class="form__control">
-                <label for="password">Repita conraseña</label>
-                <input type="password" name="password" id="password" class="control"></div>
+                <label for="password">Repita contraseña</label>
+                <input type="password" name="password" id="password" class="control" required></div>
 
 
 
 
             <div class="form__control-check">
                 <label><input type="checkbox"  value="Si" name="recordame" id="recordame">Acepto terminos y condiciones</label>
-                <label><input type="checkbox"  value="Si" name="recordame" id="recordame">Suscribirme al Newseller</label>
-
-           
-
-
-                
             </div>
-            <div class="boton-control"><button type="submit" value="Iniciar Sesion">Iniciar Sesión</button></div>
+            <div class="boton-control"><button type="submit" value="Iniciar Sesion">Crear mi cuenta</button></div>
 
 
 
@@ -117,21 +147,32 @@
             </div>
         </form>
     </main>
-    <footer class="pie-pagina">
+    <footer class="bg-dark">
 
         <section class="footer_card">
-             <article>
-                <div class="iconos1">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                        <img src="/images/logo.png" class="img-fluid" alt="">
+                        <h1 class="text-white">Foxter</h1>
+                    </div>
+                    <div class="col-lg-5"></div>
+
+                    <div class="col-lg-4 text-white d-flex justify-content-center align-items-center">
+                        <div class="iconos">
+                            <i class="fab fa-facebook me-2"></i>
+                            <i class="fab fa-twitter me-2"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-12 text-white text-center">
+                        <p class="copyrigth">
+                            Copyrigth © 2020 Foxter S.R.L.
+                        </p>
+                    </div>
                 </div>
-                <p class="copyrigth">
-                    Copyrigth © 2020 Foxter S.R.L.
-               </p>  
-                
-             </article>
-   
+            </div>
         </section>
     </footer>
 
