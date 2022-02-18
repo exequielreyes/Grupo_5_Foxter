@@ -1,34 +1,14 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const webRoutes = require('./src/routes/webRoutes');
 
-// app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'ejs');
 
 const pathStatic = path.resolve(__dirname, "./public");
 app.use(express.static(pathStatic));
 
+app.use('/' ,webRoutes);
 app.listen(3000, () => console.log("server running on port 3000"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/src/views/index.html"));
-});
-
-//Login
-app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "/src/views/usuario/login.html"));
-});
-
-//Product Cart
-app.get("/productCart", (req, res) => {
-  res.sendFile(path.join(__dirname, "/src/views/carrito/productCart.html"));
-});
-
-//register 
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "/src/views/usuario/register.html"));
-});
-
-// 
-app.get("/productDetail", (req, res) => {
-  res.sendFile(path.join(__dirname, "/src/views/products/productDetail.html"));
-});
