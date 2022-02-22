@@ -1,8 +1,10 @@
 const path = require("path");
+const { mainModule } = require("process");
 
 module.exports = {
     index: (req , res) =>{
-        res.render(path.join(__dirname, "../views/index"));
+        
+        res.render(path.join(__dirname, "../views/index"), {'css':'index.css','title':'Pagina Inicial'});
     },
 
     login: (req, res) =>{
