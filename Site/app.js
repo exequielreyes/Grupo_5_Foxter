@@ -4,6 +4,7 @@ const path = require("path");
 const webRoutes = require('./src/routes/webRoutes');
 
 
+app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 
