@@ -7,6 +7,8 @@ const webRoutes = require('./src/routes/webRoutes');
 app.set('view engine', 'ejs');
 
 
+
+
 const pathStatic = path.resolve(__dirname, "./public");
 app.use(express.static(pathStatic));
 
