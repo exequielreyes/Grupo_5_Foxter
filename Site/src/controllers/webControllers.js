@@ -21,5 +21,10 @@ module.exports = {
     },
     detalleProducto: (req, res) => {
         res.render("products/productDetail", { 'css': 'productCart.css', 'title': 'Detail' });
+    },
+
+    editarProducto: (req , res) =>{
+        res.render("admin/editProduct" , { 'css': 'editProduct.css', 'title': 'Edit Product' });
     }
+
 }

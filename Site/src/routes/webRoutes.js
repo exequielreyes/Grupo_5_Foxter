@@ -8,5 +8,6 @@ router.get('/login' , webControllers.login);
 router.get('/register' , webControllers.register);
 router.get('/productCart' , webControllers.carrito);
 router.get('/productDetail' , webControllers.detalleProducto);
+router.get('/editProduct' , webControllers.editarProducto);
 
 module.exports = router;

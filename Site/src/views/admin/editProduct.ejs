@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar producto</title>
-</head>
+<html lang="es">
+
+<%-include("../partials/head")%>
+
 <body>
-    
+   
+    <div class="banner-login">
+        <div class="container-imagen">
+            <img src="/images/logo.png" class="imagen" alt="" />
+            <h1 class="text-white">Foxter</h1>
+          </div>
+    </div>
+
+    <main>
+    <form class="formularioProducto" action="#" method="post">
+        <div class="formularioProducto__title">
+            <h3 class="title">Editar producto</h3>
+        </div>
+        <div class="formularioProducto__contenedor">
+            <div class="FormularioProducto__control">
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" name="nombre" id="nombre" class="formularioProducto__input">
+            </div>
+            <div class="FormularioProducto__control">
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio" min="0" class="formularioProducto__input">
+            </div>
+            <div class="FormularioProducto__control">
+                <label for="imagen">Editar imagen</label>
+                <input type="file"name="imagen" id="imagen" class="formularioProducto__input">
+            </div>
+            <div class="FormularioProducto__control">
+                <div class="formularioProducto__input">
+                <label for="categoria">Categoria</label>
+                
+                 <select name="categoria" id="categoria">
+                     <option value="hombre">Hombre</option>
+                     <option value="Mujer">Mujer</option>
+                 </select>
+                </div>
+            </div>
+
+            <div class="FormularioProducto__control">
+                <div class="formularioProducto__input">
+                <label for="talle">talle</label>
+                
+                 <select name="talle" id="talle">
+                     <option value="hombre">S</option>
+                     <option value="Mujer">M</option>
+                     <option value="hombre">L</option>
+                     <option value="Mujer">XL</option>
+
+                 </select>
+                </div>
+            </div>
+
+            <div class="FormularioProducto__control">
+                <div class="boton-control" >
+                <button class="guardar" type="submit">Guardar</button>
+                <button class="cancelar" type="submit">Cancelar</button>
+            </div>
+            </div>
+        </div>
+    </form>
+</main>
 </body>
 </html>
