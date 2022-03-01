@@ -80,6 +80,7 @@ footer img {
 }
 main {
   margin-bottom: 30px;
+  min-height:calc(100vh - 83.27px - 107.27px) ;
 }
 
 footer div.iconos i {
@@ -87,12 +88,22 @@ footer div.iconos i {
   padding: 0px 8px !important;
 }
 
+
+h1.text-white{
+  display: none;
+}
+
+@media (min-width: 480px){
+  h1.text-white{
+    display: block !important;
+  }
+  
+}
+
+
 @media (max-width: 991px) {
   .copyrigth {
     margin-top: 15px;
   }
-  /* div.iconos i{
-        padding: 0px 8px !important;
-        
-    } */
+  
 }
