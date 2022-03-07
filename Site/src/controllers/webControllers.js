@@ -4,7 +4,7 @@ const { mainModule } = require("process");
 module.exports = {
     index: (req, res) => {
 
-        res.render("index", { 'css': 'index.css', 'title': 'Home' });
+        res.render("index");
     },
 
     login: (req, res) => {
