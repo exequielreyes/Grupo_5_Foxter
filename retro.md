@@ -15,7 +15,7 @@ Conclusión: La manera de organizarnos permitió establecer una fluida comunicac
 - Leer en reuniones los requerimientos del sprint
 - Conversaciones fluida por whatsapp
 - Emplear trello para la organización
-- Dividir tareas las tareas
+- Dividir las tareas
 
 ### Less of
 - 
@@ -25,21 +25,23 @@ Conclusión: La manera de organizarnos permitió establecer una fluida comunicac
 
 # Sprint 2
 ## Resumen
-
+Para la realización del sprint 2 se siguió la misma modalidad de trabajo del sprint 1, pero además se tuvo en cuenta las conclusiones surguidas por la reprospectiva para mejorar la organización y comunicación en grupo.
 ### Start doing
--
+- Usar herramientas que faciliten la organizacion y relización de la retrospectiva
  
-
 ### More of
--
+- Sacarse las dudas de forma grupal ya que una duda individual puede ser o llevar a una duda grupal.
  
 ### Keep doing
--
+- Reuniones semanales
+- Leer en reuniones los requerimientos del sprint
+- Conversaciones fluida por whatsapp
+- Emplear trello para la organización
+- Dividir las tareas
+- Listas de dudas
 
 ### Less of
-
-- 
+- Subestimar la cantidad de horas en realizar la retrospectiva.
 
 ### Stop doing
-
-- 
+- Faltar o ser impuntual en las reuniones semanales.
