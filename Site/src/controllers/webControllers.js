@@ -6,21 +6,21 @@ module.exports = {
 
         res.render("index");
     },
-    // , { 'css': 'index.css', 'title': 'Home'}
+    
     login: (req, res) => {
-        res.render('usuario/login', { 'css': 'login.css', 'title': 'Login' });
+        res.render('usuario/login');
     },
 
     register: (req, res) => {
-        res.render("usuario/register", { 'css': 'register.css', 'title': 'Register' });
+        res.render("usuario/register");
     },
 
     carrito: (req, res) => {
-        res.render("carrito/productCart", { 'css': 'productCart.css', 'title': 'Cart' });
+        res.render("carrito/productCart");
 
     },
     detalleProducto: (req, res) => {
-        res.render("products/productDetail", { 'css': 'productCart.css', 'title': 'Detail' });
+        res.render("products/productDetail");
     },
 
     editarProducto: (req , res) =>{
