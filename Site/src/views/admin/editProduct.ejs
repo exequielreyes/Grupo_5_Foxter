@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%-include("../partials/head")%>
+<%-include("../partials/head" ,  { css: 'editProduct.css', title: 'Edit Product' })%>
 
 <body>
    
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="FormularioProducto__control">
+            <!-- <div class="FormularioProducto__control">
                 <div class="formularioProducto__input">
                 <label for="talle">talle</label>
                 
@@ -52,6 +52,13 @@
                      <option value="Mujer">XL</option>
 
                  </select>
+                </div>
+            </div> -->
+            <div class="FormularioProducto__control">
+                <div class="formularioProducto__textarea">
+                    <label for="descripcion">Descipción:</label>
+					<textarea name="descripcion" id="descripcion" class="textarea"  cols="12" rows="5"></textarea>
+
                 </div>
             </div>
 

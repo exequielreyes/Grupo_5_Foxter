@@ -24,7 +24,7 @@ module.exports = {
     },
 
     editarProducto: (req , res) =>{
-        res.render("admin/editProduct" , { 'css': 'editProduct.css', 'title': 'Edit Product' });
+        res.render("admin/editProduct");
     }
 
 }
