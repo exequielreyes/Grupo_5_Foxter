@@ -10,6 +10,9 @@ module.exports = {
 
     editarProducto: (req , res) =>{
         res.render("admin/editProduct");
+    },
+    
+    carrito: (req, res) => {
+        res.render("carrito/productCart");
     }
-
 }
