@@ -10,6 +10,11 @@
 display: block !important;
 }
 
+body{
+    background-color: #21252923;
+}
+
+
 .container-imagen{
    
     display: flex;
