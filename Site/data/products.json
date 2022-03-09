@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Buzzo Lotto Strike",
+    "price": 3000,
+    "image": "img-buzzo-lotto-strike.jpg",
+    "category": "masVendido",
+    "size": "L",
+    "description": "Calza Legging larga Microfibra de poliester estampada. Cintura angosta. Prenda deportiva de tiro alto, que permite mayor agarre y comodidad en el uso. Compresión Alta."
+  },
+
+  {
+    "id": 2,
+    "name": "Short Nike",
+    "price": 15000,
+    "image": "img-short-nike.jpg",
+    "category": "loUltimo",
+    "size": "S",
+    "description": "Short nike color gris."
+  }
+]
