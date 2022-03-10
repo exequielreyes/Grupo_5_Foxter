@@ -11,15 +11,17 @@ module.exports = {
     index: (req,res) => {
         res.render('products/productsList',{products});
     },
-    
+
     detalleProducto: (req, res) => {
         id = req.params.id;
-        let product = products.find(product => product.id == id)
+        let product = products.find(product => product.id == id);
         res.render("products/productDetail",{product});
     },
 
     editarProducto: (req , res) =>{
-        res.render("admin/editProduct");
+        id = req.params.id;
+        let product = products.find(product => product.id == id);
+        res.render("admin/editProduct",{product});
     },
     
     carrito: (req, res) => {

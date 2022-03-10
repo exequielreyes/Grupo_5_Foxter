@@ -20,11 +20,11 @@
         <div class="formularioProducto__contenedor">
             <div class="FormularioProducto__control">
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" name="nombre" id="nombre" class="formularioProducto__input">
+                <input type="text" name="nombre" id="nombre" class="formularioProducto__input" value="<%=product.name%>">
             </div>
             <div class="FormularioProducto__control">
                 <label for="precio">Precio</label>
-                <input type="number" name="precio" id="precio" min="0" class="formularioProducto__input">
+                <input type="number" name="precio" id="precio" min="0" class="formularioProducto__input" value="<%=product.price%>">
             </div>
             <div class="FormularioProducto__control">
                 <label for="imagen">Editar imagen</label>
@@ -46,10 +46,10 @@
                 <label for="talle">Talle</label>
                 
                  <select name="talle" id="talle">
-                     <option value="S">S</option>
-                     <option value="M">M</option>
-                     <option value="L">L</option>
-                     <option value="XL">XL</option>
+                     <option  value="S" <%= product.size == "S" ? "selected" : "" %>>S</option>
+                     <option value="M" <%= product.size == "M" ? "selected" : "" %>>M</option>
+                     <option value="L" <%= product.size == "L" ? "selected" : "" %>>L</option>
+                     <option value="XL" <%= product.size == "XL" ? "selected" : "" %>>XL</option>
 
                  </select>
                 </div>
@@ -57,7 +57,7 @@
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                     <label for="descripcion">Descipción</label>
-					<textarea name="descripcion" id="descripcion" class="textarea"  rows="4"></textarea>
+					<textarea name="descripcion" id="descripcion" class="textarea"  rows="4"><%= product.description %></textarea>
 
                 </div>
             </div>

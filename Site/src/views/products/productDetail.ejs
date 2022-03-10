@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <a href="../products/cart" class="btn btn-danger"><i class="fas fa-cart-plus"></i> Borrar </a>
-                                <a href="../products/cart" class="btn btn-success"><i class="fas fa-cart-plus"></i> Editar</a>
+                                <a href="../edit/<%= product.id %>" class="btn btn-success"><i class="fas fa-cart-plus"></i> Editar</a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-lg-6 text-justify">
                         <p class="h4 text-center">Detalles</p>
-                        <p>Calza Legging larga Microfibra de poliester estampada. Cintura angosta. Prenda deportiva de tiro alto, que permite mayor agarre y comodidad en el uso. Compresión Alta.</p>
+                        <p><%= product.description %></p>
                     </div>
                     <div class="col-lg-6 text-justify">
                         <p class="h4 text-center">Especificaciones</p>
