@@ -4,7 +4,9 @@
     "name": "Buzzo Lotto Strike",
     "price": 3000,
     "image": "1.jpg",
-    "category": "masVendido",
+    "category": "calza",
+    "salesCategory": "masVendido",
+    "sexCategory": "mujer",
     "size": "L",
     "description": "Calza Legging larga Microfibra de poliester estampada. Cintura angosta. Prenda deportiva de tiro alto, que permite mayor agarre y comodidad en el uso. Compresión Alta."
   },
@@ -14,7 +16,9 @@
     "name": "Short Nike",
     "price": 15000,
     "image": "2.jpg",
-    "category": "loUltimo",
+    "category": "short",
+    "salesCategory": "loUltimo",
+    "sexCategory": "mujer",
     "size": "S",
     "description": "Short nike color gris."
   },
@@ -25,7 +29,9 @@
     "name": "Zapatillas Nike air force 1",
     "price": 18000,
     "image": "img-air-force-1-zapatillas.png",
-    "category": "loUltimo",
+    "category": "calza",
+    "salesCategory": "loUltimo",
+    "sexCategory": "hombre",
     "size": "XL",
     "description": "Zapas nike aire force one."
   }
