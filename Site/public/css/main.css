@@ -22,7 +22,7 @@ h1 {
 }
 /*******************************header************************************/
 
-.form-control {
+.collapse .form-control {
   border-radius: 0px !important;
   border: none !important;
   border-top-left-radius: 0.25rem !important;

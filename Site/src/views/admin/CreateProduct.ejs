@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("../partials/head" , { css: 'createProduct.css' , title: 'Create Product' })%>
+
+    <body>
+
+        <div class="banner-login">
+            <div class="container-imagen">
+                <img src="/images/logo.png" class="imagen" alt="" />
+                <h1 class="text-white">Foxter</h1>
+              
+            </div>
+            <div class="float-end pe-3">
+        
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link " aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/products">Todos los Productos</a>
+                    </li>
+                    
+                  </ul>
+    
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <form class="formularioProducto" action="#" method="post">
+                    <div class="formularioProducto__title">
+                        <h3 class="title">Crear producto</h3>
+                    </div>
+                    <div class="">
+                        <div class="row pb-3">
+                            <div class=" form-group  col-lg-6">
+                                <label for="nombre">Nombre del producto</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control">
+                            </div>
+                            <div class=" form-group  col-lg-6">
+                                <label for="precio">Precio</label>
+                                <input type="number" name="precio" id="precio" min="0" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class=" form-group  col-lg-6">
+                                <label for="imagen">Agregar imagen</label>
+                                <input type="file" name="imagen" id="imagen" class="form-control">
+                            </div>
+                            <div class=" form-group  col-lg-6">
+                                <label for="talle">Talle</label>
+                                <select name="talle" id="talle" class="form-control">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class=" form-group  col-lg-4">
+                                <label for="talle">Categoria</label>
+                                <select name="category" id="category" class="form-control">
+                                    <option value="Remera">Remera</option>
+                                    <option value="Musculosa">Musculosa</option>
+                                    <option value="Pantalon">Pantalon</option>
+                                    <option value="Campera">Campera</option>
+                                    <option value="Short">Short</option>
+                                    <option value="Buzo">Buzo</option>
+                                    <option value="Calza">Calza</option>Calza
+                                </select>
+                            </div>
+
+                            <div class=" form-group col-lg-4">
+                                <label for="categoria">Genero </label>
+                                <select name="sexCategory" id="categoria" class="form-control">
+                                    <option value="hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                    <option value="Unisex">Unisex</option>
+                                </select>
+                            </div>
+                            <div class=" form-group  col-lg-4">
+                                <label for="talle">Característica de Venta</label>
+                                <select name="saleCategory" id="saleCategory" class="form-control">
+                                    <option value="Ninguna">Ninguna</option>
+                                    <option value="tendencia">Tendencia</option>
+                                    <option value="oferta">Oferta</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="row pb-3">
+                            <div class="form-group  col-lg-12">
+                                <label for="descripcion">Descipción</label>
+                                <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group  col-lg-6">
+                                <button class="guardar" type="submit">Guardar</button>
+                            </div>
+                            <div class="form-group  col-lg-6">
+                                <button class="cancelar" type="submit">Cancelar</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </main>
+    </body>
+
+</html>
