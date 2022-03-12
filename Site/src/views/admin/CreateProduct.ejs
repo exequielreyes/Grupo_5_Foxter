@@ -28,7 +28,7 @@
 
         <main>
             <div class="container">
-                <form class="formularioProducto" action="#" method="post">
+                <form class="formularioProducto" action="/products/" method="POST">
                     <div class="formularioProducto__title">
                         <h3 class="title">Crear producto</h3>
                     </div>
@@ -36,21 +36,21 @@
                         <div class="row pb-3">
                             <div class=" form-group  col-lg-6">
                                 <label for="nombre">Nombre del producto</label>
-                                <input type="text" name="nombre" id="nombre" class="form-control">
+                                <input type="text" name="name" id="nombre" class="form-control">
                             </div>
                             <div class=" form-group  col-lg-6">
                                 <label for="precio">Precio</label>
-                                <input type="number" name="precio" id="precio" min="0" class="form-control">
+                                <input type="number" name="price" id="precio" min="0" class="form-control">
                             </div>
                         </div>
                         <div class="row pb-3">
-                            <div class=" form-group  col-lg-6">
+                            <!-- <div class=" form-group  col-lg-6">
                                 <label for="imagen">Agregar imagen</label>
-                                <input type="file" name="imagen" id="imagen" class="form-control">
-                            </div>
+                                <input type="file" name="image" id="imagen" class="form-control">
+                            </div> -->
                             <div class=" form-group  col-lg-6">
                                 <label for="talle">Talle</label>
-                                <select name="talle" id="talle" class="form-control">
+                                <select name="size" id="talle" class="form-control">
                                     <option value="S">S</option>
                                     <option value="M">M</option>
                                     <option value="L">L</option>
@@ -92,8 +92,8 @@
                         </div>
                         <div class="row pb-3">
                             <div class="form-group  col-lg-12">
-                                <label for="descripcion">Descipción</label>
-                                <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
+                                <label for="description">Descipción</label>
+                                <textarea name="description" id="descripcion" rows="4" class="form-control"></textarea>
                             </div>
                         </div>
 
@@ -102,10 +102,7 @@
                             <div class="form-group  col-lg-6">
                                 <button class="guardar" type="submit">Guardar</button>
                             </div>
-                            <div class="form-group  col-lg-6">
-                                <button class="cancelar" type="submit">Cancelar</button>
-                            </div>
-
+                            
                         </div>
                     </div>
                 </form>

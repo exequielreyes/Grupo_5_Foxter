@@ -10,6 +10,7 @@ router.get('/cart' , productsControllers.carrito);
 router.get('/create' , productsControllers.crearProducto);
 router.get('/:category', productsControllers.categoriaProducto);
 router.get('/:category/:sexCategory', productsControllers.categoriaProducto);
+router.post('/', productsControllers.guardarProducto);
 
 
 module.exports = router;

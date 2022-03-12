@@ -10,6 +10,9 @@ const userRoutes = require('./src/routes/userRoutes');
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+// ************ Para usar Post ************
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 
 

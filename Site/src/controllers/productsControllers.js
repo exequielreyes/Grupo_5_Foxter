@@ -46,5 +46,15 @@ module.exports = {
     },
     crearProducto: (req, res) => {
         res.render("admin/createProduct");
+    },
+    guardarProducto:(req,res)=>{
+        let newProduct = {
+            id: products[products.length - 1].id + 1,
+            ...req.body,
+            image: 'default-image.png'
+        };
+        products.push(newProduct);
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		res.redirect("/products")
     }
 }
