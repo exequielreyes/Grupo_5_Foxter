@@ -22,5 +22,13 @@ app.use(express.static(pathStatic));
 app.use('/' ,webRoutes);
 app.use('/products' ,productsRoutes);
 app.use('/user' ,userRoutes);
+
+// ******* Error 404*********
+app.use((req , res ,next) =>{
+    res.status(404).render('not-found');
+})
+
+
+
 app.listen(3000, () => console.log("server running on port 3000"));
 
