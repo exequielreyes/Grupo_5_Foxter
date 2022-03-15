@@ -9,5 +9,43 @@
 }
 
 .h4{
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Roboto';
+    text-align: start !important;
+    font-weight: bold;
+}
+
+@media (max-width: 992px){
+    .product-description .title{
+        margin-top: 20px;
+    }
+}
+
+.my-5{
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+}
+
+.size-ul{
+    display: flex;
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
+.size-li{
+    list-style: none;
+    display: flex;
+     margin-right:15px;
+     border: 1.5px solid #000;
+     border-radius: 50% ;
+     height: 33px;
+     width: 33px;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+}
+
+.size-li:hover{
+    /* background-color: #0d6efd; */
+    border: 1px solid #548cff;
+    /* color: #fff; */
 }

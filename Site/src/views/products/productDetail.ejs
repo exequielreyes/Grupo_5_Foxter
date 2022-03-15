@@ -15,8 +15,8 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">inicio</a></li>
-                                <li class="breadcrumb-item " aria-current="page">Calzas</li>
-                                <li class="breadcrumb-item active" aria-current="page">Legging Denali </li>
+                                <li class="breadcrumb-item " aria-current="page"><%= product.category %></li>
+                                <li class="breadcrumb-item active" aria-current="page"><%= product.name %></li>
                             </ol>
                         </nav>
                     </div>
@@ -34,6 +34,18 @@
                             <p class="title"><%= product.name %></p>
                             <p>Item No. <%= product.id %></p>
                             <p class="price">$ <%= product.price %></p>
+                            <div class="size">
+                            <ul class="size-ul">
+                                <li class="size-li"><span>S</span> </li>
+                                <li class="size-li"><span>M</span></li>
+                                <li class="size-li"><span>L</span></li>
+                                <li class="size-li"><span>XL</span></li>
+                            </ul>
+                        </div>
+
+
+
+
                             <a href="../products/cart" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Agregar al
                                 carrito</a>
                         </div>
@@ -59,13 +71,13 @@
                         <p class="h4 text-center">Detalles</p>
                         <p><%= product.description %></p>
                     </div>
-                    <div class="col-lg-6 text-justify">
+                    <!-- <div class="col-lg-6 text-justify">
                         <p class="h4 text-center">Especificaciones</p>
                         <ul>
                             <li> Material: 100% Algodón</li>
                             <li>Industria Argentina </li>
                         </ul>                           
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
