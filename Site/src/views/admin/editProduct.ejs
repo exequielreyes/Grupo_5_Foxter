@@ -13,45 +13,45 @@
     </div>
  
     <main>
-    <form class="formularioProducto" action="#" method="post">
+    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST" class="formularioProducto" >
         <div class="formularioProducto__title">
             <h3 class="title">Editar producto</h3>
         </div>
         <div class="formularioProducto__contenedor">
             <div class="FormularioProducto__control">
-                <label for="nombre">Nombre del producto</label>
-                <input type="text" name="nombre" id="nombre" class="formularioProducto__input" value="<%=product.name%>">
+                <label for="name">Nombre del producto</label>
+                <input type="text" name="name" id="name" class="formularioProducto__input" value="<%=productToEdit.name%>">
             </div>
             <div class="FormularioProducto__control">
-                <label for="precio">Precio</label>
-                <input type="number" name="precio" id="precio" min="0" class="formularioProducto__input" value="<%=product.price%>">
+                <label for="price">Precio</label>
+                <input type="number" name="price" id="price" min="0" class="formularioProducto__input" value="<%=productToEdit.price%>">
             </div>
             
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__input">
-                <label for="categoria">Categoria</label>
+                <label for="category">Categoria</label>
                 
-                 <select name="categoria" id="categoria">
-                    <option value="Remera">Remera</option>
-                    <option value="Musculosa">Musculosa</option>
-                    <option value="Pantalon">Pantalon</option>
-                    <option value="Campera">Campera</option>
-                    <option value="Short">Short</option>
-                    <option value="Buzo">Buzo</option>
-                    <option value="Calza">Calza</option>Calza
+                 <select name="category" id="category" >
+                    <option value="Remera" <%= productToEdit.category == "Remera" ? "selected" : "" %>      >Remera</option>
+                    <option value="Musculosa" <%= productToEdit.category == "Musculosa" ? "selected" : "" %>   >Musculosa</option>
+                    <option value="Pantalon" <%= productToEdit.category == "Pantalon" ? "selected" : "" %> >Pantalon</option>
+                    <option value="Campera" <%= productToEdit.category == "Campera" ? "selected" : "" %>  >Campera</option>
+                    <option value="Short" <%= productToEdit.category == "Short" ? "selected" : "" %>  >Short</option>
+                    <option value="Buzo" <%= productToEdit.category == "Buzo" ? "selected" : "" %>  >Buzo</option>
+                    <option value="Calza" <%= productToEdit.category == "Calza" ? "selected" : "" %>  >Calza</option>
                  </select>
                 </div>
             </div>
 
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__input">
-                <label for="talle">Talle</label>
+                <label for="size">Talle</label>
                 
-                 <select name="talle" id="talle">
-                     <option  value="S" <%= product.size == "S" ? "selected" : "" %>>S</option>
-                     <option value="M" <%= product.size == "M" ? "selected" : "" %>>M</option>
-                     <option value="L" <%= product.size == "L" ? "selected" : "" %>>L</option>
-                     <option value="XL" <%= product.size == "XL" ? "selected" : "" %>>XL</option>
+                 <select name="size" id="talle">
+                     <option value="S" <%= productToEdit.size == "S" ? "selected" : "" %>>S</option>
+                     <option value="M" <%= productToEdit.size == "M" ? "selected" : "" %>>M</option>
+                     <option value="L" <%= productToEdit.size == "L" ? "selected" : "" %>>L</option>
+                     <option value="XL" <%= productToEdit.size == "XL" ? "selected" : "" %>>XL</option>
 
                  </select>
                 </div>
@@ -66,48 +66,42 @@
             </div> -->
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
-                <label for="categoria">Genero </label>
-                <select name="sexCategory" id="categoria" class="form-control">
-                    <option value="hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
-                    <option value="Unisex">Unisex</option>
+                <label for="sexCategory">Genero </label>
+                <select name="sexCategory" id="sexCategoria" class="form-control">
+                    <option value="Hombre" <%= productToEdit.sexCategory == "Hombre" ? "selected" : "" %>>Hombre</option>
+                    <option value="Mujer" <%= productToEdit.sexCategory == "Mujer" ? "selected" : "" %>>Mujer</option>
+                    <option value="Unisex" <%= productToEdit.sexCategory == "Unisex" ? "selected" : "" %>>Unisex</option>
                 </select>
             </div>
             </div>
 
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
-                <label for="talle">Característica de Venta</label>
+                <label for="saleCategory">Característica de Venta</label>
                 <select name="saleCategory" id="saleCategory" class="form-control">
-                    <option value="Ninguna">Ninguna</option>
-                    <option value="tendencia">Tendencia</option>
-                    <option value="oferta">Oferta</option>
+                    <option value="ninguna" <%= productToEdit.saleCategory == "ninguna" ? "selected" : "" %>   >Ninguna</option>
+                    <option value="tendencia" <%= productToEdit.saleCategory == "tendencia" ? "selected" : "" %> >Tendencia</option>
+                    <option value="oferta" <%= productToEdit.saleCategory == "oferta" ? "selected" : "" %> >Oferta</option>
                 </select>
             </div>
             </div>
             
         </div>
-        <!-- <div class="row pb-3">
-            <div class="form-group  col-lg-12">
-                <label for="description">Descipción</label>
-                <textarea name="description" id="descripcion" rows="4" class="form-control"></textarea>
-            </div>
-        </div> -->
-
+        
            
                     <div class="form-group  col-lg-12">
-                    <label class="label-description" for="descripcion">Descipción</label>
-					<textarea name="descripcion" id="descripcion" class="textarea"  rows="4"><%= product.description %></textarea>
+                    <label class="label-description" for="description">Descipción</label>
+					<textarea name="description" id="description" class="textarea"  rows="4"><%= productToEdit.description %></textarea>
 
                 </div>
                
-         
-
             <div class="FormularioProducto__control">
                 <div class="boton-control" >
-                <button class="guardar" type="submit">Guardar</button>
-                <button class="cancelar" type="submit">Cancelar</button>
-                </div>
+                <button  type="submit"  class="guardar">Guardar</button>
+                <a href="/products/detail/ <%=productToEdit.id %>">
+                <button type="submit" class="cancelar">Cancelar</button>
+                </a>    
+            </div>
             </div>
         </div>
     </form>

@@ -35,15 +35,6 @@ module.exports = {
         res.render("products/productDetail", { product });
     },
 
-    editarProducto: (req, res) => {
-        id = req.params.id;
-        let product = products.find(product => product.id == id);
-        res.render("admin/editProduct", { product });
-    },
-
-    carrito: (req, res) => {
-        res.render("carrito/productCart");
-    },
     crearProducto: (req, res) => {
         res.render("admin/createProduct");
     },
@@ -69,5 +60,39 @@ module.exports = {
                
         fs.writeFileSync(productsFilePath, JSON.stringify(products));
 		res.redirect("/products")
-    }
+    },
+
+    editarProducto: (req, res) => {
+        id = req.params.id;
+        let productToEdit = products.find(product => product.id == id);
+        res.render("admin/editProduct", { productToEdit })
+    },
+
+
+    actualizarProducto: (req , res) => {
+        id = req.params.id;
+		let productToEdit = products.find(product => product.id == id)
+
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: productToEdit.image
+		};
+		
+		let newProducts = products.map(product => {
+			if (product.id == productToEdit.id) {
+				return product = {...productToEdit};
+			}
+			return product;
+		})
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/');
+	},
+
+
+    carrito: (req, res) => {
+        res.render("carrito/productCart");
+    },
+   
 }

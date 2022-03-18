@@ -19,14 +19,38 @@ const storage = multer.diskStorage({
     })
 const uploadFile = multer({storage});
 
+/***Todo los productos ***/
 router.get('/', productsControllers.index);
-router.get('/detail/:id' , productsControllers.detalleProducto);
-router.get('/edit/:id' , productsControllers.editarProducto);
-router.get('/cart' , productsControllers.carrito);
+
+
+
+
+
+/***Crear un productos ***/
 router.get('/create' , productsControllers.crearProducto);
+router.post('/', uploadFile.single('image'), productsControllers.guardarProducto);
+
+/*** Ver el detalle de un producto***/
+router.get('/detail/:id' , productsControllers.detalleProducto);
+
+/*** Editar producto***/
+router.get('/edit/:id' , productsControllers.editarProducto);
+router.put('/edit/:id' , productsControllers.actualizarProducto);
+
+
+
+
+router.get('/cart' , productsControllers.carrito);
+
 router.get('/:category', productsControllers.categoriaProducto);
 router.get('/:category/:sexCategory', productsControllers.categoriaProducto);
-router.post('/', uploadFile.single('image'), productsControllers.guardarProducto);
+
+
+
+
+
+
+
 
 
 module.exports = router;
