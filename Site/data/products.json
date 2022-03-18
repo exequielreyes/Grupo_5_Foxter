@@ -33,45 +33,12 @@
   "description": "Zapas nike aire force one."
  },
  {
-  "id": 4,
-  "name": "Remera FILA",
-  "price": "2507",
-  "category": "Musculosa",
-  "size": "M",
-  "sexCategory": "Mujer",
-  "saleCategory": "tendencia",
-  "description": "Género: Mujer\r\n\r\nAdecuado para: Todo el día\r\n\r\nMaterial: Algodón\r\n\r\nEstilo: Estampado\r\n\r\nCuello: Redondo\r\n\r\nManga: Corta\r\n\r\nCalce: Holgado\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Importado\r\n\r\nMarca: Nike",
-  "image": "default-image.png"
- },
- {
-  "id": 5,
-  "name": "Remera Under Armour Sportstyle Short Sleeve Latam",
-  "price": "4599",
-  "image": "default-image.png",
-  "size": "S",
-  "category": "Remera",
-  "sexCategory": "hombre",
-  "saleCategory": "Ninguna",
-  "description": "Género: Hombre\r\n\r\nAdecuado para: Entrenamiento\r\n\r\nMaterial: Poliéster\r\n\r\nComposición: 100% Poliéster\r\n\r\nCuello: Redondo\r\n\r\nManga: Corta\r\n\r\nCalce: Regular\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Nacional\r\n\r\nMarca: Under Armour"
- },
- {
-  "id": 6,
-  "name": " Pantalón NikeTiro21 ",
-  "price": "4000",
-  "category": "Pantalon",
-  "size": "M",
-  "sexCategory": "hombre",
-  "saleCategory": "tendencia",
-  "description": "El Pantalón adidas Tiro21 Training cuenta con un tejido suave y absorbente que te ayuda a mantenerte fresco y seco durante más tiempo. Los cierres en los tobillos y los bolsillos aportan practicidad; la cintura elástica con cordón de ajuste mantiene la prenda en su lugar y la confección en Primegreen, una serie de materiales reciclados de alto desempeño aporta durabilidad a unos pantalones que vas a querer llevar siempre con vos.\r\n\r\nGénero: Hombre\r\n\r\nAdecuado para: Fútbol\r\n\r\nMaterial: Poliéster reciclado\r\n\r\nCintura: Con Elástico y Cordón\r\n\r\nBolsillo: Con Bolsillo\r\n\r\nComposición: 100% poliéster reciclado\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Importado",
-  "image": "default-image.png"
- },
- {
   "id": 7,
-  "name": "Campera adidas Boca Juniors Himno",
-  "price": "9799",
-  "size": "S",
+  "name": "Campera adidas de boquita el mas grande",
+  "price": "15000",
   "category": "Campera",
-  "sexCategory": "hombre",
+  "size": "L",
+  "sexCategory": "Hombre",
   "saleCategory": "oferta",
   "description": "La campera Adidas Boca Juniors está pensada para que acompañes al Xeneixe donde sea. Su diseño es una fusión perfecta entre el estilo deportivo y urbano para que la combines con cualquier outfit. Posee las tres tiras de Adidas que van desde hombros a manga y el escudo de Boca Juniors.\r\n\r\nGénero: Hombre\r\n\r\nAdecuado para: Todo el día.\r\n\r\nMaterial: Poliéster.\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nBolsillo: Con Bolsillo\r\n\r\nEstilo: Con Logo\r\n\r\nGarantía: Contra defecto de fabricación.\r\n\r\nOrigen: Importado\r\n\r\nMarca: adidas",
   "image": "1647311074611-boca.jpg"
@@ -90,5 +57,16 @@
   "saleCategory": "oferta",
   "description": "Las Calzas Lotto Smart están confeccionadas en poliéster para una mayor resistencia y durabilidad, además del máximo confort diario. Su estilo regular y diseño liso te permite vestirlas durante todo el día, ya que son una prenda cómoda para entrecasa como también para tus rutinas de entrenamiento. \r\n\r\nGénero: Mujer\r\n\r\nAdecuado para: Todo el día.\r\n\r\nMaterial: Poliéster.\r\n\r\nCintura: Con Elástico\r\n\r\nBolsillo: Sin Bolsillo\r\n\r\nEstilo: Liso\r\n\r\nGarantía: Contra defecto de fabricación.\r\n\r\nOrigen: Nacional\r\n\r\nMarca: Lotto",
   "image": "1647311758179-calza lotto.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Conjunto Deportivo",
+  "price": "20000",
+  "category": "Campera",
+  "size": "L",
+  "sexCategory": "Hombre",
+  "saleCategory": "tendencia",
+  "description": "Conjunto deportivo color gris ",
+  "image": "1647642124801-814pT6OHogL._AC_UX385_.jpg"
  }
 ]

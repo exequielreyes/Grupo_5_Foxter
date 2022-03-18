@@ -38,6 +38,10 @@ router.get('/edit/:id' , productsControllers.editarProducto);
 router.put('/edit/:id' , productsControllers.actualizarProducto);
 
 
+/*** Borrar Producto ***/
+router.delete('/delete/:id', productsControllers.borrarProducto); 
+
+
 
 
 router.get('/cart' , productsControllers.carrito);

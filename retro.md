@@ -45,3 +45,27 @@ Para la realización del sprint 2 se siguió la misma modalidad de trabajo del s
 
 ### Stop doing
 - Faltar o ser impuntual en las reuniones semanales.
+
+
+# Sprint 3
+## Resumen
+
+### Start doing
+- 
+ 
+### More of
+- 
+ 
+### Keep doing
+- 
+- 
+- 
+- 
+- 
+- 
+
+### Less of
+- 
+
+### Stop doing
+- 

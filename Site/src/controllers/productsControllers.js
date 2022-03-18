@@ -90,6 +90,12 @@ module.exports = {
 		res.redirect('/');
 	},
 
+    borrarProducto: (req, res) => {
+		let id = req.params.id;
+		let finalProducts = products.filter(product => product.id != id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		res.redirect('/');
+	},
 
     carrito: (req, res) => {
         res.render("carrito/productCart");
