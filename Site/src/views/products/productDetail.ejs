@@ -15,7 +15,8 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">inicio</a></li>
-                                <li class="breadcrumb-item " aria-current="page"><%= product.category %></li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>"><%= product.category %></a></li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>/<%= product.sexCategory %>"><%= product.sexCategory %></a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><%= product.name %></li>
                             </ol>
                         </nav>

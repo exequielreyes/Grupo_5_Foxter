@@ -13,13 +13,13 @@
  {
   "id": 2,
   "name": "Short Nike",
-  "price": 15000,
-  "image": "2.jpg",
+  "price": "15000",
   "category": "Short",
-  "saleCategory": "oferta",
-  "sexCategory": "mujer",
   "size": "S",
-  "description": "Short nike color gris."
+  "sexCategory": "Hombre",
+  "saleCategory": "oferta",
+  "description": "Short nike color gris.",
+  "image": "2.jpg"
  },
  {
   "id": 7,
@@ -53,7 +53,7 @@
   "price": "20000",
   "category": "Campera",
   "size": "L",
-  "sexCategory": "Hombre",
+  "sexCategory": "Mujer",
   "saleCategory": "tendencia",
   "description": "Conjunto deportivo color gris ",
   "image": "1647642124801-814pT6OHogL._AC_UX385_.jpg"
