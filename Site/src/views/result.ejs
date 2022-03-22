@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head", {title: 'Resultado' , css:'index.css'}) %>
+
+
+    <body>
+
+
+        <%-include("./partials/header") %>
+
+        <main>
+       
+            <!------------Productos------------------------------>
+            <section id="lomasvendidos my-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class=" h3 my-5">Resultado de la busqueda: <%= search %> </p>
+                        </div>
+    
+
+
+                        <% if (products.length > 0) { %>
+                         	<% products.forEach(product => { %>
+                        <div class="col-lg-3 ">
+                            <div class="product">
+                                <a class="floa-end" href="#">
+                                    <i class="fa fa-heart ps-2"></i>
+                                </a>
+                                <a href="/products/detail/<%= product.id %>">
+                                    <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
+                                </a>
+                                <a href="/products/detail/<%= product.id %>">
+                                    <div class="">
+                                        <p class="title text-center"><%= product.name %></p>
+                                        <p class="price text-center">$ <%= product.price %></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <% })}else {%>
+                            <div class="col-12">
+							<h2 class="products-title" style="color: #222;">No hay productos que coincidan con esa búsqueda</h2>
+						</div>
+						<% } %>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+            <%-include("./partials/footer") %>
+
+
+    </body>
+
+</html>

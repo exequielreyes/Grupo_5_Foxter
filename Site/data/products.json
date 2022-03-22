@@ -22,17 +22,6 @@
   "description": "Short nike color gris."
  },
  {
-  "id": 3,
-  "name": "Zapatillas Nike air force 1",
-  "price": 18000,
-  "image": "img-air-force-1-zapatillas.png",
-  "category": "calza",
-  "saleCategory": "Oferta",
-  "sexCategory": "hombre",
-  "size": "XL",
-  "description": "Zapas nike aire force one."
- },
- {
   "id": 7,
   "name": "Campera adidas de boquita el mas grande",
   "price": "15000",
