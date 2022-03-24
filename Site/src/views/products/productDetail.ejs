@@ -57,11 +57,11 @@
                             <i class="fab fa-instagram"></i>
 
                         </div>
-                        <div>
+                        <div class="btn-editar-eliminar">
                             <form action="../delete/<%= product.id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Eliminar</button>
+                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> ELIMINAR</button>
                             </form>
-                                <a href="../edit/<%= product.id %>" class="btn btn-success"><i class="fas fa-cart-plus"></i> Editar</a>
+                                <a href="../edit/<%= product.id %>" class="btn btn-success"><i class="fas fa-edit"></i> EDITAR</a>
                         </div>
                     </div>
                 </div>

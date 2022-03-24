@@ -14,6 +14,14 @@
     font-weight: bold;
 }
 
+.btn-editar-eliminar{
+    display: flex;
+}
+
+.btn-success{
+    margin-left: 20px;
+}
+
 @media (max-width: 992px){
     .product-description .title{
         margin-top: 20px;
