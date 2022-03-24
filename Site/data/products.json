@@ -7,6 +7,7 @@
   "size": "L",
   "sexCategory": "Hombre",
   "saleCategory": "tendencia",
+  "files[]": "",
   "description": "Remera Gucci de cuero con logos",
   "image": "1.jpg"
  },
@@ -29,6 +30,7 @@
   "size": "L",
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
+  "files[]": "frenteDni.jpg",
   "description": "La campera Adidas Boca Juniors está pensada para que acompañes al Xeneixe donde sea. Su diseño es una fusión perfecta entre el estilo deportivo y urbano para que la combines con cualquier outfit. Posee las tres tiras de Adidas que van desde hombros a manga y el escudo de Boca Juniors.\r\n\r\nGénero: Hombre\r\n\r\nAdecuado para: Todo el día.\r\n\r\nMaterial: Poliéster.\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nBolsillo: Con Bolsillo\r\n\r\nEstilo: Con Logo\r\n\r\nGarantía: Contra defecto de fabricación.\r\n\r\nOrigen: Importado\r\n\r\nMarca: adidas",
   "image": "1647311074611-boca.jpg"
  },
@@ -55,6 +57,7 @@
   "size": "L",
   "sexCategory": "Mujer",
   "saleCategory": "tendencia",
+  "files[]": "Formulario-Login-Wireframe.png",
   "description": "Conjunto deportivo color gris ",
   "image": "1647642124801-814pT6OHogL._AC_UX385_.jpg"
  }

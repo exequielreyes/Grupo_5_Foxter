@@ -69,6 +69,33 @@ color: rgba(0, 0, 0, 0.82);
     margin-bottom: 15px;
 }
 
+.FormularioProducto__control-file{
+        /* max-width: 450px; */
+    /* margin: auto; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 22px;
+    margin-right: 22px;
+    
+}
+.title-img{
+    margin-top: 12px ;
+    margin-left: 22px;
+    margin-bottom: -5px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.82);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+}
+.thumb {
+    height: 150px;
+    /* border: 1px solid #000; */
+    /* margin: 10px 5px 0 0; */
+}
+
 .formularioProducto__input{
 width: 100%;
 
@@ -162,6 +189,12 @@ margin-bottom: 5px;
     margin: auto;
     cursor: pointer;
 }
+
+.boton-control a{
+    max-width: 450px !important;
+    margin: auto;
+    cursor: pointer;
+}
     
 button[type="submit"] {
     width: 100%;
@@ -222,12 +255,20 @@ background-color: #212529;
         width: 45%;
     }
 
+
     
     
     .FormularioProducto__control .boton-control{
         width: 100% !important;
         display: flex;
         justify-content: space-between !important;
+    }
+
+    .FormularioProducto__control .boton-control a{
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between !important;
+        text-decoration: none;
     }
 
     .col-lg-12{

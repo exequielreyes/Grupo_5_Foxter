@@ -9,12 +9,13 @@
 
     <main>
         <section class="py-3">
+            
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">inicio</a></li>
+                                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                                 <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>"><%= product.category %></a></li>
                                 <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>/<%= product.sexCategory %>"><%= product.sexCategory %></a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><%= product.name %></li>
@@ -24,6 +25,7 @@
                 </div>
             </div>
         </section>
+        <div class="main-container">
         <section>
             <div class="container">
                 <div class="row">
@@ -47,7 +49,7 @@
 
 
 
-                            <a href="../products/cart" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Agregar al
+                            <a href="../products/cart" class="btn btn-primary"> Agregar al
                                 carrito</a>
                         </div>
                         <div class="iconos my-5">
@@ -60,7 +62,7 @@
                         <div class="btn-editar-eliminar">
                             
                                 <a href="../edit/<%= product.id %>" class="btn btn-success"><i class="fas fa-edit"></i> EDITAR</a>
-                                <form action="../delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <form action="../delete/<%= product.id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> ELIMINAR</button>
                             </form>
                         </div>
@@ -85,6 +87,7 @@
                 </div>
             </div>
         </section>
+    </div>
     </main>
 
     <%-include("../partials/footer") %>
