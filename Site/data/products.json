@@ -52,12 +52,11 @@
  {
   "id": 9,
   "name": "Conjunto Deportivo",
-  "price": "20000",
+  "price": "15000",
   "category": "Campera",
   "size": "L",
-  "sexCategory": "Mujer",
+  "sexCategory": "Hombre",
   "saleCategory": "tendencia",
-  "files[]": "Formulario-Login-Wireframe.png",
   "description": "Conjunto deportivo color gris ",
   "image": "1647642124801-814pT6OHogL._AC_UX385_.jpg"
  }
