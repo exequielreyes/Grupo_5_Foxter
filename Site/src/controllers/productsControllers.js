@@ -11,24 +11,25 @@ module.exports = {
     index: (req, res) => {
         res.render('products/productsList', { products });
     },
+
     categoriaProducto: (req, res) => {
         if (req.params.sexCategory) {
             category = req.params.category;
             sexCategory = req.params.sexCategory;
 
-            let productsFilter = products.filter(product => product.category == category && product.sexCategory == sexCategory);
+            let productsFilter = products.filter(product => product.category.toLowerCase()  == category && product.sexCategory == sexCategory);
 
             res.render('products/productsList', { 'products': productsFilter });
         }
         else {
             category = req.params.category;
-            let productsFilter = products.filter(product => product.category == category);
-
+            let productsFilter = products.filter(product => product.category.toLowerCase()  == category);
             res.render('products/productsList', { 'products': productsFilter });
-        }
+        }     
 
 
     },
+
     detalleProducto: (req, res) => {
         id = req.params.id;
         let product = products.find(product => product.id == id);
@@ -38,6 +39,7 @@ module.exports = {
     crearProducto: (req, res) => {
         res.render("admin/createProduct");
     },
+    
     guardarProducto:(req,res)=>{
         if(req.file){
 			let newProduct = {

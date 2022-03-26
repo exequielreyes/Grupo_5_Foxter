@@ -14,11 +14,12 @@
  {
   "id": 2,
   "name": "Short Nike",
-  "price": "15000",
+  "price": "500",
   "category": "Short",
   "size": "S",
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
+  "files[]": "",
   "description": "Short nike color gris.",
   "image": "2.jpg"
  },
