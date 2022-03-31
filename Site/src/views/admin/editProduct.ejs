@@ -13,7 +13,7 @@
     </div>
  
     <main>
-    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  class="formularioProducto" >
+    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  enctype="multipart/form-data" class="formularioProducto" >
         <div class="formularioProducto__title">
             <h3 class="title">Editar producto</h3>
         </div>
@@ -46,27 +46,20 @@
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__input">
                 <label for="size">Talle</label>
-                
                  <select name="size" id="talle">
                      <option value="S" <%= productToEdit.size == "S" ? "selected" : "" %>>S</option>
                      <option value="M" <%= productToEdit.size == "M" ? "selected" : "" %>>M</option>
                      <option value="L" <%= productToEdit.size == "L" ? "selected" : "" %>>L</option>
                      <option value="XL" <%= productToEdit.size == "XL" ? "selected" : "" %>>XL</option>
-
                  </select>
                 </div>
             </div>
 
 
-
-
-            
-            
-
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                 <label for="sexCategory">Genero </label>
-                <select name="sexCategory" id="sexCategoria" class="form-control">
+                <select name="sexCategory" id="sexCategoria" >
                     <option value="Hombre" <%= productToEdit.sexCategory == "Hombre" ? "selected" : "" %>>Hombre</option>
                     <option value="Mujer" <%= productToEdit.sexCategory == "Mujer" ? "selected" : "" %>>Mujer</option>
                     <option value="Unisex" <%= productToEdit.sexCategory == "Unisex" ? "selected" : "" %>>Unisex</option>
@@ -77,7 +70,7 @@
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                 <label for="saleCategory">Característica de Venta</label>
-                <select name="saleCategory" id="saleCategory" class="form-control">
+                <select name="saleCategory" id="saleCategory" >
                     <option value="ninguna" <%= productToEdit.saleCategory == "ninguna" ? "selected" : "" %>   >Ninguna</option>
                     <option value="tendencia" <%= productToEdit.saleCategory == "tendencia" ? "selected" : "" %> >Tendencia</option>
                     <option value="oferta" <%= productToEdit.saleCategory == "oferta" ? "selected" : "" %> >Oferta</option>
@@ -92,7 +85,7 @@
         </div>
         
         <div class="FormularioProducto__control-file">
-            <input type="file" name="files[]" id="files" class="formularioProducto__input-file">
+            <input type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
             <!-- <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px"> -->
             <output id="list" ></output>
         </div>
@@ -138,7 +131,7 @@
             }
         }
        
-        document.getElementById('files').addEventListener('change', archivo, false);
+        document.getElementById('imagen').addEventListener('change', archivo, false);
 </script>
 
 
