@@ -23,16 +23,10 @@ module.exports = {
         }
         else {
             category = req.params.category;
-<<<<<<< HEAD
             let productsFilter = products.filter(product => product.category == category);
 
             res.render('products/productsList', { 'products': productsFilter, 'category':category });
         }
-=======
-            let productsFilter = products.filter(product => product.category.toLowerCase()  == category);
-            res.render('products/productsList', { 'products': productsFilter });
-        }     
->>>>>>> 31aaf6f185be0b79847dda2c0a4b9055e842bf88
 
 
     },
