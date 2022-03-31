@@ -13,7 +13,7 @@
     </div>
  
     <main>
-    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST" class="formularioProducto" >
+    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  class="formularioProducto" >
         <div class="formularioProducto__title">
             <h3 class="title">Editar producto</h3>
         </div>
@@ -58,12 +58,11 @@
             </div>
 
 
-        <!-- editar archivos -->
 
-            <!-- <div class="FormularioProducto__control">
-                <label for="imagen">Editar imagen</label>
-                <input type="file"name="imagen" id="imagen" class="formularioProducto__input">
-            </div> -->
+
+            
+            
+
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                 <label for="sexCategory">Genero </label>
@@ -88,7 +87,15 @@
             
         </div>
         
-           
+        <div class="title-img">
+            <label for="imagen">Editar imagen</label>
+        </div>
+        
+        <div class="FormularioProducto__control-file">
+            <input type="file" name="files[]" id="files" class="formularioProducto__input-file">
+            <!-- <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px"> -->
+            <output id="list" ></output>
+        </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>
 					<textarea name="description" id="description" class="textarea"  rows="4"><%= productToEdit.description %></textarea>
@@ -105,6 +112,37 @@
             </div>
         </div>
     </form>
+    
+
+    <script>
+        function archivo(evt) {
+            let files = evt.target.files; // FileList object
+       
+            // Obtenemos la imagen del campo "file".
+            for (let i = 0, f; f = files[i]; i++) {
+              //Solo admitimos imágenes.
+              if (!f.type.match('image.*')) {
+                  continue;
+              }
+       
+              let reader = new FileReader();
+       
+              reader.onload = (function(theFile) {
+                  return function(e) {
+                    // Insertamos la imagen
+                   document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                  };
+              })(f);
+       
+              reader.readAsDataURL(f);
+            }
+        }
+       
+        document.getElementById('files').addEventListener('change', archivo, false);
+</script>
+
+
+
 </main>
 </body>
 </html>

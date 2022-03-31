@@ -87,7 +87,7 @@ module.exports = {
 		})
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		res.redirect('../detail/'+ id);
 	},
 
     borrarProducto: (req, res) => {

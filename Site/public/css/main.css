@@ -7,6 +7,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  
 }
 
 h1 {
@@ -30,17 +31,7 @@ h1 {
   outline: none;
 }
 
-.fa-search {
-  padding: 0.375rem 0.75rem;
-  background-color: var(--white);
-  display: flex !important;
-  align-items: center;
-  border: none;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-  color: #495057;
-  cursor: pointer;
-}
+
 
 .far,
 .fas {
@@ -91,6 +82,25 @@ footer div.iconos i {
 
 h1.text-white{
   display: none;
+}
+
+
+.linkHome{
+text-decoration: none;
+}
+
+.searchButton{
+  padding: 0.375rem 0.75rem;
+  background-color: var(--white);
+  display: flex !important;
+  align-items: center;
+  border: none;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  color: #495057;
+  cursor: pointer;
+
+   
 }
 
 @media (min-width: 480px){
