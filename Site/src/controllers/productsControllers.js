@@ -23,7 +23,7 @@ module.exports = {
         }
         else {
             category = req.params.category;
-            let productsFilter = products.filter(product => product.category == category);
+            let productsFilter = products.filter(product => product.category.toLowerCase() == category.toLowerCase());
 
             res.render('products/productsList', { 'products': productsFilter, 'category':category });
         }
