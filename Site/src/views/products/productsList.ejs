@@ -15,31 +15,62 @@
         <section id="lomasvendidos my-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <p class=" h3 my-5">PRODUCTOS</p>
+                    <div class="col-lg-12 my-3">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">inicio</a></li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="/products/">Productos</a></li>
+                            </ol>
+                        </nav>
                     </div>
-
-                    
-			<% products.forEach(product => { %>
-                    <div class="col-lg-3 ">
-                        <div class="product">
-                            <a class="floa-end" href="#">
-                                <i class="fa fa-heart ps-2"></i>
-                            </a>
-                            <a href="/products/detail/<%= product.id %>">
-                                <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
-                            </a>
-                            <a href="/products/detail/<%= product.id %>">
-                                <div class="">
-                                    <p class="title text-center"><%= product.name %></p>
-                                    <p class="price text-center">$ <%= product.price %></p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <% }) %>
                 </div>
             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="row">
+                            <p class="h5">Tipos de Productos</p>
+                            <a href="/products/Remera"><i class="far fa-square"></i></i> Remeras</a>
+                            <a href="/products/Musculosa"><i class="far fa-square"></i></i> Musculosas</a>
+                            <a href="/products/Pantalon"><i class="far fa-square"></i></i> Pantalones</a>
+                            <a href="/products/Campera"><i class="far fa-square"></i></i> Camperas</a>
+                            <a href="/products/Short"><i class="far fa-square"></i></i> Shorts</a>
+                            <a href="/products/Buzo"><i class="far fa-square"></i></i> Buzos</a>
+                            <a href="/products/Calza"><i class="far fa-square"></i></i> Calzas</a>
+                            <a href="/products/Malla"><i class="far fa-square"></i></i> Mallas</a>
+                           
+                             
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="text-center small fw-bold">  <%= products.length %> Resultados</p>
+                            </div>
+                            <% products.forEach(product => { %>
+                                <div class="col-lg-3 ">
+                                    <div class="product">
+                                        <a class="floa-end" href="#">
+                                            <i class="fa fa-heart ps-2"></i>
+                                        </a>
+                                        <a href="/products/detail/<%= product.id %>">
+                                            <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
+                                        </a>
+                                        <a href="/products/detail/<%= product.id %>">
+                                            <div class="">
+                                                <p class="title text-center"><%= product.name %></p>
+                                                <p class="price text-center">$ <%= product.price %></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
         </section>
     </main>
 
