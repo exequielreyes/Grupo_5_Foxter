@@ -46,8 +46,7 @@ router.delete('/delete/:id', productsControllers.borrarProducto);
 
 router.get('/cart' , productsControllers.carrito);
 
-router.get('/:category', productsControllers.categoriaProducto);
-router.get('/:category/:sexCategory', productsControllers.categoriaProducto);
+router.get('/:category/:sexCategory?', productsControllers.categoriaProducto);
 
 
 

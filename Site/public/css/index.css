@@ -28,7 +28,7 @@ a:hover{
     color:var(--purple)
 }
 /***/
-.far {
+.filter .far, .filter .fas {
     font-size: 16px !important;
     color: #7900ff !important;
 }

@@ -18,13 +18,13 @@ module.exports = {
 
             let productsFilter = products.filter(product => product.category == category && product.sexCategory == sexCategory);
 
-            res.render('products/productsList', { 'products': productsFilter });
+            res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
         }
         else {
             category = req.params.category;
             let productsFilter = products.filter(product => product.category == category);
 
-            res.render('products/productsList', { 'products': productsFilter });
+            res.render('products/productsList', { 'products': productsFilter, 'category':category });
         }
 
 
