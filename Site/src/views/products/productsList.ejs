@@ -67,7 +67,7 @@
                                 <p class="text-center small fw-bold">  <%= products.length %> Resultados</p>
                             </div>
                             <% products.forEach(product => { %>
-                                <div class="col-lg-3 ">
+                                <div class="col-lg-4 ">
                                     <div class="product">
                                         <a class="floa-end" href="#">
                                             <i class="fa fa-heart ps-2"></i>
@@ -75,10 +75,29 @@
                                         <a href="/products/detail/<%= product.id %>">
                                             <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
                                         </a>
+                                        <% if(product.discount>0){%>
+                                            <div class="discount">
+                                                <p><%= product.discount %>%</p>
+                                            </div>
+                                     <%} %>
                                         <a href="/products/detail/<%= product.id %>">
                                             <div class="">
                                                 <p class="title text-center"><%= product.name %></p>
-                                                <p class="price text-center">$ <%= product.price %></p>
+                                                <% if(product.discount>0){%>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <p class="price text-center">$ <%= product.price-(product.discount* (product.price/100)) %></p>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <p class="price-discount text-center">$ <%= product.price %></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <%} 
+                                                    else{%>  
+                                                        <p class="price text-center">$ <%= product.price %></p>
+                                                     
+                                                        <%} %>
                                             </div>
                                         </a>
                                     </div>
