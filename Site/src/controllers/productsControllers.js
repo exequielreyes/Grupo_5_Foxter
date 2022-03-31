@@ -11,24 +11,32 @@ module.exports = {
     index: (req, res) => {
         res.render('products/productsList', { products });
     },
+
     categoriaProducto: (req, res) => {
         if (req.params.sexCategory) {
             category = req.params.category;
             sexCategory = req.params.sexCategory;
 
-            let productsFilter = products.filter(product => product.category == category && product.sexCategory == sexCategory);
+            let productsFilter = products.filter(product => product.category.toLowerCase()  == category && product.sexCategory == sexCategory);
 
             res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
         }
         else {
             category = req.params.category;
+<<<<<<< HEAD
             let productsFilter = products.filter(product => product.category == category);
 
             res.render('products/productsList', { 'products': productsFilter, 'category':category });
         }
+=======
+            let productsFilter = products.filter(product => product.category.toLowerCase()  == category);
+            res.render('products/productsList', { 'products': productsFilter });
+        }     
+>>>>>>> 31aaf6f185be0b79847dda2c0a4b9055e842bf88
 
 
     },
+
     detalleProducto: (req, res) => {
         id = req.params.id;
         let product = products.find(product => product.id == id);
@@ -38,6 +46,7 @@ module.exports = {
     crearProducto: (req, res) => {
         res.render("admin/createProduct");
     },
+    
     guardarProducto:(req,res)=>{
         if(req.file){
 			let newProduct = {
