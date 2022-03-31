@@ -1,11 +1,11 @@
 [
-  {
-    "id": 1,
-    "firstName": "Exequiel",
-    "lastName": "Reyes",
-    "birth-date": "01-04-1998",
-    "email": "reyesjonatan@gmail.com",
-    "password": "reyes 12345",
-    "image": "img-user-1432423"
-  }
+ {
+  "id": 1,
+  "name": "Misael",
+  "lastName": "Cortes",
+  "date": "2000-01-05",
+  "email": "misael.cortes39@gmail.com",
+  "password": "$2a$10$IWKikbUwQ1PYJ6Lm9NkkQem.fCL2RyGAsW2s9muBSrhqg5680TCZe",
+  "recordame": "Si"
+ }
 ]
