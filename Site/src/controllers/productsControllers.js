@@ -17,7 +17,7 @@ module.exports = {
             category = req.params.category;
             sexCategory = req.params.sexCategory;
 
-            let productsFilter = products.filter(product => product.category.toLowerCase()  == category && product.sexCategory == sexCategory);
+            let productsFilter = products.filter(product => product.category.toLowerCase()  == category.toLowerCase()  && product.sexCategory.toLowerCase()  == sexCategory.toLowerCase() );
 
             res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
         }

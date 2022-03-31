@@ -19,7 +19,7 @@
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
   "description": "Short nike color gris.",
-  "image": "2.jpg"
+  "image": "default-image.png"
  },
  {
   "id": 7,
@@ -30,7 +30,7 @@
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
   "description": "La campera Adidas Boca Juniors está pensada para que acompañes al Xeneixe donde sea. Su diseño es una fusión perfecta entre el estilo deportivo y urbano para que la combines con cualquier outfit. Posee las tres tiras de Adidas que van desde hombros a manga y el escudo de Boca Juniors.\r\n\r\nGénero: Hombre\r\n\r\nAdecuado para: Todo el día.\r\n\r\nMaterial: Poliéster.\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nBolsillo: Con Bolsillo\r\n\r\nEstilo: Con Logo\r\n\r\nGarantía: Contra defecto de fabricación.\r\n\r\nOrigen: Importado\r\n\r\nMarca: adidas",
-  "image": "1647311074611-boca.jpg"
+  "image": "default-image.png"
  },
  {
   "id": 9,
@@ -53,5 +53,20 @@
   "saleCategory": "tendencia",
   "description": "Buzo versace de lana",
   "image": "1648696986115-6.jpg"
+ },
+ {
+  "id": 11,
+  "name": "Campera Nike Sportswear Icon Clash",
+  "price": "10990",
+  "discount": "15",
+  "size": [
+   "S",
+   "M"
+  ],
+  "category": "Campera",
+  "sexCategory": "Mujer",
+  "saleCategory": "oferta",
+  "description": "Para vos que tenés un estilo urbano y chic, el Buzo Nike Sportswear Icon Clash está confeccionado en algodón, con diseño holgado, abertura 1/2 con cremallera’ que te da un look informal y despreocupado, su estilo liso con un Swoosh oversized perfecto para los días más frescos o de lluvia. Su diseño de pata de gallo y la etiqueta de tejido woven en el dobladillo te da versatilidad para usarlo como quieras. Combinalo con tus prendas favoritas y llamá la atención entre la multitud.\r\n\r\nGénero: Mujer\r\n\r\nAdecuado para: Todo el día\r\n\r\nMaterial: Algodón\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Importado\r\n\r\nMarca: Nike",
+  "image": "1648697532006-NI_DD5031-673-1.jpg"
  }
 ]
