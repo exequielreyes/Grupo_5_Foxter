@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "name": "Remera Gucci",
+  "name": "Remera Guccis",
   "price": "8500",
   "category": "Remera",
   "size": "L",
@@ -13,7 +13,7 @@
  {
   "id": 2,
   "name": "Short Nike",
-  "price": "15000",
+  "price": "21",
   "category": "Short",
   "size": "S",
   "sexCategory": "Hombre",
