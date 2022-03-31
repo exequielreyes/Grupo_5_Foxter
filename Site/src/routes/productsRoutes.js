@@ -4,7 +4,7 @@ const path = require('path');
 const multer= require('multer');
 const productsControllers = require('../controllers/productsControllers.js');
 const storage = multer.diskStorage({
-    destination: (req,file,cb)=>{
+    destination: (req ,file, cb)=>{
         cb(null, path.join(__dirname, '../../public/images/product'));
     },
     
@@ -35,7 +35,7 @@ router.get('/detail/:id' , productsControllers.detalleProducto);
 
 /*** Editar producto***/
 router.get('/edit/:id' , productsControllers.editarProducto);
-router.put('/edit/:id' , productsControllers.actualizarProducto);
+router.put('/edit/:id' , uploadFile.single('image'), productsControllers.actualizarProducto);
 
 
 /*** Borrar Producto ***/

@@ -13,7 +13,7 @@
     </div>
  
     <main>
-    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  class="formularioProducto" >
+    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  enctype="multipart/form-data" class="formularioProducto" >
         <div class="formularioProducto__title">
             <h3 class="title">Editar producto</h3>
         </div>
@@ -85,9 +85,9 @@
         </div>
         
         <div class="FormularioProducto__control-file">
-            <input type="file" name="image" id="files" class="formularioProducto__input-file">
-            <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px">
-            <!-- <output id="list" ></output> -->
+            <input type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
+            <!-- <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px"> -->
+            <output id="list" ></output>
         </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>
@@ -107,7 +107,7 @@
     </form>
     
 
-    <!-- <script>
+    <script>
         function archivo(evt) {
             let files = evt.target.files; // FileList object
        
@@ -131,8 +131,8 @@
             }
         }
        
-        document.getElementById('files').addEventListener('change', archivo, false);
-</script> -->
+        document.getElementById('imagen').addEventListener('change', archivo, false);
+</script>
 
 
 

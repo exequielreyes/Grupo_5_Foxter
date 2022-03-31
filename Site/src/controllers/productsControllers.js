@@ -60,7 +60,7 @@ module.exports = {
 		
 		}
                
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null , ' '));
 		res.redirect("/products")
     },
 
@@ -74,13 +74,21 @@ module.exports = {
     actualizarProducto: (req , res) => {
         id = req.params.id;
 		let productToEdit = products.find(product => product.id == id)
-
+    if(req.file){
 		productToEdit = {
 			id: productToEdit.id,
 			...req.body,
-			image: productToEdit.image
+			image: req.file.filename
 		};
-		
+    }else{
+        productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: 'default-image.png'
+		};
+    }
+    
+   
 		let newProducts = products.map(product => {
 			if (product.id == productToEdit.id) {
 				return product = {...productToEdit};
