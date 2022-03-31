@@ -121,10 +121,29 @@
                                             <a href="products/detail/<%= listaProducto.id %>">
                                                 <img src="images/product//<%= listaProducto.image %>" class="card-img-top" alt="...">
                                             </a>
+                                            <% if(listaProducto.discount>0){%>
+                                                   <div class="discount">
+                                                <p><%= listaProducto.discount %>%</p>
+                                                   </div>
+                                            <%} %>
                                             <a href="products/detail/<%= listaProducto.id %>">
                                                 <div class="">
                                                     <p class="title text-center"><%= listaProducto.name %></p>
-                                                    <p class="price text-center">$ <%= listaProducto.price %></p>
+                                                    <% if(listaProducto.discount>0){%>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <p class="price text-center">$ <%= listaProducto.price-(listaProducto.discount* (listaProducto.price/100)) %></p>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <p class="price-discount text-center">$ <%= listaProducto.price %></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <%} 
+                                                    else{%>  
+                                                        <p class="price text-center">$ <%= listaProducto.price %></p>
+                                                     
+                                                        <%} %>
                                                 </div>
                                             </a>
                                         </div>

@@ -17,6 +17,11 @@
     font-size: 25px;
     font-weight: 700;
 }
+.product .price-discount{
+    font-size: 25px;
+    color: #c3c1c5;
+    text-decoration: line-through;
+}
 .product:hover{
     box-shadow: 1px 1px 14px var(--purple);
 }
@@ -32,3 +37,24 @@ a:hover{
     font-size: 16px !important;
     color: #7900ff !important;
 }
+.product{
+    position: relative;
+  }
+  .discount{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 60px solid #7900ff;
+    border-right: 60px solid transparent;
+    z-index: 1000;
+  }
+  .discount p{
+    font-size: 15px;
+    transform: rotate(-45deg);
+    color: #fff;
+    margin-left: 15px;
+    margin-top: -40px;
+  }
+  
