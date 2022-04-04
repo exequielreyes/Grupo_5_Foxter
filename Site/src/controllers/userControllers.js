@@ -2,7 +2,7 @@ const path = require("path");
 const { mainModule } = require("process");
 const User = require("../models/User");
 const bcryptjs = require ('bcryptjs');
-
+const { validationResult } = require('express-validator')
 
 module.exports = {
 
@@ -10,8 +10,14 @@ module.exports = {
         res.render("usuario/register");
     },
     processRegister: (req,res) => {
+        const resultValidation = validationResult(req);
 
-
+        if(resultValidation.errors.length > 0){
+            res.render("usuario/register" , {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
 
 
         //validacion

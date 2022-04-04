@@ -7,5 +7,21 @@
   "email": "misael.cortes39@gmail.com",
   "password": "$2a$10$IWKikbUwQ1PYJ6Lm9NkkQem.fCL2RyGAsW2s9muBSrhqg5680TCZe",
   "recordame": "Si"
+ },
+ {
+  "id": 2,
+  "name": "",
+  "lastName": "",
+  "date": "",
+  "email": "",
+  "password": "$2a$10$rNCIIRhf7sriPBo23cvbweFExIfKSnIA3r5HL5A2RCVdGhevkHeS2"
+ },
+ {
+  "id": 3,
+  "name": "Jonathan",
+  "lastName": "",
+  "date": "",
+  "email": "exequielreyes93@gmail.com",
+  "password": "$2a$10$C/P9G6hfEhpW0Wk1QfM93.UD/pGA/P5rHSUSwLRWdyIBgYu9C8/H2"
  }
 ]

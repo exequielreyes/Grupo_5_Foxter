@@ -29,9 +29,15 @@
               type="text"
               name="name"
               id="name"
-              class="control"
-              required
+              class="control   <%= locals.errors && errors.name ? 'is-invalid' : null %>   "
+              value="  <%= locals.oldData ? oldData.name : null %>"
             />
+            <% if (locals.errors && errors.name) { %>
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
+            
           </div>
 
           <div class="form__control">
@@ -41,13 +47,22 @@
               name="lastName"
               id="lastName"
               class="control"
-              required
             />
+            <% if (locals.errors && errors.lastName) { %>
+              <div class="text-danger">
+                <%= errors.lastName.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="form__control">
             <label for="date">Fecha de nacimiento</label>
-            <input type="date" name="date" id="date" class="control" required />
+            <input type="date" name="date" id="date" class="control" value="  <%= locals.oldData ? oldData.date : null %>" />
+            <% if (locals.errors && errors.date) { %>
+              <div class="text-danger">
+                <%= errors.date.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="form__control">
@@ -57,8 +72,14 @@
               name="email"
               id="email"
               class="control"
-              required
+              value="  <%= locals.oldData ? oldData.email : null %>"
             />
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
+            
           </div>
 
           <div class="form__control">
@@ -68,8 +89,12 @@
               name="password"
               id="password"
               class="control"
-              required
             />
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="form__control">
@@ -79,8 +104,13 @@
               name="password"
               id="password"
               class="control"
-              required
+              
             />
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="form__control-check">
@@ -94,7 +124,7 @@
             >
           </div>
           <div class="boton-control">
-            <button type="submit" value="Iniciar Sesion">
+            <button class="button-submit" type="submit" value="Iniciar Sesion">
               Crear mi cuenta
             </button>
           </div>
