@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const {validationResult}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 
 
@@ -42,6 +43,13 @@ module.exports = {
     },
     
     guardarProducto:(req,res)=>{
+        let resul=validationResult(req);
+        //return  res.send(resul.errors);
+        if(resul.errors){
+          // return  res.send(resul.mapped())
+        return res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
+         }
+        else{
         if(req.file){
 			let newProduct = {
 				id: products[products.length - 1].id + 1,
@@ -62,7 +70,7 @@ module.exports = {
 		}
                
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null , ' '));
-		res.redirect("/products")
+		res.redirect("/products")}
     },
 
     editarProducto: (req, res) => {
