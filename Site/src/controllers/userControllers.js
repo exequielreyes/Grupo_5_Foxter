@@ -2,7 +2,7 @@ const path = require("path");
 const { mainModule } = require("process");
 const User = require("../models/User");
 const bcryptjs = require ('bcryptjs');
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
 
 module.exports = {
 
@@ -19,18 +19,28 @@ module.exports = {
             });
         }
 
-
-        //validacion
-
-
         let userInDB = User.findByField('email',req.body.email);
 
         if (userInDB){
-            res.send('el usuario ya esta registrado'); // agregar validaciones oldData y todo eso
+            return res.render('usuario/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
         }
 
         if (req.body.password[0] != req.body.password[1]){
-            res.send('las contrasenas no coinciden'); // agregar validaciones oldData y todo eso 
+            return res.render('usuario/register', {
+				errors: {
+					password: {
+						msg: 'Las contraseñas no coinciden'
+					}
+				},
+				oldData: req.body
+			});
         }
 
         let userToCreate = {
@@ -45,6 +55,37 @@ module.exports = {
 
     login: (req, res) => {
         res.render('usuario/login');
+    },
+
+    loginProcess: (req,res) => {
+        let userToLogin = User.findByField('email', req.body.email );
+
+        if (userToLogin){
+            let passwordOk = bcryptjs.compareSync( req.body.password,userToLogin.password);
+            if(passwordOk){
+                res.send(userToLogin);
+            }
+            
+            return res.render('usuario/login', {
+            errors: {
+                email: {
+                    msg: 'El usuario o la contraseña no son correctas. Por favor, inténtalo de nuevo.'
+                }
+            }
+        });
+
+        }
+        
+
+
+        return res.render('usuario/login', {
+			errors: {
+				email: {
+					msg: 'Este email no esta registrado'
+				}
+			}
+		});
+
     }
 
   

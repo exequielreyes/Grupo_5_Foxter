@@ -13,20 +13,20 @@ const validations = [
     .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-  
-
-
 ]
 
-// Formulario de registro
+//Formulario de registro
 router.get('/register' , userControllers.register);
-
 
 //Procesar el registro
 router.post('/register', validations , userControllers.processRegister);
 
-
+//Formulario Login
 router.get('/login' , userControllers.login);
+
+//Procesar el login
+router.post('/login', userControllers.loginProcess);
+
 
 
 module.exports = router;

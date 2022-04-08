@@ -26,6 +26,11 @@
           <div class="form__control">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" class="control" />
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="form__control">
             <label for="password">Contraseña</label>
