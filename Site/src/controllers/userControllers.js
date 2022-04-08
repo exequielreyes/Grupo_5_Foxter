@@ -21,16 +21,30 @@ module.exports = {
 
 
         //validacion
-
+ 
 
         let userInDB = User.findByField('email',req.body.email);
 
         if (userInDB){
-            res.send('el usuario ya esta registrado'); // agregar validaciones oldData y todo eso
+            return res.render('usuario/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
         }
 
         if (req.body.password[0] != req.body.password[1]){
-            res.send('las contrasenas no coinciden'); // agregar validaciones oldData y todo eso 
+            return res.render('usuario/register', {
+				errors: {
+					password: {
+						msg: 'Las contraseñas no coinciden'
+					}
+				},
+				oldData: req.body
+			});
         }
 
         let userToCreate = {
