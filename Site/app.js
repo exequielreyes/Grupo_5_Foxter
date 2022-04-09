@@ -5,6 +5,7 @@ const webRoutes = require('./src/routes/webRoutes');
 const productsRoutes = require('./src/routes/productsRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const methodOverride =  require('method-override');
+const session = require('express-session');
 
 
 app.set('views', './src/views');
@@ -14,7 +15,11 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
-
+app.use(session({
+    secret: 'Es un secreto',
+    resave: false,
+	saveUninitialized: false,
+}))
 
 
 const pathStatic = path.resolve(__dirname, "./public");
