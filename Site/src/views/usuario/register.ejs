@@ -29,7 +29,7 @@
               type="text"
               name="name"
               id="name"
-              class="control   <%= locals.errors && errors.name ? 'is-invalid' : null %>   "
+              class="control"
               value="<%= locals.oldData ? oldData.name : null %>"
             />
             <% if (locals.errors && errors.name) { %>
@@ -47,6 +47,7 @@
               name="lastName"
               id="lastName"
               class="control"
+              value="<%= locals.oldData ? oldData.lastName : null %>"
             />
             <% if (locals.errors && errors.lastName) { %>
               <div class="text-danger">
@@ -57,7 +58,7 @@
 
           <div class="form__control">
             <label for="date">Fecha de nacimiento</label>
-            <input type="date" name="date" id="date" class="control" value="  <%= locals.oldData ? oldData.date : null %>" />
+            <input type="date" name="date" id="date" class="control" value="<%= locals.oldData ? oldData.date : null %>" />
             <% if (locals.errors && errors.date) { %>
               <div class="text-danger">
                 <%= errors.date.msg %> 
@@ -72,7 +73,7 @@
               name="email"
               id="email"
               class="control"
-              value="  <%= locals.oldData ? oldData.email : null %>"
+              value="<%=locals.oldData ? oldData.email : null %>"
             />
             <% if (locals.errors && errors.email) { %>
               <div class="text-danger">

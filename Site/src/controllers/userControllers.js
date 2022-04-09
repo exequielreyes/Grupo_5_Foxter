@@ -19,6 +19,10 @@ module.exports = {
             });
         }
 
+
+        //validacion
+ 
+
         let userInDB = User.findByField('email',req.body.email);
 
         if (userInDB){

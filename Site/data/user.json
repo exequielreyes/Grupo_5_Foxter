@@ -5,6 +5,63 @@
   "lastName": "Cortes",
   "date": "2000-01-05",
   "email": "misael.cortes39@gmail.com",
-  "password": "$2a$10$LOk/GTyrDoEhFslq8MACdOYv8R6r8c2q1xQcF.W8pLwTIDkChz7ym"
+  "password": "$2a$10$IWKikbUwQ1PYJ6Lm9NkkQem.fCL2RyGAsW2s9muBSrhqg5680TCZe",
+  "recordame": "Si"
+ },
+ {
+  "id": 2,
+  "name": "",
+  "lastName": "",
+  "date": "",
+  "email": "",
+  "password": "$2a$10$rNCIIRhf7sriPBo23cvbweFExIfKSnIA3r5HL5A2RCVdGhevkHeS2"
+ },
+ {
+  "id": 3,
+  "name": "Jonathan",
+  "lastName": "",
+  "date": "",
+  "email": "exequielreyes93@gmail.com",
+  "password": "$2a$10$C/P9G6hfEhpW0Wk1QfM93.UD/pGA/P5rHSUSwLRWdyIBgYu9C8/H2"
+ },
+ {
+  "id": 4,
+  "name": "exe",
+  "lastName": "rey",
+  "date": "2022-04-30",
+  "email": "esefe@fefe",
+  "password": "$2a$10$MaDh36nKmdx1YsZuafSQu.h30LwXw1zogZTM2U9T5oHuF9z37UDUq"
+ },
+ {
+  "id": 5,
+  "name": "exe",
+  "lastName": "rey",
+  "date": "2022-04-30",
+  "email": "esefe@fefe.com",
+  "password": "$2a$10$SX20cqm6s54vMCbZ6oZ92eqOrHTeKBf9k/uzzNZl..d4wlUnU8IaW"
+ },
+ {
+  "id": 6,
+  "name": "exe",
+  "lastName": "reyes",
+  "date": "2022-04-21",
+  "email": "exereyes@gmail.com",
+  "password": "$2a$10$wIbU3U2k.i.DAZnXe6.8cub.q0dMfNLZ4.jzVxZatmT8vpIeXMS56"
+ },
+ {
+  "id": 7,
+  "name": "Prueba ",
+  "lastName": "Definitiva",
+  "date": "1998-01-15",
+  "email": "Prueba_definitiva@gmail.com",
+  "password": "$2a$10$4Yt79eofjC2qMf.E2nqqN.C0PmfTIXIxQ.uCuhvAJ/WV.ASZbyU82"
+ },
+ {
+  "id": 8,
+  "name": "Misael Roberto",
+  "lastName": "Cortez",
+  "date": "1998-06-19",
+  "email": "MisaelCortez@gmail.com",
+  "password": "$2a$10$QOJn7d2cHfVGOe4L0Omhcera7crWpl8MyK9monOoVRHDMWXtPIk5."
  }
 ]
