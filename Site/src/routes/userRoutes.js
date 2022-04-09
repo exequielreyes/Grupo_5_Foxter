@@ -11,8 +11,9 @@ router.get('/register' , userControllers.register);
 //Procesar el registro
 router.post('/register', validations , userControllers.processRegister);
 
-
 router.get('/login' , userControllers.login);
+
+router.get('/profile', userControllers.profile);
 
 
 module.exports = router;

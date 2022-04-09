@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+    <%-include("../partials/head", {title: "Profile", css:"profile.css"}) %>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet"  href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+
+  <body>
+
+    <%-include("../partials/header") %>
+
+<section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header">
+        <div class="perfil-usuario-portada">
+            <div class="seccion-perfil-avatar">
+             <img src="https://s03.s3c.es/imag/_v0/770x420/7/6/f/GettyImages-522796439.jpg" alt="avatar">
+            
+            </div>
+            
+        </div>
+    </div>
+    <div class="perfil-usuario-body">
+        <div class="perfil-usuario-bio">
+            <h3 class="titulo">Hola, Exequiel Reyes</h3>
+           
+        </div>
+    <div class="perfil-usuario">
+        <ul class="lista-datos">
+            <li><i class="icono fas fa-id-badge"></i>Nombre:</li>
+            <li><i class="icono fas fa-envelope"></i>E-mail:</li>
+            <li><i class="icono fas fa-lock"></i>Contraseña:</li>
+            <!-- <li><i class="icono fas fa-building"></i> Cargo</li> -->
+        </ul>
+        <ul class="lista-datos">
+            <li><i class="icono fal fa-id-badge"></i>  Apellido:</li>
+            <!-- <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento.</li> -->
+            <li><i class="icono fas fa-calendar-alt"></i>Fecha de nacimiento:</li>
+            <!-- <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li> -->
+        </ul>
+        <div>
+            <button type="button" class="boton">
+                Editar
+            </button>
+
+        </div>
+    </div>
+    </div>
+
+</section>
+
+<%-include("../partials/footer") %>
+    
+</body>
+</html>
