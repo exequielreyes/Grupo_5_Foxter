@@ -63,5 +63,13 @@
   "date": "1998-06-19",
   "email": "MisaelCortez@gmail.com",
   "password": "$2a$10$QOJn7d2cHfVGOe4L0Omhcera7crWpl8MyK9monOoVRHDMWXtPIk5."
+ },
+ {
+  "id": 9,
+  "name": "Juan",
+  "lastName": "Juanchito",
+  "date": "2000-06-09",
+  "email": "juanchito@gmail.com",
+  "password": "$2a$10$IgMOfghnEiorjmscJB02mOLF7yAtYFy0gPQPLT5ZJ/WL6OZQgDcWK"
  }
 ]

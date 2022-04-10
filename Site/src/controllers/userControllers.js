@@ -8,6 +8,7 @@ module.exports = {
   register: (req, res) => {
     res.render("usuario/register");
   },
+
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -67,7 +68,14 @@ module.exports = {
       if (passwordOk) {
         delete userToLogin.password; //Para no tener la contrasena en ssesion, es por seguridad
         req.session.userLogged = userToLogin;
-        res.redirect("./profile");
+
+
+        if (req.body.recordame){
+          res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60  })
+        }
+
+
+       return res.redirect("./profile");
       }
 
       return res.render("usuario/login", {
@@ -89,7 +97,12 @@ module.exports = {
   },
 
   profile: (req, res) => {
-    
     res.render("usuario/profile", {user: req.session.userLogged});
   },
+
+  logout: (req,res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
+  }
 };

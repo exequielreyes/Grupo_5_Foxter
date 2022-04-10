@@ -6,6 +6,8 @@ const productsRoutes = require('./src/routes/productsRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const methodOverride =  require('method-override');
 const session = require('express-session');
+const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
+const cookies = require("cookie-parser");
 
 
 app.set('views', './src/views');
@@ -13,14 +15,20 @@ app.set('view engine', 'ejs');
 
 // ************ Para usar Post ************
 app.use(express.urlencoded({extended:false}));
+
 app.use(express.json());
+
 app.use(methodOverride('_method'));
+
 app.use(session({
     secret: 'Es un secreto',
     resave: false,
 	saveUninitialized: false,
 }))
 
+app.use(cookies());
+
+app.use(userLoggedMiddleware);
 
 const pathStatic = path.resolve(__dirname, "./public");
 app.use(express.static(pathStatic));
