@@ -71,5 +71,13 @@
   "date": "2000-06-09",
   "email": "juanchito@gmail.com",
   "password": "$2a$10$IgMOfghnEiorjmscJB02mOLF7yAtYFy0gPQPLT5ZJ/WL6OZQgDcWK"
+ },
+ {
+  "id": 10,
+  "name": "pedro",
+  "lastName": "cortez",
+  "date": "2004-06-11",
+  "email": "pedrito15@gmail.com",
+  "password": "$2a$10$NSZqIbs49tM1bwjnI7R8q.MLeGKXXoilC/wH/Cs7qqJlTWurcXa9."
  }
 ]

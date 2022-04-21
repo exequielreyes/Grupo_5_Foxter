@@ -68,21 +68,61 @@ color: rgba(0, 0, 0, 0.82);
     margin-top: 15px;
     margin-bottom: 15px;
 }
+/*** Talles***/
+.form-check-input[type=checkbox]{
+    height: 2px;
+
+}
+.form-check-label{
+    margin-top: 4px;
+}
+
+
+/* 
+.probandoLabel{
+
+} */
+
+.inline-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inline-block label{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.82);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+}
+
+.separarInput{
+display: flex;
+justify-content: space-between;
+
+}
+
+
+.formularioProducto__input-price{
+    width: 45%;
+}
+
 
 .FormularioProducto__control-file{
-        /* max-width: 450px; */
-    /* margin: auto; */
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 22px;
+    /* margin-left: 22px; */
     margin-right: 22px;
     
 }
+
 .title-img{
     margin-top: 12px ;
-    margin-left: 22px;
+    /* margin-left: 22px; */
     margin-bottom: -5px;
     display: flex;
     align-items: center;
@@ -238,6 +278,8 @@ background-color: #212529;
     /* .text-white{
         display: block;
     } */
+   
+
     
 }
 
@@ -255,9 +297,6 @@ background-color: #212529;
         width: 45%;
     }
 
-
-    
-    
     .FormularioProducto__control .boton-control{
         width: 100% !important;
         display: flex;
@@ -280,5 +319,14 @@ background-color: #212529;
     .cancelar{
         margin-left: 15px;
     }
+
+     .title-img{
+        margin-left: 22px !important; 
+    }
+    .FormularioProducto__control-file{
+        margin-left: 22px;
+    }
+
+  
   
 }

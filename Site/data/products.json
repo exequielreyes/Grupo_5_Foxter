@@ -3,28 +3,30 @@
   "id": 1,
   "name": "Remera Guccis",
   "price": "8500",
+  "discount": "15",
   "category": "Remera",
-  "size": "L",
   "sexCategory": "Hombre",
-  "saleCategory": "tendencia",
+  "saleCategory": "oferta",
   "description": "Remera Gucci de cuero con logos",
-  "image": "1.jpg"
+  "image": "default-image.png"
  },
  {
   "id": 2,
   "name": "Short Nike",
-  "price": "500",
+  "price": "5000",
+  "discount": "18",
   "category": "Short",
   "size": "S",
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
-  "description": "Short nike color gris.",
+  "description": "Short nike color gris de algodon .",
   "image": "default-image.png"
  },
  {
   "id": 7,
   "name": "Campera adidas de boquita el mas grande",
   "price": "15000",
+  "discount": "50",
   "category": "Campera",
   "size": "L",
   "sexCategory": "Hombre",
@@ -36,37 +38,37 @@
   "id": 9,
   "name": "Conjunto Deportivo",
   "price": "15000",
+  "discount": "",
   "category": "Campera",
-  "size": "L",
+  "size": [
+   "S"
+  ],
   "sexCategory": "Hombre",
   "saleCategory": "tendencia",
   "description": "Conjunto deportivo color gris ",
-  "image": "1647642124801-814pT6OHogL._AC_UX385_.jpg"
+  "image": "default-image.png"
  },
  {
   "id": 10,
   "name": "Buzo versace",
   "price": "27001",
+  "discount": "10",
   "category": "Buzo",
-  "size": "M",
   "sexCategory": "Hombre",
-  "saleCategory": "tendencia",
+  "saleCategory": "oferta",
   "description": "Buzo versace de lana",
-  "image": "1648696986115-6.jpg"
+  "image": "default-image.png"
  },
  {
   "id": 11,
   "name": "Campera Nike Sportswear Icon Clash",
   "price": "10990",
   "discount": "15",
-  "size": [
-   "S",
-   "M"
-  ],
   "category": "Campera",
+  "size": "S",
   "sexCategory": "Mujer",
   "saleCategory": "oferta",
   "description": "Para vos que tenés un estilo urbano y chic, el Buzo Nike Sportswear Icon Clash está confeccionado en algodón, con diseño holgado, abertura 1/2 con cremallera’ que te da un look informal y despreocupado, su estilo liso con un Swoosh oversized perfecto para los días más frescos o de lluvia. Su diseño de pata de gallo y la etiqueta de tejido woven en el dobladillo te da versatilidad para usarlo como quieras. Combinalo con tus prendas favoritas y llamá la atención entre la multitud.\r\n\r\nGénero: Mujer\r\n\r\nAdecuado para: Todo el día\r\n\r\nMaterial: Algodón\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Importado\r\n\r\nMarca: Nike",
-  "image": "1648697532006-NI_DD5031-673-1.jpg"
+  "image": "default-image.png"
  }
 ]
