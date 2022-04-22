@@ -45,8 +45,8 @@ module.exports = {
     guardarProducto:(req,res)=>{
         let resul=validationResult(req);
         //return  res.send(resul.errors);
-        if(resul.errors){
-          // return  res.send(resul.mapped())
+        if(resul.errors.length > 0){
+        //   return  res.send(resul.mapped())
         return res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
          }
         else{
@@ -93,7 +93,7 @@ module.exports = {
         productToEdit = {
 			id: productToEdit.id,
 			...req.body,
-			image: 'default-image.png'
+			// image: req.body.image
 		};
     }
     
