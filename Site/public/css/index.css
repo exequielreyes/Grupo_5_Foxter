@@ -1,30 +1,97 @@
 /*******************************OFERTAS************************************/
-#ofertas .h4{
+/* #ofertas .h4{
     font-family: 'Anton', sans-serif;
+} */
+
+
+.bg-dark.p-3.ofert{
+    background-color: #706B6B !important;
 }
+
+
+#ofertas .h4,
+.text-white.pric{
+    font-family:'Montserrat' !important;
+    font-size: 19px;
+}
+
 
 
 /*******************************PRODUCTOS************************************/
 .h3{
-    font-family: 'Anton', sans-serif;
-    color: var(--lightblue)
+    /* font-family: 'Anton', sans-serif; */
+    /* color: var(--lightblue) */
+    font-family:"Roboto,sans-serif";
+    color: #666666;
 }
+
+body{
+    background-color: #ebebeb;
+}
+
+
+
+
+
+
+.product{
+    position: relative;
+    background-color: #fff;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+      transition: all 454ms;
+}
+
+.product:hover{
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
 .product .title{
-    font-size: 20px;
-    font-weight: 700;
+    /* font-size: 20px;
+    font-weight: 700; */
+    font-family:'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: lowercase;
+    margin-bottom: 13px;
+   
 }
+/* Para que la primera letra siempre sea en mayuscula */
+.product .title:first-letter {
+    text-transform: uppercase;
+} 
+
+
+
+
 .product .price{
-    font-size: 25px;
+    font-family:'Montserrat';
+    /* font-size: 25px;
     font-weight: 700;
+  */
+    font-style: normal;
+    font-weight: 600 ;
+    font-size: 25px;
+
 }
 .product .price-discount{
     font-size: 25px;
     color: #c3c1c5;
     text-decoration: line-through;
 }
-.product:hover{
+/* .product:hover{
     box-shadow: 1px 1px 14px var(--purple);
+} */
+
+.title.text-center,
+.price.text-center{
+    text-align: left !important;
+    margin-left: 12px;
 }
+
+
+
 a{
     color: var(--dark);
     text-decoration: none;
@@ -37,9 +104,7 @@ a:hover{
     font-size: 16px !important;
     color: #7900ff !important;
 }
-.product{
-    position: relative;
-  }
+
   .discount{
     position: absolute;
     top: 0;
@@ -58,3 +123,24 @@ a:hover{
     margin-top: -40px;
   }
   
+  /* .container.tendencias{
+    background-color: #E0DDDD;
+    margin-bottom: 50px;
+  }
+
+  .container.ofertas{
+    background-color: #E0DDDD ;
+  }
+
+   */
+/* Distancia entre el titulo con los productos */ 
+   .my-5 {
+    margin-top: 2rem!important;
+    margin-bottom: 1rem!important;
+}
+
+ .fa-heart{ 
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8px;
+}

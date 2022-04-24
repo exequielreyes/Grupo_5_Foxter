@@ -44,22 +44,26 @@
             <a href="/user/login">
               <%= locals.userLogged.name %>
               <i class="far fa-user me-3"></i>
+            
             </a>
             
             <a href="/user/logout">Logout</a>
             <a href="/products/cart">
               <i class="fas fa-cart-arrow-down"></i>
+              
             </a>
           </div>
         </div>
           <% } else { %>
          <div class="col-lg-3">
-          <div class="iconos d-flex justify-content-end">
-            <a href="/user/login">
-              <i class="far fa-user me-3"></i>
+          <div class="iconos d-flex justify-content-end icon-align">
+            <a  href="/user/login">
+              <i class="fas fa-user me-3 icon-navBar"> <p class="title-icon">Mi cuenta</p></i>
+              
             </a>
             <a href="/products/cart">
-              <i class="fas fa-cart-arrow-down"></i>
+              <i class="fas fa-shopping-cart icon-navBar"><p class="title-icon">Mi carrito</p></i>
+              
             </a>
           </div>
         </div>

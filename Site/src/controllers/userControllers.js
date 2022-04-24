@@ -68,7 +68,7 @@ module.exports = {
       let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password);
     
       if (passwordOk ==  true) {
-        // delete userToLogin.password; //Para no tener la contrasena en ssesion, es por seguridad
+        // delete userToLogin.password[0]; //Para no tener la contrasena en ssesion, es por seguridad
         req.session.userLogged = userToLogin;
 
 

@@ -70,24 +70,28 @@
  },
  {
   "id": 12,
-  "name": "Buzo versace",
-  "price": "154789",
-  "discount": "50",
-  "category": "Remera",
+  "name": "Pantalon Jean Azul",
+  "price": "8.000",
+  "discount": "",
+  "category": "Pantalon",
+  "size": [
+   "S",
+   "M"
+  ],
   "sexCategory": "Hombre",
-  "saleCategory": "oferta",
-  "description": "buzp eflnefkefefef",
-  "image": "default-image.png"
+  "saleCategory": "tendencia",
+  "image": "1650772065540-Pantalon.jpg",
+  "description": "Pantalon azul de jeans"
  },
  {
   "id": 13,
-  "name": "buzo Versace ",
+  "name": "buzo nike",
   "price": "1895",
   "discount": "",
   "category": "Buzo",
   "sexCategory": "Hombre",
   "saleCategory": "tendencia",
-  "image": "1650583546681-6.jpg",
+  "image": "1650777183327-buzo nike.jpg",
   "description": "Buzo fila blabalbalbla"
  }
 ]

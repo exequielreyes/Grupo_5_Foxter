@@ -2,7 +2,7 @@
 <html lang="es">
 
 <%-include("./partials/head", {title: 'Resultado' , css:'index.css'}) %>
-
+<link rel="stylesheet" href="./css/result.css">
 
     <body>
 
@@ -41,7 +41,14 @@
                         </div>
                         <% })}else {%>
                             <div class="col-12">
+                                <i class="fa fa-search busqueda"></i>
 							<h2 class="products-title" style="color: #222;">No hay productos que coincidan con esa búsqueda</h2>
+                            <ul>
+                                <li>Por favor, verificá que no sea un error de digitación.</li>
+                                <li>Intentá usando una sola palabra.</li>
+                                <li>Intentá buscar con términos menos específicos y después usá los filtros de búsqueda.</li>
+                                <li>Intentá usar sinónimos del producto que buscás.</li>
+                            </ul>
 						</div>
 						<% } %>
                     </div>
