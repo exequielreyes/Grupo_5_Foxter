@@ -51,7 +51,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `foxter_db`.`SaleCategories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `foxter_db`.`SaleCategories` (
+CREATE TABLE IF NOT EXISTS `foxter_db`.`saleCategories` (
   `idSaleCategory` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idSaleCategory`))
@@ -132,7 +132,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `foxter_db`.`sizeProduct`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `foxter_db`.`userssizes` (
+CREATE TABLE IF NOT EXISTS `foxter_db`.`productsSizes` (
   `idsizeProduct` INT NOT NULL AUTO_INCREMENT,
   `sizeId` INT NULL,
   `productsId` INT NULL,
