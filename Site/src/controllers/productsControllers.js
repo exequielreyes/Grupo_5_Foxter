@@ -92,8 +92,8 @@ module.exports = {
     }else{
         productToEdit = {
 			id: productToEdit.id,
-			...req.b
-			//image: 'default-image.png'
+			...req.body,
+			// image: req.body.image
 		};
     }
     

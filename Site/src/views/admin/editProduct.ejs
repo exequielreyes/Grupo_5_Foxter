@@ -97,16 +97,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                 <label for="sexCategory">Genero </label>
@@ -136,10 +126,18 @@
         </div>
         
         <div class="FormularioProducto__control-file">
+<<<<<<< HEAD
             <input type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
             <input type="text" class="image" value="images/product/<%=productToEdit.image %>">
             <!-- <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px"> -->
             <output id="list" ></output>
+=======
+            <input value="<%=productToEdit.image %>" type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
+            <input type="text"  name="image"   hidden  value="<%=productToEdit.image %>" >
+            <output id="list" >
+                <img src="/images/product/<%=productToEdit.image %>"   alt="imagen" width="150px">
+            </output>
+>>>>>>> fe8010b4b4965a1fd6fd9706405dbec91c39c4e9
         </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>

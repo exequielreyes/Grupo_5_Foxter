@@ -60,13 +60,15 @@ module.exports = {
   },
 
   loginProcess: (req, res) => {
+    // console.log("req.body.password", req.body.password)
     let userToLogin = User.findByField("email", req.body.email);
-
+    // console.log("userToLogin" , userToLogin);
     if (userToLogin) {
+     
       let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password);
-      
-      if (passwordOk) {
-        delete userToLogin.password; //Para no tener la contrasena en ssesion, es por seguridad
+    
+      if (passwordOk ==  true) {
+        // delete userToLogin.password[0]; //Para no tener la contrasena en ssesion, es por seguridad
         req.session.userLogged = userToLogin;
 
 

@@ -40,13 +40,10 @@
   "price": "15000",
   "discount": "",
   "category": "Campera",
-  "size": [
-   "S"
-  ],
   "sexCategory": "Hombre",
   "saleCategory": "tendencia",
   "description": "Conjunto deportivo color gris ",
-  "image": "default-image.png"
+  "image": "1650581643667-6.jpg"
  },
  {
   "id": 10,
@@ -70,5 +67,31 @@
   "saleCategory": "oferta",
   "description": "Para vos que tenés un estilo urbano y chic, el Buzo Nike Sportswear Icon Clash está confeccionado en algodón, con diseño holgado, abertura 1/2 con cremallera’ que te da un look informal y despreocupado, su estilo liso con un Swoosh oversized perfecto para los días más frescos o de lluvia. Su diseño de pata de gallo y la etiqueta de tejido woven en el dobladillo te da versatilidad para usarlo como quieras. Combinalo con tus prendas favoritas y llamá la atención entre la multitud.\r\n\r\nGénero: Mujer\r\n\r\nAdecuado para: Todo el día\r\n\r\nMaterial: Algodón\r\n\r\nCapucha: Sin Capucha\r\n\r\nAbertura: Con Cierre\r\n\r\nCuello: Alto\r\n\r\nGarantía: Contra defecto de fabricación\r\n\r\nOrigen: Importado\r\n\r\nMarca: Nike",
   "image": "default-image.png"
+ },
+ {
+  "id": 12,
+  "name": "Pantalon Jean Azul",
+  "price": "8.000",
+  "discount": "",
+  "category": "Pantalon",
+  "size": [
+   "S",
+   "M"
+  ],
+  "sexCategory": "Hombre",
+  "saleCategory": "tendencia",
+  "image": "1650772065540-Pantalon.jpg",
+  "description": "Pantalon azul de jeans"
+ },
+ {
+  "id": 13,
+  "name": "buzo nike",
+  "price": "1895",
+  "discount": "",
+  "category": "Buzo",
+  "sexCategory": "Hombre",
+  "saleCategory": "tendencia",
+  "image": "1650777183327-buzo nike.jpg",
+  "description": "Buzo fila blabalbalbla"
  }
 ]

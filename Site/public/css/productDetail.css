@@ -6,6 +6,12 @@ a{
     text-decoration: none !important;
 }
 
+/** Imagen del producto**/
+.img-fluid.img-detail{
+    width: 400px;
+    height: 400px !important;
+}
+
 .main-container{
     background-color: #fff;
     border-radius: 5px;
