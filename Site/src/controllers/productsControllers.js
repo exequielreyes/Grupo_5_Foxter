@@ -47,7 +47,7 @@ module.exports = {
         //return  res.send(resul.errors);
         if(resul.errors){
           // return  res.send(resul.mapped())
-        return res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
+         res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
          }
         else{
         if(req.file){
@@ -92,8 +92,8 @@ module.exports = {
     }else{
         productToEdit = {
 			id: productToEdit.id,
-			...req.body,
-			image: 'default-image.png'
+			...req.b
+			//image: 'default-image.png'
 		};
     }
     
