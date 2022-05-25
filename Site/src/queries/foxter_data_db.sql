@@ -1,3 +1,4 @@
+use foxter_db;
 /*
 -- Query: SELECT * FROM foxter_db.categories
 LIMIT 0, 1000
@@ -84,7 +85,7 @@ LIMIT 0, 1000
 
 -- Date: 2022-05-19 21:01
 */
-INSERT INTO `users` (`idUser`,`name`,`lastName`,`date`,`password`,`email`,`avatar`,`remember`) VALUES (1,'misael','perez','1998-06-26 00:00:00','$2a$10$QU/Dv3jWZDhWqi.ZGZkLM.RItNLFs9LpCErRCjZpTDY0Gb/5P2qtS','misael98@gmail.com','default-image.png',1);
+INSERT INTO `users` (`idUser`,`name`,`lastName`,`date`,`password`,`email`,`avatar`,`rol`,`remember`) VALUES (1,'misael','perez','1998-06-26 00:00:00','$2a$10$QU/Dv3jWZDhWqi.ZGZkLM.RItNLFs9LpCErRCjZpTDY0Gb/5P2qtS','misael98@gmail.com','default-image.png','admin',1);
 /*
 -- Query: SELECT * FROM foxter_db.productsSizes
 LIMIT 0, 1000

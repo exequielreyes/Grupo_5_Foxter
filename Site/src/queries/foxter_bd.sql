@@ -96,6 +96,7 @@ CREATE TABLE IF NOT EXISTS `foxter_db`.`users` (
   `password` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `avatar` VARCHAR(100) NULL,
+  `rol` VARCHAR(100) NULL,
   `remember` TINYINT NULL,
   PRIMARY KEY (`idUser`))
 ENGINE = InnoDB;
