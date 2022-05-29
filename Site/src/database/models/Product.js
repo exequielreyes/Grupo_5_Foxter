@@ -41,8 +41,8 @@ const Product = sequelize.define(alias, cols, config);
 //Relaciones
 
 Product.associate = (models) => {
-    Product.belongsTo(models.Categorie, {
-        as: 'categorie',
+    Product.belongsTo(models.Category, {
+        as: 'category',
         foreignKey: 'idCategory'
     }),
 
