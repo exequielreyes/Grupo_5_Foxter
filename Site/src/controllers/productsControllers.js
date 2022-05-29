@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult}=require('express-validator');
 const { mainModule, nextTick } = require("process");
+const db = require('../database/models');
 
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
@@ -10,7 +11,13 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
     index: (req, res) => {
-        res.render('products/productsList', { products });
+        
+        db.Product.findAll()
+        .then(products => {
+            res.render('products/productsList', { products });
+        })
+
+        // res.render('products/productsList', { products });
     },
 
     categoriaProducto: (req, res) => {

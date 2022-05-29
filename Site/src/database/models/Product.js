@@ -8,7 +8,7 @@ let alias = 'Product';
 let cols = {
     idProduct: {
         type: dataTypes.INTEGER(10).UNSIGNED,
-        primeryKey: true,
+        primaryKey: true,
         autoIncrement: true
     },
     name: {
@@ -36,7 +36,7 @@ let config = {
     timestamps: false
 }
 
-const Product = sequelize.difine(alias, cols, config);
+const Product = sequelize.define(alias, cols, config);
 
 //Relaciones
 

@@ -37,6 +37,8 @@ const validarFormCreate=[
 router.get('/create', productsControllers.crearProducto);
 router.post('/', uploadFile.single('image'),validarFormCreate, productsControllers.guardarProducto);
 
+
+
 /*** Ver el detalle de un producto***/
 router.get('/detail/:id' , productsControllers.detalleProducto);
 
@@ -47,7 +49,7 @@ router.put('/edit/:id' , uploadFile.single('image'), productsControllers.actuali
 
 /*** Borrar Producto ***/
 router.delete('/delete/:id', productsControllers.borrarProducto); 
-
+// router.post('/delete/:id', productsControllers.)
 
 
 
