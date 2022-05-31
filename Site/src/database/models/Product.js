@@ -65,7 +65,8 @@ Product.associate = (models) => {
         as: 'sizes',
         through: 'productsSizes',
         foreignKey: 'productsId',
-        otherKey: 'sizeId'
+        otherKey: 'sizeId',
+        timestamps: false
     }),
 
     Product.belongsToMany(models.User, {

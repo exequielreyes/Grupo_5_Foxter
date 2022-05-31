@@ -36,7 +36,7 @@
                         <div class="row pb-3">
                             <div class=" form-group  col-lg-6">
                                 <label for="nombre">Nombre del producto</label>
-                                <input type="text" name="name" id="nombre" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : 'is-valid' %>" value="<%=locals.oldData && oldData.name? oldData.name:null%>">
+                                <input type="text" name="name" id="nombre" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : '' %>" value="<%=locals.oldData && oldData.name? oldData.name:null%>">
                                 <% if(locals.errors && errors.name){%>
                                     <div class="small text-danger">
                                        <%= errors.name.msg %>
@@ -66,22 +66,14 @@
                         <div class="row pb-3">
                             <div class=" form-group  col-lg-6">
                                 <label for="talle">Talles</label>
+                                <%sizes.forEach((talle)=>{ %>
+                                    
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="S" name="size[]">
-                                    <label class="form-check-label" for="inlineCheckbox1">S</label>
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.idSize %>" name="size[]">
+                                    <label class="form-check-label" for="inlineCheckbox1"><%= talle.name %></label>
                                   </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="M" name="size[]">
-                                    <label class="form-check-label" for="inlineCheckbox2">M</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="L" name="size[]" >
-                                    <label class="form-check-label" for="inlineCheckbox3">L</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="XL"  name="size[]" >
-                                    <label class="form-check-label" for="inlineCheckbox4">XL</label>
-                                  </div>
+                                  <%}) %>
+                                  
                               
                             </div>
                            
@@ -90,30 +82,26 @@
                             <div class=" form-group  col-lg-4">
                                 <label for="category">Categoria</label>
                                 <select name="category" id="category" class="form-control">
-                                    <option value="Remera">Remera</option>
-                                    <option value="Musculosa">Musculosa</option>
-                                    <option value="Pantalon">Pantalon</option>
-                                    <option value="Campera">Campera</option>
-                                    <option value="Short">Short</option>
-                                    <option value="Buzo">Buzo</option>
-                                    <option value="Calza">Calza</option>
+                                    <%categorias.forEach((categoria)=>{ %>
+                                    <option value="<%= categoria.idCategory %>"><%= categoria.name %></option>
+                                    <%}) %>
                                 </select>
                             </div>
 
                             <div class=" form-group col-lg-4">
                                 <label for="sexCategory">Genero </label>
                                 <select name="sexCategory" id="sexCategory" class="form-control">
-                                    <option value="hombre">Hombre</option>
-                                    <option value="Mujer">Mujer</option>
-                                    <option value="Unisex">Unisex</option>
+                                    <%sexCategorias.forEach((sexCategoria)=>{ %>
+                                        <option value="<%= sexCategoria.idSexCategories %>"><%= sexCategoria.name %></option>
+                                        <%}) %>
                                 </select>
                             </div>
                             <div class=" form-group  col-lg-4">
                                 <label for="saleCategory">Característica de Venta</label>
                                 <select name="saleCategory" id="saleCategory" class="form-control">
-                                    <option value="Ninguna">Ninguna</option>
-                                    <option value="tendencia">Tendencia</option>
-                                    <option value="oferta">Oferta</option>
+                                    <%saleCategorias.forEach((saleCategoria)=>{ %>
+                                        <option value="<%= saleCategoria.idSaleCategory %>"><%= saleCategoria.name %></option>                                       %>"><%= saleCategoria.name %></option>
+                                        <%}) %>
                                 </select>
                             </div>
                             

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {validationResult}=require('express-validator');
+const {validationResult, body}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
 // const sequelize = db.sequelize;
@@ -56,18 +56,52 @@ module.exports = {
     },
 
     crearProducto: (req, res) => {
-        res.render("admin/createProduct");
+        let categorias = db.Category.findAll();
+        let sexCategorias = db.sexCategory.findAll()
+        let saleCategorias = db.saleCategory.findAll()
+        let sizes = db.Size.findAll()
+        Promise.all([categorias,sexCategorias,saleCategorias,sizes])
+        .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
+            res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes})
+        })
+       
     },
     
     guardarProducto:(req,res)=>{
-        let resul=validationResult(req);
+       /*  let resul=validationResult(req);
         //return  res.send(resul.errors);
         if(resul.errors){
           // return  res.send(resul.mapped())
          res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
          }
-        else{
-        if(req.file){
+        else{ */
+            db.Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                discount:  req.body.discount,
+                idCategory: req.body.category ,
+                description: req.body.category,
+                idSexCategory: req.body.sexCategory,
+                idSaleCategory: req.body.saleCategory,
+                images:[
+                    {
+                    name:req.file.filename
+                    }
+                ],
+               
+                },{
+                    include: [{
+                      association:"images"}
+                    ]
+
+            }).then(product=>{
+                product.addSize([1,2,3])
+                res.send(product);
+            })
+           // res.redirect("/products")
+       // }
+          
+       /*  if(req.file){
 			let newProduct = {
 				id: products[products.length - 1].id + 1,
 				...req.body,
@@ -87,7 +121,7 @@ module.exports = {
 		}
                
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null , ' '));
-		res.redirect("/products")}
+		res.redirect("/products")} */
     },
 
     editarProducto: (req, res) => {
