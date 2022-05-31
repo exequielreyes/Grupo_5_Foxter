@@ -3,6 +3,8 @@ const path = require('path');
 const {validationResult}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
+// const sequelize = db.sequelize;
+
 
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
@@ -40,9 +42,17 @@ module.exports = {
     },
 
     detalleProducto: (req, res) => {
-        id = req.params.id;
-        let product = products.find(product => product.id == id);
-        res.render("products/productDetail", { product });
+
+        db.Product.findByPk(req.params.id)
+        
+        .then(product => {
+            res.render("products/productDetail", { product })
+        })
+
+
+        // id = req.params.id;
+        // let product = products.find(product => product.id == id);
+        // res.render("products/productDetail", { product });
     },
 
     crearProducto: (req, res) => {
