@@ -10,6 +10,7 @@ const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
 
 
+
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 

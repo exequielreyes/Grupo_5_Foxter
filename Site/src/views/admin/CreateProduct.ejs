@@ -69,7 +69,7 @@
                                 <%sizes.forEach((talle)=>{ %>
                                     
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.name %>" name="size[]">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.idSize %>" name="size[]">
                                     <label class="form-check-label" for="inlineCheckbox1"><%= talle.name %></label>
                                   </div>
                                   <%}) %>
@@ -83,7 +83,7 @@
                                 <label for="category">Categoria</label>
                                 <select name="category" id="category" class="form-control">
                                     <%categorias.forEach((categoria)=>{ %>
-                                    <option value="<%= categoria.name %>"><%= categoria.name %></option>
+                                    <option value="<%= categoria.idCategory %>"><%= categoria.name %></option>
                                     <%}) %>
                                 </select>
                             </div>
@@ -92,7 +92,7 @@
                                 <label for="sexCategory">Genero </label>
                                 <select name="sexCategory" id="sexCategory" class="form-control">
                                     <%sexCategorias.forEach((sexCategoria)=>{ %>
-                                        <option value="<%= sexCategoria.name %>"><%= sexCategoria.name %></option>
+                                        <option value="<%= sexCategoria.idSexCategories %>"><%= sexCategoria.name %></option>
                                         <%}) %>
                                 </select>
                             </div>
@@ -100,7 +100,7 @@
                                 <label for="saleCategory">Característica de Venta</label>
                                 <select name="saleCategory" id="saleCategory" class="form-control">
                                     <%saleCategorias.forEach((saleCategoria)=>{ %>
-                                        <option value="<%= saleCategoria.name %>"><%= saleCategoria.name %></option>
+                                        <option value="<%= saleCategoria.idSaleCategory %>"><%= saleCategoria.name %></option>                                       %>"><%= saleCategoria.name %></option>
                                         <%}) %>
                                 </select>
                             </div>
