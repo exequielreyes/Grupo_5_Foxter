@@ -46,7 +46,15 @@ module.exports = {
     },
 
     crearProducto: (req, res) => {
-        res.render("admin/createProduct");
+        let categorias = db.Category.findAll();
+        let sexCategorias = db.sexCategory.findAll()
+        let saleCategorias = db.saleCategory.findAll()
+        let sizes = db.Size.findAll()
+        Promise.all([categorias,sexCategorias,saleCategorias,sizes])
+        .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
+            res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes})
+        })
+       
     },
     
     guardarProducto:(req,res)=>{
