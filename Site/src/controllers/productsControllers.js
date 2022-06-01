@@ -68,21 +68,22 @@ module.exports = {
     },
     
     guardarProducto:(req,res)=>{
-        let resul=validationResult(req);
+        let resultValidation=validationResult(req);
         //return  res.send(resul.errors);
-        if(resul.errors){
-          // return  res.send(resul.mapped())
+        if(resultValidation.errors.length > 0){
             let categorias = db.Category.findAll();
             let sexCategorias = db.sexCategory.findAll()
             let saleCategorias = db.saleCategory.findAll()
             let sizes = db.Size.findAll()
             Promise.all([categorias,sexCategorias,saleCategorias,sizes])
             .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
-                res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes,errors:resul.mapped(), oldData:req.body})
+                res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes,errors:resultValidation.mapped(), oldData:req.body})
             })
          }
         else{ 
-            db.Product.create({
+            let images=[]
+           for (i in req.files) {images.push({'name':req.files[i].filename}) }
+          db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount:  req.body.discount,
@@ -90,11 +91,7 @@ module.exports = {
                 description: req.body.category,
                 idSexCategory: req.body.sexCategory,
                 idSaleCategory: req.body.saleCategory,
-                images:[
-                    {
-                    name:req.file.filename
-                    }
-                ],
+                images:images,
                
                 },{
                     include: [{
@@ -102,10 +99,11 @@ module.exports = {
                     ]
 
             }).then(product=>{
-                product.addSize([1,2,3])
-                res.send(product);
+                product.addSize(req.body.size)
+                //res.send(product);
+                res.redirect("/products")
+
             })
-           // res.redirect("/products")
         }
           
        /*  if(req.file){

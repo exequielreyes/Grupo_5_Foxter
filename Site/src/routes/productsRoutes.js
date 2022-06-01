@@ -31,7 +31,7 @@ router.get('/', productsControllers.index);
 
 /***Crear un productos ***/
 router.get('/create', productsControllers.crearProducto);
-router.post('/', uploadFile.single('image'),validations, productsControllers.guardarProducto);
+router.post('/', uploadFile.array('image'),validations, productsControllers.guardarProducto);
 
 
 
