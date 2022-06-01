@@ -34,19 +34,42 @@ module.exports = {
         if (req.params.sexCategory) {
             category = req.params.category;
             sexCategory = req.params.sexCategory;
+            db.Product.findAll(
+                {
+                    where: {
+                        '$category.name$': category,
+                        '$sexCategory.name$': sexCategory,
+                      }, 
+                    order:[
+                        ["idProduct", "DESC"]
+                    ],
+                include: [{association: "images"},{association: "category"},{association: "sexCategory"}],
+    
+                }
+            ).then(productsFilter => {
+                res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
 
-            let productsFilter = products.filter(product => product.category.toLowerCase()  == category.toLowerCase()  && product.sexCategory.toLowerCase()  == sexCategory.toLowerCase() );
+            })
 
-            res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
         }
         else {
             category = req.params.category;
-            let productsFilter = products.filter(product => product.category.toLowerCase() == category.toLowerCase());
+            db.Product.findAll(
+                {
+                include: [{association: "images"},{association: "category"}],
 
-            res.render('products/productsList', { 'products': productsFilter, 'category':category });
+                where: {
+                    '$category.name$': category,
+                  }, 
+                    order:[
+                        ["idProduct", "DESC"]
+                    ],
+                }
+            )
+            .then(productsFilter => {
+                res.render('products/productsList', { 'products': productsFilter, 'category':category });
+            })
         }
-
-
     },
 
     detalleProducto: (req, res) => {
