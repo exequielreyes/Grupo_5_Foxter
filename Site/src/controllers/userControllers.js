@@ -38,61 +38,51 @@ module.exports = {
     //   }
     // });
     
-    let userInDB = db.User.findOne({
+    db.User.findOne({
       where: {
         email: req.body.email
       }
-    });
-    let userToCreate = db.User.create({
-      name: req.body.name,
-      lastName: req.body.lastName,
-      date: req.body.date,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      email: req.body.email,
-      remember: req.body.recordame,
+    }).then(userInDB=>{
+      if (userInDB) {
+        return res.render("usuario/register", {
+          errors: {
+            email: {
+              msg: "Este email ya está registrado",
+            },
+          },
+          oldData: req.body,
+        });
+      }
+  
+      if (req.body.password != req.body.repassword) {
+        return res.render("usuario/register", {
+          errors: {
+            password: {
+              msg: "Las contraseñas no coinciden",
+            },
+          },
+          oldData: req.body,
+        });
+      } 
+       db.User.create({
+        name: req.body.name,
+        lastName: req.body.lastName,
+        date: req.body.date,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email: req.body.email,
+        remember: req.body.recordame,
+      })
+      .then((data) => { 
+        return res.redirect("/");
+      })
     })
-    Promise.all([userInDB, userToCreate])
-    .then(([userInDB, userToCreate]) => {
-          if (userInDB) {
-                        return res.render("usuario/register", {
-                          errors: {
-                            email: {
-                              msg: "Este email ya está registrado",
-                            },
-                          },
-                          oldData: req.body,
-                        });
-                      }
 
-                      if (req.body.password != req.body.repassword) {
-                        return res.render("usuario/register", {
-                          errors: {
-                            password: {
-                              msg: "Las contraseñas no coinciden",
-                            },
-                          },
-                          oldData: req.body,
-                        });
-                      } 
-                      
-                      userToCreate;
-                      
-              // let userToCreate = {
+            // let userToCreate = {
               //   ...req.body,
               //   password: bcryptjs.hashSync(req.body.password[0], 10),
               // };
 
               // let userCreated = User.create(userToCreate);
-
-             return res.redirect("/");
-    })
-
-
-          
-   
-  
-
-   
   },
 
 
