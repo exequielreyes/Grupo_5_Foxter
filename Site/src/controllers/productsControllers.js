@@ -68,13 +68,20 @@ module.exports = {
     },
     
     guardarProducto:(req,res)=>{
-       /*  let resul=validationResult(req);
+        let resul=validationResult(req);
         //return  res.send(resul.errors);
         if(resul.errors){
           // return  res.send(resul.mapped())
-         res.render('admin/createProduct',{errors:resul.mapped(), oldData:req.body });
+            let categorias = db.Category.findAll();
+            let sexCategorias = db.sexCategory.findAll()
+            let saleCategorias = db.saleCategory.findAll()
+            let sizes = db.Size.findAll()
+            Promise.all([categorias,sexCategorias,saleCategorias,sizes])
+            .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
+                res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes,errors:resul.mapped(), oldData:req.body})
+            })
          }
-        else{ */
+        else{ 
             db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
@@ -99,7 +106,7 @@ module.exports = {
                 res.send(product);
             })
            // res.redirect("/products")
-       // }
+        }
           
        /*  if(req.file){
 			let newProduct = {

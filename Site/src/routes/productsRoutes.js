@@ -4,6 +4,8 @@ const path = require('path');
 const multer= require('multer');
 const { body } = require("express-validator");
 const productsControllers = require('../controllers/productsControllers.js');
+const validations = require("../middlewares/validateCreateProductMiddleware.js");
+
 const storage = multer.diskStorage({
     destination: (req ,file, cb)=>{
         cb(null, path.join(__dirname, '../../public/images/product'));
@@ -24,18 +26,12 @@ const uploadFile = multer({storage});
 router.get('/', productsControllers.index);
 
 
-const validarFormCreate=[
-    body('name').notEmpty().withMessage('debe completar este campo'),
-    body('price').notEmpty().withMessage('debe completar este campo'),
-   
-    
-    ];
     
 
 
 /***Crear un productos ***/
 router.get('/create', productsControllers.crearProducto);
-router.post('/', uploadFile.single('image'),validarFormCreate, productsControllers.guardarProducto);
+router.post('/', uploadFile.single('image'),validations, productsControllers.guardarProducto);
 
 
 
