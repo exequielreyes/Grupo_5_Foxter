@@ -14,7 +14,13 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 module.exports = {
     index: (req, res) => {
         
-        db.Product.findAll()
+        db.Product.findAll(
+            {
+                order:[
+                    ["idProduct", "DESC"]
+                ]
+            }
+        )
         .then(products => {
             res.render('products/productsList', { products });
         })
