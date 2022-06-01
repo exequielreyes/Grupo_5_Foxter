@@ -4,7 +4,7 @@ const {validationResult, body}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
 // const sequelize = db.sequelize;
-
+// const {product, brand, gender, image, category, user, color, size } = require('../database/models');
 
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
@@ -43,9 +43,9 @@ module.exports = {
 
     detalleProducto: (req, res) => {
 
-        db.Product.findByPk(req.params.id)
-        
-        .then(product => {
+        db.Product.findByPk(req.params.id, {
+            include: [{association: "category"},{association: "sexCategory"}]
+        }).then(product => {
             res.render("products/productDetail", { product })
         })
 
