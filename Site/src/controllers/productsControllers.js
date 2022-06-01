@@ -18,14 +18,16 @@ module.exports = {
             {
                 order:[
                     ["idProduct", "DESC"]
-                ]
+                ],
+            include: [{association: "images"}]
+
             }
         )
         .then(products => {
-            res.render('products/productsList', { products });
+          // res.send(products.images)
+        
+         res.render('products/productsList', { products });
         })
-
-        // res.render('products/productsList', { products });
     },
 
     categoriaProducto: (req, res) => {
