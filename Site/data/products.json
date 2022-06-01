@@ -7,8 +7,8 @@
   "category": "Remera",
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
-  "description": "Remera Gucci de cuero con logos",
-  "image": "default-image.png"
+  "image": "1651863346203-6.jpg",
+  "description": "Remera Gucci de cuero con logos"
  },
  {
   "id": 2,
@@ -16,11 +16,10 @@
   "price": "5000",
   "discount": "18",
   "category": "Short",
-  "size": "S",
   "sexCategory": "Hombre",
   "saleCategory": "oferta",
-  "description": "Short nike color gris de algodon .",
-  "image": "default-image.png"
+  "image": "default-image.png",
+  "description": "Short nike color gris de algodon ."
  },
  {
   "id": 7,

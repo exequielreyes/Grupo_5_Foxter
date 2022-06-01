@@ -24,7 +24,7 @@
                                 <li class="breadcrumb-item " aria-current="page"><a href="/products/<%=category%>"><%=category%></a></li>
                                 <% } %>
                                 <% if(locals.categorySex){ %>
-                                    <li class="breadcrumb-item " aria-current="page"><a href="/products/<%=category+"/"+categorySex%>"><%=categorySex%></a></li>
+                                    <li class="breadcrumb-item " aria-current="page"><a href="/products/<%=category+"/"+categorySex%>"<%=categorySex%></a></li>
                                     <% } %>
                             </ol>
                         </nav>
@@ -72,7 +72,7 @@
                                         <a class="floa-end" href="#">
                                             <i class="fa fa-heart ps-2"></i>
                                         </a>
-                                        <a href="/products/detail/<%= product.id %>">
+                                        <a href="/products/detail/<%= product.idProduct %>">
                                             <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
                                         </a>
                                         <% if(product.discount>0){%>
@@ -80,7 +80,7 @@
                                                 <p><%= product.discount %>%</p>
                                             </div>
                                      <%} %>
-                                        <a href="/products/detail/<%= product.id %>">
+                                        <a href="/products/detail/<%= product.idProduct %>">
                                             <div class="">
                                                 <p class="title text-center"><%= product.name %></p>
                                                 <% if(product.discount>0){%>

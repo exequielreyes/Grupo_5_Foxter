@@ -79,5 +79,24 @@
   "date": "2004-06-11",
   "email": "pedrito15@gmail.com",
   "password": "$2a$10$NSZqIbs49tM1bwjnI7R8q.MLeGKXXoilC/wH/Cs7qqJlTWurcXa9."
+ },
+ {
+  "id": 11,
+  "name": "misael",
+  "lastName": "perez",
+  "date": "1998-06-26",
+  "email": "misael98@gmail.com",
+  "password": "$2a$10$QU/Dv3jWZDhWqi.ZGZkLM.RItNLFs9LpCErRCjZpTDY0Gb/5P2qtS",
+  "recordame": "Si",
+  "image": "default-image.png"
+ },
+ {
+  "id": 12,
+  "name": "roberto",
+  "lastName": "cortez",
+  "date": "1996-06-26",
+  "email": "roberto@gmail.com",
+  "password": "$2a$10$VIeeu.ygfhb1oxVEmVwq6ODzCnpWXUJgzDX1FrFXGQWRV/6.QW9cS",
+  "image": "default-image-user.png"
  }
 ]

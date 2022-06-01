@@ -17,8 +17,8 @@ h1 {
 /*******************************fondos************************************/
 .bg-purple {
   /**Categoria de productos**/
-  /* background-color: var(--purple); */
-  background-color: #6B3894;
+  background-color: var(--purple);
+  /* background-color: #6B3894; */
 }
 .bg-celeste {
   background-color: var(--lightblue);
@@ -37,6 +37,7 @@ h1 {
 
 .form-control{
   width: 75% !important;
+  margin-left: 50px;
 }
 
 
@@ -110,7 +111,7 @@ footer div.iconos i {
 h1.text-white{
   display: none;
   font-weight: 400 !important;
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
   font-size: 32px;
 }
 

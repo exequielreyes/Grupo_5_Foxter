@@ -48,6 +48,9 @@ module.exports = {
     let userToCreate = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password[0], 10),
+      image: 'default-image-user.png'
+
+      /** Aca debe ir lo de la foto **/
     };
 
     let userCreated = User.create(userToCreate);

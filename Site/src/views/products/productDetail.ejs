@@ -16,8 +16,8 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>"><%= product.category %></a></li>
-                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.category %>/<%= product.sexCategory %>"><%= product.sexCategory %></a></li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.idCategory%>"><%= product.idCategory.name %></a></li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%= product.Category %>/<%= product.sexCategory %>"><%= product.sexCategory %></a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><%= product.name %></li>
                             </ol>
                         </nav>
@@ -61,8 +61,8 @@
                         </div>
                         <div class="btn-editar-eliminar">
                             
-                                <a href="../edit/<%= product.id %>" class="btn btn-success"><i class="fas fa-edit"></i> EDITAR</a>
-                            <form action="../delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <a href="../edit/<%= product.idProduct %>" class="btn btn-success"><i class="fas fa-edit"></i> EDITAR</a>
+                            <form action="../delete/<%= product.idProduct %>?_method=DELETE" method="POST">
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> ELIMINAR</button>
                             </form>
                         </div>
