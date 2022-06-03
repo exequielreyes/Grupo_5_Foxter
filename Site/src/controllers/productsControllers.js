@@ -3,9 +3,6 @@ const path = require('path');
 const {validationResult, body}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
-// const sequelize = db.sequelize;
-// const {product, brand, gender, image, category, user, color, size } = require('../database/models');
-
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
