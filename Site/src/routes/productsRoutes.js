@@ -40,7 +40,7 @@ router.get('/detail/:id' , productsControllers.detalleProducto);
 
 /*** Editar producto***/
 router.get('/edit/:id' , productsControllers.editarProducto);
-router.put('/edit/:id' , uploadFile.single('image'), productsControllers.actualizarProducto);
+router.put('/edit/:id' ,  uploadFile.array('image'), productsControllers.actualizarProducto);
 
 
 /*** Borrar Producto ***/

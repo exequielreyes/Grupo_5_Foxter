@@ -3,6 +3,7 @@ const path = require('path');
 const {validationResult, body}=require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
+// const { defaultValueSchemable } = require('sequelize/types/utils');
 // const {Category } = require('../database/models');
 
 
@@ -72,12 +73,11 @@ module.exports = {
     },
 
     detalleProducto: (req, res) => {
-        db.Product.findByPk(req.params.id)
-        .then(product => {
-            res.render('products/productDetail', {product});
-        });
-
-
+        db.Product.findByPk(req.params.id, {
+            include: [{association: "category"},{association: "sexCategory"}]
+        }).then(product => {
+            res.render("products/productDetail", { product })
+        })
     },
 
     crearProducto: (req, res) => {
@@ -155,48 +155,75 @@ module.exports = {
     },
 
     editarProducto: (req, res) => {
-        id = req.params.id;
-        let productToEdit = products.find(product => product.id == id);
-        res.render("admin/editProduct", { productToEdit })
+        // let productToEdit = products.find(product => product.id == id);
+        //
+        db.Product.findByPk(req.params.id,{
+            include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]
+        })
+        .then(productToEdit => {
+            res.render("admin/editProduct", { productToEdit })
+        })
     },
 
 
     actualizarProducto: (req , res) => {
-        id = req.params.id;
-		let productToEdit = products.find(product => product.id == id)
-    if(req.file){
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			image: req.file.filename
-		};
-    }else{
-        productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			// image: req.body.image
-		};
-    }
-    
-   
-		let newProducts = products.map(product => {
-			if (product.id == productToEdit.id) {
-				return product = {...productToEdit};
-			}
-			return product;
-		})
+//         let images=[]
+//    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
+        db.Product.update({
+                    name: req.body.name,
+                    price: req.body.price,
+                    discount:  req.body.discount,
+                    idCategory: req.body.category ,
+                    description: req.body.category,
+                    idSexCategory: req.body.sexCategory,
+                    idSaleCategory: req.body.saleCategory,
+           },{
+            where: {idProduct: req.params.id}
+           }).then(()=>{
+            return res.redirect('/products')
+           })
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('../detail/'+ id);
-	},
+    //        id = req.params.id;
+    //        let productToEdit = products.find(product => product.id == id)
+    //    if(req.file){
+    //        productToEdit = {
+    //            id: productToEdit.id,
+    //            ...req.body,
+    //            image: req.file.filename
+    //        };
+    //    }else{
+    //        productToEdit = {
+    //            id: productToEdit.id,
+    //            ...req.body,
+    //            // image: req.body.image
+    //        };
+    //    }
+       
+      
+    //        let newProducts = products.map(product => {
+    //            if (product.id == productToEdit.id) {
+    //                return product = {...productToEdit};
+    //            }
+    //            return product;
+    //        })
+   
+    //        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+    //        res.redirect('../detail/'+ id);
+
+    },
 
     borrarProducto: (req, res) => {
-		let id = req.params.id;
-		let finalProducts = products.filter(product => product.id != id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
-	},
-
+        db.Product.destroy({
+            where:{
+                idProduct: req.params.id
+            } , force: true
+        })
+		// let finalProducts = products.filter(product => product.id != id);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		.then(()=>{
+            res.redirect('/');
+        })},
+    
     carrito: (req, res) => {
         res.render("carrito/productCart");
     },

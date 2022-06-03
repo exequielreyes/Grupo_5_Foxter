@@ -13,7 +13,7 @@
     </div>
  
     <main>
-    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT"  method="POST"  enctype="multipart/form-data" class="formularioProducto" >
+    <form action="/products/edit/<%= productToEdit.idProduct %>?_method=PUT"  method="POST"  enctype="multipart/form-data" class="formularioProducto" >
         <div class="formularioProducto__title">
             <h3 class="title">Editando: <%=productToEdit.name  %></h3>
         </div>
@@ -41,13 +41,13 @@
                 <label for="category">Categoria</label>
                 
                  <select name="category" id="category" >
-                    <option value="Remera" <%= productToEdit.category == "Remera" ? "selected" : "" %>      >Remera</option>
-                    <option value="Musculosa" <%= productToEdit.category == "Musculosa" ? "selected" : "" %>   >Musculosa</option>
-                    <option value="Pantalon" <%= productToEdit.category == "Pantalon" ? "selected" : "" %> >Pantalon</option>
-                    <option value="Campera" <%= productToEdit.category == "Campera" ? "selected" : "" %>  >Campera</option>
-                    <option value="Short" <%= productToEdit.category == "Short" ? "selected" : "" %>  >Short</option>
-                    <option value="Buzo" <%= productToEdit.category == "Buzo" ? "selected" : "" %>  >Buzo</option>
-                    <option value="Calza" <%= productToEdit.category == "Calza" ? "selected" : "" %>  >Calza</option>
+                    <option value="Remera" <%= productToEdit.category.name == "Remera" ? "selected" : "" %>      >Remera</option>
+                    <option value="Musculosa" <%= productToEdit.category.name == "Musculosa" ? "selected" : "" %>   >Musculosa</option>
+                    <option value="Pantalon" <%= productToEdit.category.name == "Pantalon" ? "selected" : "" %> >Pantalon</option>
+                    <option value="Campera" <%= productToEdit.category.name == "Campera" ? "selected" : "" %>  >Campera</option>
+                    <option value="Short" <%= productToEdit.category.name == "Short" ? "selected" : "" %>  >Short</option>
+                    <option value="Buzo" <%= productToEdit.category.name == "Buzo" ? "selected" : "" %>  >Buzo</option>
+                    <option value="Calza" <%= productToEdit.category.name == "Calza" ? "selected" : "" %>  >Calza</option>
                  </select>
                 </div>
             </div>
@@ -101,9 +101,9 @@
                 <div class="formularioProducto__textarea">
                 <label for="sexCategory">Genero </label>
                 <select name="sexCategory" id="sexCategoria" >
-                    <option value="Hombre" <%= productToEdit.sexCategory == "Hombre" ? "selected" : "" %>>Hombre</option>
-                    <option value="Mujer" <%= productToEdit.sexCategory == "Mujer" ? "selected" : "" %>>Mujer</option>
-                    <option value="Unisex" <%= productToEdit.sexCategory == "Unisex" ? "selected" : "" %>>Unisex</option>
+                    <option value="Hombre" <%= productToEdit.sexCategory.name == "Hombre" ? "selected" : "" %>>Hombre</option>
+                    <option value="Mujer" <%= productToEdit.sexCategory.name == "Mujer" ? "selected" : "" %>>Mujer</option>
+                    <option value="Unisex" <%= productToEdit.sexCategory.name == "Unisex" ? "selected" : "" %>>Unisex</option>
                 </select>
             </div>
             </div>
@@ -112,9 +112,9 @@
                 <div class="formularioProducto__textarea">
                 <label for="saleCategory">Característica de Venta</label>
                 <select name="saleCategory" id="saleCategory" >
-                    <option value="ninguna" <%= productToEdit.saleCategory == "ninguna" ? "selected" : "" %>   >Ninguna</option>
-                    <option value="tendencia" <%= productToEdit.saleCategory == "tendencia" ? "selected" : "" %> >Tendencia</option>
-                    <option value="oferta" <%= productToEdit.saleCategory == "oferta" ? "selected" : "" %> >Oferta</option>
+                    <option value="ninguna" <%= productToEdit.saleCategory.name == "Ninguna" ? "selected" : "" %>   >Ninguna</option>
+                    <option value="tendencia" <%= productToEdit.saleCategory.name == "Tendencia" ? "selected" : "" %> >Tendencia</option>
+                    <option value="oferta" <%= productToEdit.saleCategory.name == "Oferta" ? "selected" : "" %> >Oferta</option>
                 </select>
             </div>
             </div>
@@ -126,18 +126,11 @@
         </div>
         
         <div class="FormularioProducto__control-file">
-<<<<<<< HEAD
-            <input type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
-            <input type="text" class="image" value="images/product/<%=productToEdit.image %>">
-            <!-- <img src="/images/product/<%=productToEdit.image %>"  alt="imagen" width="150px"> -->
-            <output id="list" ></output>
-=======
-            <input value="<%=productToEdit.image %>" type="file" name="image" id="imagen" class="formularioProducto__input-file"  >
-            <input type="text"  name="image"   hidden  value="<%=productToEdit.image %>" >
-            <output id="list" >
+            <input value="<%=productToEdit.image %>" type="file" name="image" multiple id="imagen" class="formularioProducto__input-file"  >
+            <!-- <input type="text"  name="image"   hidden  value="<%=productToEdit.image %>" > -->
+            <!-- <output id="list" >
                 <img src="/images/product/<%=productToEdit.image %>"   alt="imagen" width="150px">
-            </output>
->>>>>>> fe8010b4b4965a1fd6fd9706405dbec91c39c4e9
+            </output> -->
         </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>
@@ -157,7 +150,7 @@
     </form>
     
 
-    <script>
+    <!-- <script>
         function archivo(evt) {
             let files = evt.target.files; // FileList object
        
@@ -182,7 +175,7 @@
         }
        
         document.getElementById('imagen').addEventListener('change', archivo, false);
-</script>
+</script> -->
 
 
 

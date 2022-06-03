@@ -1,8 +1,5 @@
 const path = require("path");
 const fs = require('fs');
-// const db = require('../database/models');
-
-
 const { mainModule, nextTick } = require("process");
 const db = require("../database/models");
 const  Op  = db.Sequelize.Op;
@@ -25,19 +22,19 @@ module.exports = {
   
     search: async function(req, res){
 		let search = req.query.keywords;
-
-		let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));	
-		
-		productsToSearch = db.Product.findAll({
-			where: { name: 
+		// let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));	
+		db.Product.findAll({
+			where: 
+			{ name: 
                 { [Op.like] : `%${search}%` } 
             },
-			// include: [{association: "Product"}]
-		})
-		res.render('../views/result', { 
-			products: productsToSearch, 
-			search,
-		});
+		}).then(productsToSearch =>{
+			res.render('../views/result', { 
+				products: productsToSearch, 
+				search,
+			});
+		}) 
+		
 	},
 }
 
