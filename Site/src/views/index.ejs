@@ -79,16 +79,16 @@
                                 <p class=" h3 my-5">Tendencias</p>
                             </div>
                             <%products.forEach((listaProducto)=>{ %>
-                                <%if(listaProducto.saleCategory=="tendencia"){ %>
+                                <%if(listaProducto.saleCategory.name == "Tendencia"){ %>
                                     <div class="col-lg-3 ">
                                         <div class="product">
                                             <a class="floa-end" href="#">
                                                 <i class="fa fa-heart ps-2"></i>
                                             </a>
-                                            <a href="products/detail/<%= listaProducto.id %>">
+                                            <a href="products/detail/<%= listaProducto.idProduct %>">
                                                 <img src="images/product//<%= listaProducto.image %>" class="card-img-top" height="280px" alt="...">
                                             </a>
-                                            <a href="products/detail/<%= listaProducto.id %>">
+                                            <a href="products/detail/<%= listaProducto.idProduct %>">
                                                 <div class="">
                                                     <p class="title text-center"><%= listaProducto.name %></p>
                                                     <p class="price text-center">$ <%= listaProducto.price %></p>
@@ -112,13 +112,13 @@
                                 <p class=" h3 my-5">Ofertas</p>
                             </div>
                             <%products.forEach((listaProducto)=>{ %>
-                                <%if(listaProducto.saleCategory=="oferta"){ %>
+                                <%if(listaProducto.saleCategory.name == "Oferta"){ %>
                                     <div class="col-lg-3 ">
                                         <div class="product">
                                             <a class="floa-end" href="#">
                                                 <i class="fa fa-heart ps-2"></i>
                                             </a>
-                                            <a href="products/detail/<%= listaProducto.id %>">
+                                            <a href="products/detail/<%= listaProducto.idProduct %>">
                                                 <img src="images/product//<%= listaProducto.image %>" class="card-img-top" alt="...">
                                             </a>
                                             <% if(listaProducto.discount>0){%>
@@ -126,7 +126,7 @@
                                                 <p><%= listaProducto.discount %>%</p>
                                                    </div>
                                             <%} %>
-                                            <a href="products/detail/<%= listaProducto.id %>">
+                                            <a href="products/detail/<%= listaProducto.idProduct %>">
                                                 <div class="">
                                                     <p class="title text-center"><%= listaProducto.name %></p>
                                                     <% if(listaProducto.discount>0){%>
