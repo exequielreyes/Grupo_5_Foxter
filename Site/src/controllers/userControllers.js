@@ -3,11 +3,21 @@ const { mainModule } = require("process");
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const db = require('../database/models');
+
 
 module.exports = {
   register: (req, res) => {
     res.render("usuario/register");
   },
+
+
+
+
+
+
+
+
 
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
@@ -21,41 +31,62 @@ module.exports = {
 
     //validacion
 
-    let userInDB = User.findByField("email", req.body.email);
+    // let userInDB = User.findByField("email", req.body.email);
+    // let userInDB = db.User.findAll({ 
+    //   where: {
+    //     email: req.body.email
+    //   }
+    // });
+    
+    let userInDB = db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    });
+    let userToCreate = db.User.create({
+      name: req.body.name,
+      lastName: req.body.lastName,
+      date: req.body.date,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      email: req.body.email,
+      remember: req.body.recordame,
+    })
+    Promise.all([userInDB, userToCreate])
+    .then(([userInDB, userToCreate]) => {
+          if (userInDB) {
+                        return res.render("usuario/register", {
+                          errors: {
+                            email: {
+                              msg: "Este email ya está registrado",
+                            },
+                          },
+                          oldData: req.body,
+                        });
+                      }
 
-    if (userInDB) {
-      return res.render("usuario/register", {
-        errors: {
-          email: {
-            msg: "Este email ya está registrado",
-          },
-        },
-        oldData: req.body,
-      });
-    }
+                      if (req.body.password != req.body.repassword) {
+                        return res.render("usuario/register", {
+                          errors: {
+                            password: {
+                              msg: "Las contraseñas no coinciden",
+                            },
+                          },
+                          oldData: req.body,
+                        });
+                      } 
+                      
+                      userToCreate;
+                      
+              // let userToCreate = {
+              //   ...req.body,
+              //   password: bcryptjs.hashSync(req.body.password[0], 10),
+              // };
 
-    if (req.body.password[0] != req.body.password[1]) {
-      return res.render("usuario/register", {
-        errors: {
-          password: {
-            msg: "Las contraseñas no coinciden",
-          },
-        },
-        oldData: req.body,
-      });
-    }
+              // let userCreated = User.create(userToCreate);
 
-    let userToCreate = {
-      ...req.body,
-      password: bcryptjs.hashSync(req.body.password[0], 10),
-      image: 'default-image-user.png'
+             return res.redirect("/");
+    })
 
-      /** Aca debe ir lo de la foto **/
-    };
-
-    let userCreated = User.create(userToCreate);
-
-    res.redirect("/");
   },
 
   login: (req, res) => {
