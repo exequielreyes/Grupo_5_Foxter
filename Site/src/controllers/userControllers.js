@@ -11,14 +11,6 @@ module.exports = {
     res.render("usuario/register");
   },
 
-
-
-
-
-
-
-
-
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -85,67 +77,58 @@ module.exports = {
               // let userCreated = User.create(userToCreate);
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   login: (req, res) => {
     res.render("usuario/login");
   },
 
   loginProcess: (req, res) => {
-    // console.log("req.body.password", req.body.password)
-    let userToLogin = User.findByField("email", req.body.email);
-    // console.log("userToLogin" , userToLogin);
-    if (userToLogin) {
-     
-      let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password);
-    
-      if (passwordOk ==  true) {
-        // delete userToLogin.password[0]; //Para no tener la contrasena en ssesion, es por seguridad
-        req.session.userLogged = userToLogin;
 
-
-        if (req.body.recordame){
-          res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60  })
-        }
-
-
-       return res.redirect("./profile");
+    db.User.findOne({
+      where: {
+        email: req.body.email
       }
+    }).then((userToLogin) => {
 
-      return res.render("usuario/login", {
-        errors: {
-          email: {
-            msg: "El usuario o la contraseña no son correctas. Por favor, inténtalo de nuevo.",
-          },
-        },
-      });
-    }
+          if (userToLogin){
+         
+            let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password);
+          
+            if (passwordOk ==  true) {
+              // delete userToLogin.password[0]; //Para no tener la contrasena en ssesion, es por seguridad
+              req.session.userLogged = userToLogin;
 
-    return res.render("usuario/login", {
-      errors: {
-        email: {
-          msg: "Este email no esta registrado",
-        },
-      },
-    });
+
+              if (req.body.recordame){
+                res.cookie('userEmail', req.body.email, {maxAge: 1000 * 60  })
+              }
+
+
+            return res.redirect("./profile");
+            }
+
+            return res.render("usuario/login", {
+              errors: {
+                email: {
+                  msg: "El usuario o la contraseña no son correctas. Por favor, inténtalo de nuevo.",
+                },
+              },
+            });
+          }
+
+          return res.render("usuario/login", {
+            errors: {
+              email: {
+                msg: "Este email no esta registrado",
+              },
+            },
+          });
+    })
+
+
+    // console.log("req.body.password", req.body.password)
+    // let userToLogin = User.findByField("email", req.body.email);
+    // console.log("userToLogin" , userToLogin);
+
   },
 
   profile: (req, res) => {
