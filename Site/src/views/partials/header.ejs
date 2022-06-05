@@ -37,37 +37,35 @@
           </form>
         </div>
 
-        <% if(locals.isLogged) { %>       
-       
+           
+         
+
         <div class="col-lg-3">
           <div class="iconos d-flex justify-content-end">
-            <a href="/user/login">
-              <%= locals.userLogged.name %>
-              <i class="far fa-user me-3"></i>
-            
-            </a>
-            
-            <a href="/user/logout">Logout</a>
+            <% if(locals.isLogged) { %>   
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle p-0 px-3 text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <%= locals.userLogged.name %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/user/login">Mi Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/user/logout">Logout</a>
+              </div>
+            </li>
+            <% } else { %>
+              <a  href="/user/login">
+                <i class="fas fa-user me-3 icon-navBar"> </i>
+                
+              </a>
+              <%} %>
             <a href="/products/cart">
               <i class="fas fa-cart-arrow-down"></i>
               
             </a>
           </div>
         </div>
-          <% } else { %>
-         <div class="col-lg-3">
-          <div class="iconos d-flex justify-content-end icon-align">
-            <a  href="/user/login">
-              <i class="fas fa-user me-3 icon-navBar"> <p class="title-icon">Mi cuenta</p></i>
-              
-            </a>
-            <a href="/products/cart">
-              <i class="fas fa-shopping-cart icon-navBar"><p class="title-icon">Mi carrito</p></i>
-              
-            </a>
-          </div>
-        </div>
-        <% } %>
+         
       </div>
     </div>
   </nav>
@@ -110,4 +108,25 @@
       </div>
     </div>
   </nav>
+  <% if(locals.rol) { %> 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-celeste">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./products/create">Crear Producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+  
+      </div>
+    </div>
+   
+  </nav>
+  <%}%>
 </header>

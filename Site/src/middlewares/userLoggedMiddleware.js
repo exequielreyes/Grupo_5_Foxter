@@ -3,7 +3,7 @@ const db = require("../database/models");
 module.exports = userLoggedMiddleware = (req, res, next) => {
     res.locals.isLogged = false;
     let emailInCookie = req.cookies.userEmail;
-    console.log("sesion " + req.session.userLogged + " cokier " + emailInCookie)
+   // console.log("sesion " + req.session.userLogged + " cokier " + emailInCookie)
     if (emailInCookie && req.session.userLogged == undefined) {
         console.log("entro");
         db.User.findOne({
@@ -12,11 +12,13 @@ module.exports = userLoggedMiddleware = (req, res, next) => {
             }
         }).then(userCookie => {
             console.log("aqui" + userCookie);
-            if (userCookie.name) {
+            if (userCookie) {
                 res.locals.isLogged = true;
-                console.log(res.locals.isLogged);
                 req.session.userLogged = userCookie; 
                 res.locals.userLogged = req.session.userLogged;
+                if(userCookie.rol=="admin"){
+                    res.locals.rol=true;
+                }
             }
            
 
@@ -26,6 +28,10 @@ module.exports = userLoggedMiddleware = (req, res, next) => {
         if (req.session.userLogged) {
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
+            console.log(res.locals.userLogged);
+            if(res.locals.userLogged.rol=="admin"){
+                res.locals.rol=true;
+            }
         }
         else{
             res.locals.isLogged = false;
