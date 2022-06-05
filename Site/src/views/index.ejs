@@ -86,7 +86,12 @@
                                                 <i class="fa fa-heart ps-2"></i>
                                             </a>
                                             <a href="products/detail/<%= listaProducto.idProduct %>">
-                                                <img src="images/product//<%= listaProducto.image %>" class="card-img-top" height="280px" alt="...">
+                                                <%if(listaProducto.images.length>0){%>
+                                                    <img src="/images/product/<%= listaProducto.images[0].name %>" class="card-img-top" alt="<%= listaProducto.name %>">
+                                                    <%} else{ %>
+                                                    <img src="/images/product/default-image.png" class="card-img-top" alt="imagen por defecto">
+        
+                                                        <%} %>
                                             </a>
                                             <a href="products/detail/<%= listaProducto.idProduct %>">
                                                 <div class="">
@@ -113,13 +118,18 @@
                             </div>
                             <%products.forEach((listaProducto)=>{ %>
                                 <%if(listaProducto.saleCategory.name == "Oferta"){ %>
-                                    <div class="col-lg-3 ">
+                                    <div class="col-lg-3 pb-3">
                                         <div class="product">
                                             <a class="floa-end" href="#">
                                                 <i class="fa fa-heart ps-2"></i>
                                             </a>
                                             <a href="products/detail/<%= listaProducto.idProduct %>">
-                                                <img src="images/product//<%= listaProducto.image %>" class="card-img-top" alt="...">
+                                                <%if(listaProducto.images.length>0){%>
+                                                    <img src="/images/product/<%= listaProducto.images[0].name %>" class="card-img-top" alt="<%= listaProducto.name %>">
+                                                    <%} else{ %>
+                                                    <img src="/images/product/default-image.png" class="card-img-top" alt="imagen por defecto">
+        
+                                                        <%} %>
                                             </a>
                                             <% if(listaProducto.discount>0){%>
                                                    <div class="discount">
