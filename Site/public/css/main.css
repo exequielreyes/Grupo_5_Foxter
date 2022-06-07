@@ -42,7 +42,8 @@ h1 {
 
 
 .fas.fa-user.me-3.icon-navBar,
-.fas.fa-shopping-cart.icon-navBar
+.fas.fa-shopping-cart.icon-navBar,
+.fa-cart-arrow-down:before
 {
   font-size: 18px;
   /* color: var(--white); */
