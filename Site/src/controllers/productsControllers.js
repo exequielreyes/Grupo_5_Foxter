@@ -113,7 +113,7 @@ module.exports = {
                 price: req.body.price,
                 discount:  req.body.discount,
                 idCategory: req.body.category ,
-                description: req.body.category,
+                description: req.body.description,
                 idSexCategory: req.body.sexCategory,
                 idSaleCategory: req.body.saleCategory,
                 images:images,
@@ -156,25 +156,30 @@ module.exports = {
 
     editarProducto: (req, res) => {
         // let productToEdit = products.find(product => product.id == id);
-        //
-        db.Product.findByPk(req.params.id,{
-            include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]
+
+        let sizes = db.Size.findAll();
+        let categorias = db.Category.findAll();
+        let sexCategorias = db.sexCategory.findAll()
+        let saleCategorias = db.saleCategory.findAll()
+        let productToEdit = db.Product.findByPk(req.params.id ,{
+                include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]});
+        Promise.all([sizes, categorias, sexCategorias, saleCategorias,productToEdit ])
+        .then(([sizes ,categorias , sexCategorias,saleCategorias ,productToEdit  ]) => {
+            res.render('admin/editProduct', {sizes ,categorias, sexCategorias,saleCategorias, productToEdit})
         })
-        .then(productToEdit => {
-            res.render("admin/editProduct", { productToEdit })
-        })
+
     },
 
 
     actualizarProducto: (req , res) => {
-//         let images=[]
-//    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
+    let images=[]
+    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
         db.Product.update({
                     name: req.body.name,
                     price: req.body.price,
                     discount:  req.body.discount,
                     idCategory: req.body.category ,
-                    description: req.body.category,
+                    description: req.body.description,
                     idSexCategory: req.body.sexCategory,
                     idSaleCategory: req.body.saleCategory,
            },{
