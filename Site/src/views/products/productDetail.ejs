@@ -61,14 +61,36 @@
                     <div class="col-lg-4">
                         <div class="product-description">
                             <p class="title"><%= product.name %></p>
-                            <p>Item No. <%= product.id %></p>
+                            <p>Item No. <%= product.idProduct %></p>
                             <p class="price">$ <%= product.price %></p>
                             <div class="size">
                             <ul class="size-ul">
-                                <li class="size-li"><span>S</span> </li>
+                                <!-- <li class="size-li"><span>S</span> </li>
                                 <li class="size-li"><span>M</span></li>
                                 <li class="size-li"><span>L</span></li>
-                                <li class="size-li"><span>XL</span></li>
+                                <li class="size-li"><span>XL</span></li>  -->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= product.sizes %>"  name="size" disabled checked>
+                                    <label class="form-check-label" for="inlineCheckbox1">S</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="<%= product.sizes %>" name="size" disabled checked>
+                                    <label class="form-check-label" for="inlineCheckbox2">M</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="<%= product.sizes %>" name="size" disabled checked>
+                                    <label class="form-check-label" for="inlineCheckbox3">L</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="<%= product.sizes %>"  name="size" disabled checked >
+                                    <label class="form-check-label" for="inlineCheckbox4">XL</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="<%= product.sizes %>"  name="size" disabled checked >
+                                    <label class="form-check-label" for="inlineCheckbox4">XXL</label>
+                                  </div>
+
+
                             </ul>
                         </div>
 

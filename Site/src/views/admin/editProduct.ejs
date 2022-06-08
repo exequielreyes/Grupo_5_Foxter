@@ -41,13 +41,9 @@
                 <label for="category">Categoria</label>
                 
                  <select name="category" id="category" >
-                    <option value="Remera" <%= productToEdit.category.name == "Remera" ? "selected" : "" %>      >Remera</option>
-                    <option value="Musculosa" <%= productToEdit.category.name == "Musculosa" ? "selected" : "" %>   >Musculosa</option>
-                    <option value="Pantalon" <%= productToEdit.category.name == "Pantalon" ? "selected" : "" %> >Pantalon</option>
-                    <option value="Campera" <%= productToEdit.category.name == "Campera" ? "selected" : "" %>  >Campera</option>
-                    <option value="Short" <%= productToEdit.category.name == "Short" ? "selected" : "" %>  >Short</option>
-                    <option value="Buzo" <%= productToEdit.category.name == "Buzo" ? "selected" : "" %>  >Buzo</option>
-                    <option value="Calza" <%= productToEdit.category.name == "Calza" ? "selected" : "" %>  >Calza</option>
+                        <%categorias.forEach((categoria)=>{ %>
+                        <option value="<%= categoria.idCategory %>"  <%= categoria.idCategory ==  productToEdit.idCategory ? "selected" : "" %> ><%= categoria.name %></option>
+                        <%}) %>
                  </select>
                 </div>
             </div>
@@ -55,55 +51,24 @@
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__input">
                 <label for="size">Talle</label>
-                 <!-- <select name="size" id="talle"> -->
-                     <!-- <option value="S" <%= productToEdit.size == "S" ? "selected" : "" %>>S</option>
-                     <option value="M" <%= productToEdit.size == "M" ? "selected" : "" %>>M</option>
-                     <option value="L" <%= productToEdit.size == "L" ? "selected" : "" %>>L</option>
-                     <option value="XL" <%= productToEdit.size == "XL" ? "selected" : "" %>>XL</option> -->
-
-                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="S" name="size[]">
-                        <label class="form-check-label" for="inlineCheckbox1">S</label>
+                
+                <%sizes.forEach((talle)=>{ %>
+                                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.idSize %>" name="size">
+                        <label class="form-check-label" for="inlineCheckbox1"><%= talle.name %></label>
                       </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="M" name="size[]">
-                        <label class="form-check-label" for="inlineCheckbox2">M</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="L" name="size[]" >
-                        <label class="form-check-label" for="inlineCheckbox3">L</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="XL"  name="size[]" >
-                        <label class="form-check-label" for="inlineCheckbox4">XL</label>
-                      </div>
-
-
-
-
-
-                 <!-- </select> -->
+                <%}) %>
                 </div>
             </div>
-
-
-
-
-            <!-- <div class=" form-group  col-lg-6">
-                <label for="talle">Talles</label>
-               
-              
-            </div> -->
-
-
 
             <div class="FormularioProducto__control">
                 <div class="formularioProducto__textarea">
                 <label for="sexCategory">Genero </label>
                 <select name="sexCategory" id="sexCategoria" >
-                    <option value="Hombre" <%= productToEdit.sexCategory.name == "Hombre" ? "selected" : "" %>>Hombre</option>
-                    <option value="Mujer" <%= productToEdit.sexCategory.name == "Mujer" ? "selected" : "" %>>Mujer</option>
-                    <option value="Unisex" <%= productToEdit.sexCategory.name == "Unisex" ? "selected" : "" %>>Unisex</option>
+                    <%sexCategorias.forEach((sexCategoria)=>{ %>
+                        <option value="<%= sexCategoria.idSexCategories %>"   <%= sexCategoria.idSexCategories ==  productToEdit.idSexCategory ? "selected" : "" %>><%= sexCategoria.name %></option>
+                        <%}) %>
                 </select>
             </div>
             </div>
@@ -112,9 +77,9 @@
                 <div class="formularioProducto__textarea">
                 <label for="saleCategory">Característica de Venta</label>
                 <select name="saleCategory" id="saleCategory" >
-                    <option value="ninguna" <%= productToEdit.saleCategory.name == "Ninguna" ? "selected" : "" %>   >Ninguna</option>
-                    <option value="tendencia" <%= productToEdit.saleCategory.name == "Tendencia" ? "selected" : "" %> >Tendencia</option>
-                    <option value="oferta" <%= productToEdit.saleCategory.name == "Oferta" ? "selected" : "" %> >Oferta</option>
+                    <%saleCategorias.forEach((saleCategoria)=>{ %>
+                        <option value="<%= saleCategoria.idSaleCategory %>" <%= saleCategoria.idSaleCategory ==  productToEdit.idSaleCategory ? "selected" : "" %>><%=saleCategoria.name %></option> 
+                        <%}) %>
                 </select>
             </div>
             </div>
@@ -127,10 +92,6 @@
         
         <div class="FormularioProducto__control-file">
             <input value="<%=productToEdit.image %>" type="file" name="image" multiple id="imagen" class="formularioProducto__input-file"  >
-            <!-- <input type="text"  name="image"   hidden  value="<%=productToEdit.image %>" > -->
-            <!-- <output id="list" >
-                <img src="/images/product/<%=productToEdit.image %>"   alt="imagen" width="150px">
-            </output> -->
         </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>
@@ -148,37 +109,7 @@
             </div>
         </div>
     </form>
-    
-
-    <!-- <script>
-        function archivo(evt) {
-            let files = evt.target.files; // FileList object
-       
-            // Obtenemos la imagen del campo "file".
-            for (let i = 0, f; f = files[i]; i++) {
-              //Solo admitimos imágenes.
-              if (!f.type.match('image.*')) {
-                  continue;
-              }
-       
-              let reader = new FileReader();
-       
-              reader.onload = (function(theFile) {
-                  return function(e) {
-                    // Insertamos la imagen
-                   document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-                  };
-              })(f);
-       
-              reader.readAsDataURL(f);
-            }
-        }
-       
-        document.getElementById('imagen').addEventListener('change', archivo, false);
-</script> -->
-
-
-
+  
 </main>
 </body>
 </html>
