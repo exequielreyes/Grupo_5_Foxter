@@ -67,7 +67,7 @@
                                 <p class="text-center small fw-bold">  <%= products.length %> Resultados</p>
                             </div>
                             <% products.forEach(product => { %>
-                                <div class="col-lg-4 ">
+                                <div class="col-lg-4 pb-4">
                                     <div class="product">
                                         <a class="floa-end" href="#">
                                             <i class="fa fa-heart ps-2"></i>
@@ -106,7 +106,16 @@
                                                      
                                                         <%} %>
                                             </div>
-                                        </a>
+                                            </a>
+                                            
+                                            <% if(locals.rol){ %>
+                                            <div class="btn-editar-eliminar d-flex justify-content-end pb-2 pe-2 gap-2">
+                                                <a href="products/edit/<%= product.idProduct %>" class="btn btn-success"><i class="fas fa-edit text-white"></i></a>
+                                                <form action="products/delete/<%= product.idProduct %>?_method=DELETE" method="POST">
+                                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash text-white"></i></button>
+                                                </form>
+                                            </div>
+                                            <% } %>
                                     </div>
                                 </div>
                                 <% }) %>
