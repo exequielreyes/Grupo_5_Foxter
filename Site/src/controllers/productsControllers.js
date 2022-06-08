@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {validationResult, body}=require('express-validator');
+const { validationResult, body } = require('express-validator');
 const { mainModule, nextTick } = require("process");
 const db = require('../database/models');
 // const { defaultValueSchemable } = require('sequelize/types/utils');
@@ -13,21 +13,21 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
     index: (req, res) => {
-        
+
         db.Product.findAll(
             {
-                order:[
+                order: [
                     ["idProduct", "DESC"]
                 ],
-            include: [{association: "images"}]
+                include: [{ association: "images" }]
 
             }
         )
-        .then(products => {
-          // res.send(products.images)
-        
-         res.render('products/productsList', { products });
-        })
+            .then(products => {
+                // res.send(products.images)
+
+                res.render('products/productsList', { products });
+            })
     },
 
     categoriaProducto: (req, res) => {
@@ -39,15 +39,15 @@ module.exports = {
                     where: {
                         '$category.name$': category,
                         '$sexCategory.name$': sexCategory,
-                      }, 
-                    order:[
+                    },
+                    order: [
                         ["idProduct", "DESC"]
                     ],
-                include: [{association: "images"},{association: "category"},{association: "sexCategory"}],
-    
+                    include: [{ association: "images" }, { association: "category" }, { association: "sexCategory" }],
+
                 }
             ).then(productsFilter => {
-                res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
+                res.render('products/productsList', { 'products': productsFilter, 'category': category, 'categorySex': sexCategory });
 
             })
 
@@ -56,26 +56,27 @@ module.exports = {
             category = req.params.category;
             db.Product.findAll(
                 {
-                include: [{association: "images"},{association: "category"}],
+                    include: [{ association: "images" }, { association: "category" }],
 
-                where: {
-                    '$category.name$': category,
-                  }, 
-                    order:[
+                    where: {
+                        '$category.name$': category,
+                    },
+                    order: [
                         ["idProduct", "DESC"]
                     ],
                 }
             )
-            .then(productsFilter => {
-                res.render('products/productsList', { 'products': productsFilter, 'category':category });
-            })
+                .then(productsFilter => {
+                    res.render('products/productsList', { 'products': productsFilter, 'category': category });
+                })
         }
     },
 
     detalleProducto: (req, res) => {
         db.Product.findByPk(req.params.id, {
-            include: [{association: "category"},{association: "sexCategory"}]
+            include: [{ association: "category" }, { association: "sexCategory" }, { association: "images" }]
         }).then(product => {
+            console.log(product.name);
             res.render("products/productDetail", { product })
         })
     },
@@ -85,147 +86,149 @@ module.exports = {
         let sexCategorias = db.sexCategory.findAll()
         let saleCategorias = db.saleCategory.findAll()
         let sizes = db.Size.findAll()
-        Promise.all([categorias,sexCategorias,saleCategorias,sizes])
-        .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
-            res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes})
-        })
-       
+        Promise.all([categorias, sexCategorias, saleCategorias, sizes])
+            .then(([categorias, sexCategorias, saleCategorias, sizes]) => {
+                res.render('admin/createProduct', { categorias, sexCategorias, saleCategorias, sizes })
+            })
+
     },
-    
-    guardarProducto:(req,res)=>{
-        let resultValidation=validationResult(req);
+
+    guardarProducto: (req, res) => {
+        let resultValidation = validationResult(req);
         //return  res.send(resul.errors);
-        if(resultValidation.errors.length > 0){
+        if (resultValidation.errors.length > 0) {
             let categorias = db.Category.findAll();
             let sexCategorias = db.sexCategory.findAll()
             let saleCategorias = db.saleCategory.findAll()
             let sizes = db.Size.findAll()
-            Promise.all([categorias,sexCategorias,saleCategorias,sizes])
-            .then(([categorias, sexCategorias, saleCategorias,sizes]) => {
-                res.render('admin/createProduct', {categorias, sexCategorias, saleCategorias,sizes,errors:resultValidation.mapped(), oldData:req.body})
-            })
-         }
-        else{ 
-            let images=[]
-           for (i in req.files) {images.push({'name':req.files[i].filename}) }
-          db.Product.create({
+            Promise.all([categorias, sexCategorias, saleCategorias, sizes])
+                .then(([categorias, sexCategorias, saleCategorias, sizes]) => {
+                    res.render('admin/createProduct', { categorias, sexCategorias, saleCategorias, sizes, errors: resultValidation.mapped(), oldData: req.body })
+                })
+        }
+        else {
+            let images = []
+            for (i in req.files) { images.push({ 'name': req.files[i].filename }) }
+            db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
-                discount:  req.body.discount,
-                idCategory: req.body.category ,
+                discount: req.body.discount,
+                idCategory: req.body.category,
                 description: req.body.category,
                 idSexCategory: req.body.sexCategory,
                 idSaleCategory: req.body.saleCategory,
-                images:images,
-               
-                },{
-                    include: [{
-                      association:"images"}
-                    ]
+                images: images,
 
-            }).then(product=>{
+            }, {
+                include: [{
+                    association: "images"
+                }
+                ]
+
+            }).then(product => {
                 product.addSize(req.body.size)
                 //res.send(product);
                 res.redirect("/products")
 
             })
         }
-          
-       /*  if(req.file){
-			let newProduct = {
-				id: products[products.length - 1].id + 1,
-				...req.body,
-				image: req.file.filename
-			};
-		 	products.push(newProduct);
-		
-		}
-		else {
-			let newProduct = {
-				id: products[products.length - 1].id + 1,
-				...req.body,
-				image: 'default-image.png'
-			};
-			products.push(newProduct);
-		
-		}
-               
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null , ' '));
-		res.redirect("/products")} */
+
+        /*  if(req.file){
+             let newProduct = {
+                 id: products[products.length - 1].id + 1,
+                 ...req.body,
+                 image: req.file.filename
+             };
+               products.push(newProduct);
+     	
+         }
+         else {
+             let newProduct = {
+                 id: products[products.length - 1].id + 1,
+                 ...req.body,
+                 image: 'default-image.png'
+             };
+             products.push(newProduct);
+     	
+         }
+                
+         fs.writeFileSync(productsFilePath, JSON.stringify(products, null , ' '));
+         res.redirect("/products")} */
     },
 
     editarProducto: (req, res) => {
         // let productToEdit = products.find(product => product.id == id);
         //
-        db.Product.findByPk(req.params.id,{
-            include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]
+        db.Product.findByPk(req.params.id, {
+            include: [{ association: "category" }, { association: "sexCategory" }, { association: "saleCategory" }]
         })
-        .then(productToEdit => {
-            res.render("admin/editProduct", { productToEdit })
-        })
+            .then(productToEdit => {
+                res.render("admin/editProduct", { productToEdit })
+            })
     },
 
 
-    actualizarProducto: (req , res) => {
-//         let images=[]
-//    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
+    actualizarProducto: (req, res) => {
+        //         let images=[]
+        //    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
         db.Product.update({
-                    name: req.body.name,
-                    price: req.body.price,
-                    discount:  req.body.discount,
-                    idCategory: req.body.category ,
-                    description: req.body.category,
-                    idSexCategory: req.body.sexCategory,
-                    idSaleCategory: req.body.saleCategory,
-           },{
-            where: {idProduct: req.params.id}
-           }).then(()=>{
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            idCategory: req.body.category,
+            description: req.body.category,
+            idSexCategory: req.body.sexCategory,
+            idSaleCategory: req.body.saleCategory,
+        }, {
+            where: { idProduct: req.params.id }
+        }).then(() => {
             return res.redirect('/products')
-           })
+        })
 
-    //        id = req.params.id;
-    //        let productToEdit = products.find(product => product.id == id)
-    //    if(req.file){
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            image: req.file.filename
-    //        };
-    //    }else{
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            // image: req.body.image
-    //        };
-    //    }
-       
-      
-    //        let newProducts = products.map(product => {
-    //            if (product.id == productToEdit.id) {
-    //                return product = {...productToEdit};
-    //            }
-    //            return product;
-    //        })
-   
-    //        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-    //        res.redirect('../detail/'+ id);
+        //        id = req.params.id;
+        //        let productToEdit = products.find(product => product.id == id)
+        //    if(req.file){
+        //        productToEdit = {
+        //            id: productToEdit.id,
+        //            ...req.body,
+        //            image: req.file.filename
+        //        };
+        //    }else{
+        //        productToEdit = {
+        //            id: productToEdit.id,
+        //            ...req.body,
+        //            // image: req.body.image
+        //        };
+        //    }
+
+
+        //        let newProducts = products.map(product => {
+        //            if (product.id == productToEdit.id) {
+        //                return product = {...productToEdit};
+        //            }
+        //            return product;
+        //        })
+
+        //        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+        //        res.redirect('../detail/'+ id);
 
     },
 
     borrarProducto: (req, res) => {
         db.Product.destroy({
-            where:{
+            where: {
                 idProduct: req.params.id
-            } , force: true
+            }, force: true
         })
-		// let finalProducts = products.filter(product => product.id != id);
-		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		.then(()=>{
-            res.redirect('/');
-        })},
-    
+            // let finalProducts = products.filter(product => product.id != id);
+            // fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+            .then(() => {
+                res.redirect('/products');
+            })
+    },
+
     carrito: (req, res) => {
         res.render("carrito/productCart");
     },
-   
+
 }
