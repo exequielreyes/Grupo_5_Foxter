@@ -8,7 +8,7 @@ const validations= [
     .isLength({min: 20 }).withMessage('El campo descripcion debe tener al menos 20 caracteres'),
 
     body('price').notEmpty().withMessage('debe completar este campo').bail()
-    .isNumeric().isLength({ min: 0}),
+    .isNumeric().isLength({min: 20 }).withMessage('Debe ser mayor a 0'),
 
 
    

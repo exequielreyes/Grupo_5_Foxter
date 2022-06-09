@@ -122,7 +122,13 @@
                             <div class="form-group  col-lg-12">
                                 <label for="description">Descipción</label>
                                 <textarea name="description" id="descripcion" rows="4" class="form-control"></textarea>
-                            </div>
+                                <% if(locals.errors && errors.description){%>
+                                    <div class="small text-danger">
+                                       <%= errors.description.msg %>
+                                       </div>
+                            
+                                 <%  } %>
+                                    </div>
                         </div>
 
 
