@@ -43,22 +43,23 @@ const Product = sequelize.define(alias, cols, config);
 Product.associate = (models) => {
     Product.belongsTo(models.Category, {
         as: 'category',
-        foreignKey: 'idCategory'
+        foreignKey: 'idCategory',
     }),
 
     Product.belongsTo(models.saleCategory, {
         as: 'saleCategory',
-        foreignKey: 'idSaleCategory'
+        foreignKey: 'idSaleCategory',
     }),
 
     Product.belongsTo(models.sexCategory, {
         as: 'sexCategory',
-        foreignKey: 'idSexCategory'
+        foreignKey: 'idSexCategory',
     }),
 
     Product.hasMany(models.Image, {
         as: 'images',
-        foreignKey: 'productId'
+        foreignKey: 'productId',
+        onDelete: 'CASCADE',
     }),
 
     Product.belongsToMany(models.Size, {
@@ -66,14 +67,17 @@ Product.associate = (models) => {
         through: 'productsSizes',
         foreignKey: 'productsId',
         otherKey: 'sizeId',
-        timestamps: false
+        timestamps: false,
+        onDelete: 'CASCADE',
     }),
 
     Product.belongsToMany(models.User, {
         as: 'users',
         through: 'userProduct',
         foreignKey: 'productId',
-        otherKey: 'userId'
+        otherKey: 'userId',
+        timestamps: false,
+        onDelete: 'CASCADE',
     })
 
 }

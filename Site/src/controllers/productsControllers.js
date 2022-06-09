@@ -229,9 +229,6 @@ module.exports = {
             res.redirect('/');
         })},
     
-
-
-
     carrito: (req, res) => {
         res.render("carrito/productCart");
     },

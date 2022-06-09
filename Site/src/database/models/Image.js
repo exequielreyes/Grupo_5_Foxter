@@ -13,8 +13,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         productId: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            allowNull: false
+            allowNull: false,
+            onUpdate: 'CASCADE',
+            onDelete: 'CASCADE',
+      
         }
+        
 
     }
     
@@ -29,7 +33,8 @@ module.exports = (sequelize, dataTypes) => {
     Image.associate = (models) => {
         Image.belongsTo(models.Product, {
             as: 'product',
-            foreignKey: 'productId'
+            foreignKey: 'productId',
+            onDelete: 'CASCADE',
         })
     }
     
