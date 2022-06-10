@@ -48,6 +48,13 @@
                             <div class=" form-group  col-lg-6">
                                 <label for="imagen">Agregar imagen</label>
                                 <input type="file" name="image" multiple id="imagen" class="form-control">
+                                <% if(locals.errors && errors.image){%>
+                                    <div class="small text-danger">
+                                       <%= errors.image.msg %>
+                                       </div>
+                            
+                                 <%  } %>
+
                             </div>
                            
                         
