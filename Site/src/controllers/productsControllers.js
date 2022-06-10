@@ -14,67 +14,113 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 module.exports = {
     index: (req, res) => {
         
-        db.Product.findAll(
+        let pageAsnumber = Number.parseInt(req.query.page);
+        let size = 6;
+        let page = 0;
+        if (pageAsnumber && pageAsnumber > 0)
+            page = pageAsnumber - 1
+        let totalProducts = db.Product.count()
+        let products = db.Product.findAll(
             {
-                order:[
+                limit: size,
+                offset: page * size,
+                order: [
                     ["idProduct", "DESC"]
                 ],
-            include: [{association: "images"}]
+                include: [{ association: "images" }]
 
             }
         )
-        .then(products => {
-          // res.send(products.images)
-        
-         res.render('products/productsList', { products });
-        })
+           
+        Promise.all([totalProducts, products])
+            .then(([totalProducts, products]) => {
+                res.render('products/productsList', { products, totalProducts, totalPages: Math.round(totalProducts / size), pageActive: page });
+            })
+
     },
 
     categoriaProducto: (req, res) => {
+        let pageAsnumber = Number.parseInt(req.query.page);
+        let size = 6;
+        let page = 0;
+        if (pageAsnumber && pageAsnumber > 0)
+            page = pageAsnumber - 1
         if (req.params.sexCategory) {
             category = req.params.category;
             sexCategory = req.params.sexCategory;
-            db.Product.findAll(
+            let totalProducts = db.Product.count({
+                include: [{ association: "category" }, { association: "sexCategory" }],
+                where: {
+                    '$category.name$': category,
+                    '$sexCategory.name$': sexCategory,
+                },
+            }
+            )
+            let productsFilter = db.Product.findAll(
                 {
-                    where: {
-                        '$category.name$': category,
-                        '$sexCategory.name$': sexCategory,
-                      }, 
-                    order:[
+
+                    order: [
                         ["idProduct", "DESC"]
                     ],
-                include: [{association: "images"},{association: "category"},{association: "sexCategory"}],
-    
+                    include: [{ association: "images" },
+                    {
+                        association: "category", where: {
+                            '$category.name$': category
+                        }
+                    },
+                    {
+                        association: "sexCategory", where: {
+                            '$sexCategory.name$': sexCategory,
+                        }
+                    }
+                    ],
+
                 }
-            ).then(productsFilter => {
-                res.render('products/productsList', { 'products': productsFilter, 'category':category, 'categorySex':sexCategory });
+            )
+            Promise.all([totalProducts, productsFilter])
+                .then(([totalProducts, productsFilter]) => {
+                res.render('products/productsList', { 'products': productsFilter, 'category': category, 'categorySex': sexCategory, totalProducts, totalPages: Math.round(totalProducts / size), pageActive: page });
 
             })
 
         }
         else {
             category = req.params.category;
-            db.Product.findAll(
-                {
-                include: [{association: "images"},{association: "category"}],
-
+            let totalProducts = db.Product.count({
+                include: [{ association: "category" }],
                 where: {
                     '$category.name$': category,
-                  }, 
-                    order:[
+                },
+            }
+            )
+
+            let productsFilter = db.Product.findAll(
+                {
+                    limit: size,
+                    offset: page * size,
+                    where: {
+                        '$category.name$': category,
+                    },
+                    include: [{ association: "images" }, {
+                        association: "category", where: {
+                            '$category.name$': category,
+                        }
+                    },],
+                    order: [
                         ["idProduct", "DESC"]
                     ],
                 }
             )
-            .then(productsFilter => {
-                res.render('products/productsList', { 'products': productsFilter, 'category':category });
-            })
+            Promise.all([productsFilter, totalProducts])
+                .then(([productsFilter, totalProducts]) => {
+                    res.render('products/productsList', { 'products': productsFilter, 'category': category, totalProducts, totalPages: Math.round(totalProducts / size), pageActive: page });
+                })
         }
     },
 
     detalleProducto: (req, res) => {
         db.Product.findByPk(req.params.id, {
-            include: [{association: "category"},{association: "sexCategory"}]
+            include: [{association: "category"},{association: "sexCategory"},{association: "images"}]
         }).then(product => {
             res.render("products/productDetail", { product })
         })
