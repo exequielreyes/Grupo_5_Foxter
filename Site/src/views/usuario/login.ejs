@@ -27,10 +27,13 @@
             <label for="email">Email</label>
             <input type="email" name="email" id="email" class="control" />
             <% if (locals.errors && errors.email) { %>
-              <div class="text-danger">
+              <div class="text-danger" id="email-back">
                 <%= errors.email.msg %> 
               </div>
             <% } %>
+            <div class="text-danger" id="container-email">
+
+            </div>
           </div>
           <div class="form__control">
             <label for="password">Contraseña</label>
@@ -40,6 +43,9 @@
               id="password"
               class="control"
             />
+            <div class="text-danger" id="container-password">
+              
+            </div>
           </div>
           <div class="form__control-check">
             <label
@@ -63,5 +69,6 @@
 
     <%-include("../partials/footer") %>
 
+  <script src="/js/validacionesLogin.js"></script>
   </body>
 </html>
