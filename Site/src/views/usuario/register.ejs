@@ -23,6 +23,10 @@
             </ul>
           </div>
 
+          <div class="errores">
+            <ul></ul>
+          </div>
+
           <div class="form__control">
             <label for="text">Nombre</label>
             <input
@@ -33,7 +37,7 @@
               value="<%= locals.oldData ? oldData.name : null %>"
             />
             <% if (locals.errors && errors.name) { %>
-              <div class="text-danger">
+              <div class="text-danger errores">
                 <%= errors.name.msg %> 
               </div>
             <% } %>
