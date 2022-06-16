@@ -36,38 +36,17 @@
                 <section id="ofertas">
                     <div class="container">
                         <div class="row my-3">
-                            <div class="col-lg-3 text-center ">
+                            <% minimos.forEach((category)=>{ %>
+                            <div class="col-lg-3 mb-3 text-center ">
                                 <div class="bg-dark  p-3 ofert">
-                                    <a href="/products/musculosas">
-                                    <p class="h4 text-white">MUSCULOSAS </p>
-                                    <p class="text-white pric">desde $1500</p>
+                                    <a href="/products/<%=category.category.name%>">
+                                    <p class="h4 text-white"><%=category.category.name%> </p>
+                                    <p class="text-white pric">desde $ <%=category.price%></p>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-3 text-center">
-                                <div class="bg-dark  p-3 ofert">
-                                    <a href="/products/calzas">
-                                    <p class="h4 text-white">CALZAS</p>
-                                    <p class="text-white pric">desde $2500</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 text-center">
-                                <div class="bg-dark  p-3 ofert">
-                                    <a href="/products/short">
-                                    <p class="h4 text-white">SHORT </p>
-                                    <p class="text-white pric">desde $1500</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 text-center">
-                                <div class="bg-dark  p-3 ofert">
-                                    <a href="/products/buzos">
-                                    <p class="h4 text-white pric">BUZOS</p>
-                                    <p class="text-white pric">desde $3000</p>
-                                    </a>
-                                </div>
-                            </div>
+                            <% })%>
+                           
                         </div>
                     </div>
                 </section>
