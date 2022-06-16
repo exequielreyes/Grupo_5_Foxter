@@ -8,6 +8,7 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
+const categoriasMiddleware = require("./src/middlewares/categoriasMiddleware");
 
 
 
@@ -30,6 +31,7 @@ app.use(session({
 app.use(cookies());
 
 app.use(userLoggedMiddleware);
+app.use(categoriasMiddleware);
 
 const pathStatic = path.resolve(__dirname, "./public");
 app.use(express.static(pathStatic));

@@ -38,23 +38,24 @@
                                 <label for="nombre">Nombre del producto</label>
                                 <input type="text" name="name" id="nombre" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : '' %>" value="<%=locals.oldData && oldData.name? oldData.name:null%>">
                                 <% if(locals.errors && errors.name){%>
-                                    <div class="small text-danger">
+                                    <div class="small text-danger" id="msg-name-back">
                                        <%= errors.name.msg %>
                                        </div>
                             
                                  <%  } %>
-                            
+                                <div class="small text-danger" id="msg-name"></div>
                             </div>
                             <div class=" form-group  col-lg-6">
                                 <label for="imagen">Agregar imagen</label>
-                                <input type="file" name="image" multiple id="imagen" class="form-control">
+                                <input type="file" name="image" multiple id="imagen" class="form-control <%= locals.errors && errors.image ? 'is-invalid' : '' %>" onchange="return fileValidation()">
                                 <% if(locals.errors && errors.image){%>
                                     <div class="small text-danger">
                                        <%= errors.image.msg %>
                                        </div>
                             
                                  <%  } %>
-
+                                 <div class="small text-danger" id="msg-image"></div>
+                                
                             </div>
                            
                         
@@ -62,37 +63,35 @@
                         <div class="row pb-3">
                             <div class=" form-group  col-lg-6">
                                 <label for="precio">Precio</label>
-                                <input type="number" name="price" id="precio" class="form-control" value="<%=locals.oldData && oldData.price? oldData.price:null%>">
+                                <input type="number" name="price" id="precio" class="form-control <%= locals.errors && errors.price ? 'is-invalid' : '' %>" value="<%=locals.oldData && oldData.price? oldData.price:null%>">
                                 <% if(locals.errors && errors.price){%>
                                     <div class="small text-danger">
                                        <%= errors.price.msg %>
                                        </div>
                             
                                  <%  } %>
-                            
-                            
-                            
-                            
-                            
-                            
+                                <div class="small text-danger" id="msg-price"></div>
                             </div>
                             <div class=" form-group  col-lg-6">
                                 <label for="descuento">Descuento</label>
                                 <input type="number" name="discount" id="descuento" min="0" class="form-control">
+                                <div class="small text-danger" id="msg-discount"></div>
                             </div>
+
 
                         </div>
                         <div class="row pb-3">
-                            <div class=" form-group  col-lg-6">
+                            <div class=" form-group size  col-lg-6">
                                 <label for="talle">Talles</label>
                                 <%sizes.forEach((talle)=>{ %>
                                     
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.idSize %>" name="size[]">
+                                    <input class="form-check-input" type="checkbox" id="size" value="<%= talle.idSize %>" name="size[]">
                                     <label class="form-check-label" for="inlineCheckbox1"><%= talle.name %></label>
                                   </div>
                                   <%}) %>
                                   
+                                  <div class="small text-danger" id="msg-size"></div>
                               
                             </div>
                            
@@ -128,14 +127,16 @@
                         <div class="row pb-3">
                             <div class="form-group  col-lg-12">
                                 <label for="description">Descipción</label>
-                                <textarea name="description" id="descripcion" rows="4" class="form-control"></textarea>
+                                <textarea name="description" id="descripcion" rows="4" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : '' %>"></textarea>
                                 <% if(locals.errors && errors.description){%>
                                     <div class="small text-danger">
                                        <%= errors.description.msg %>
                                        </div>
                             
                                  <%  } %>
-                                    </div>
+                                <div class="small text-danger" id="msg-description"></div>
+
+                            </div>
                         </div>
 
 
@@ -151,6 +152,7 @@
             </div>
 
         </main>
+        <script src="/js/validacionesProducts.js"></script>
     </body>
 
 </html>

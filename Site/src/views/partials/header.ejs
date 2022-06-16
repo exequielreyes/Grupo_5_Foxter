@@ -80,30 +80,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/products">TODOS LOS PRODUCTOS</a>
           </li>
+          <% if(locals.categorias) { %> 
+            <% locals.categorias.forEach(category=>{%>
           <li class="nav-item">
-            <a class="nav-link" href="/products/remera">REMERAS</a>
+            <a class="nav-link" href="/products/<%=category.name%>"><%=category.name%></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/musculosa">MUSCULOSAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/pantalon">PANTALONES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/campera">CAMPERAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/short">SHORT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/buzo">BUZOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/calza">CALZAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/products/malla">MALLAS</a>
-          </li>
+         
+          <%})
+        }%>
         </ul>
       </div>
     </div>
@@ -118,7 +102,7 @@
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav  ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./products/create">Crear Producto</a>
+            <a class="nav-link" href="/products/create">Crear Producto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"></a>

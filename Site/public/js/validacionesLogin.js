@@ -39,7 +39,12 @@ form.addEventListener('submit', (e) => {
 
     if (errores.length > 0){
         e.preventDefault();
+<<<<<<< HEAD
         msgEmailBack.innerHTML = '';
+=======
+       msgEmailBack.innerHTML = '';
+
+>>>>>>> b47acb2e07930c9f54c7f9053435974839d82e94
         console.log('hay errores mann');
     } else {
         console.log('Logeado bien')
