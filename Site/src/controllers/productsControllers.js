@@ -120,7 +120,7 @@ module.exports = {
 
     detalleProducto: (req, res) => {
         db.Product.findByPk(req.params.id, {
-            include: [{association: "category"},{association: "sexCategory"},{association: "images"}]
+            include: [{association: "category"},{association: "sexCategory"},{association: "images"}, {association: "sizes"}]
         }).then(product => {
             res.render("products/productDetail", { product })
         })
