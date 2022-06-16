@@ -20,7 +20,21 @@ const storage = multer.diskStorage({
     }
     
     })
-const uploadFile = multer({storage});
+//const uploadFile = multer({storage, fileFilter: });
+var uploadFile = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+        cb(null, true);
+      } else {
+        cb(null, false);
+
+        // throw new Error('Only .png, .jpg and .jpeg format allowed!');
+        //console.log(uploadFile)
+        //return false;
+      }
+    }
+  });
 
 /***Todo los productos ***/
 router.get('/', productsControllers.index);

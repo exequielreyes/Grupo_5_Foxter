@@ -140,7 +140,7 @@ module.exports = {
     
     guardarProducto:(req,res)=>{
         let resultValidation=validationResult(req);
-        //return  res.send(resul.errors);
+       // return  res.send(resultValidation.errors);
         if(resultValidation.errors.length > 0){
             let categorias = db.Category.findAll();
             let sexCategorias = db.sexCategory.findAll()
