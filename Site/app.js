@@ -28,10 +28,10 @@ app.use(session({
 	saveUninitialized: false,
 }))
 
+app.use(categoriasMiddleware);
 app.use(cookies());
 
 app.use(userLoggedMiddleware);
-app.use(categoriasMiddleware);
 
 const pathStatic = path.resolve(__dirname, "./public");
 app.use(express.static(pathStatic));

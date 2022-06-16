@@ -42,5 +42,9 @@ router.get("/profile", uploadFile.single('image'), authMiddleware,userController
 // Logout
 router.get('/logout', userControllers.logout);
 
+router.get('/list', userControllers.listar);
+
+router.post('/admin/:id', userControllers.updateAdmin);
+
 module.exports = router;
 

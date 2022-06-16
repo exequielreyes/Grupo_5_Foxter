@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<%-include("../partials/head", {title: 'Usuarios', css:'index.css'}) %>
+
+
+<body>
+   
+
+    <%-include("../partials/header") %>
+
+    <main>
+       
+        <div class="container py-5">
+            <div class="row">
+                <% user.forEach(user => { %>
+                    <div class="col-lg-3 pb-3">
+                        
+                        <div class="card ">
+                            <div class="card-content pb-3 <%= (user.rol=="admin")? "bg-primary": ''%>">
+                           
+                            <div class="image">
+                                <img src="" class="img-fluid img-thumbnai">
+                            </div>    
+                              <div class="text-center">
+                                <p class=" h4 text-center"><%=user.name%></p>
+                                <p class=" h6 text-center"><%=user.email%></p>
+                              </div>
+                              <% if(user.rol!="admin"){ %>
+                            <div class="text-center">
+                                <form action="/user/admin/<%= user.idUser %>" method="POST">
+                                    <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('¿Está seguro de cambiar el rol de este usuario?');">Hacer administrador</button>
+                                </form>
+                            </div>       
+                            <%} %>             
+                             
+                            
+                        </div>
+                         
+                        
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+            
+        </div>
+    </main>
+
+    <%-include("../partials/footer") %>
+
+
+</body>
+
+</html>

@@ -272,7 +272,7 @@ module.exports = {
 		// let finalProducts = products.filter(product => product.id != id);
 		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		.then(()=>{
-            res.redirect('/');
+            res.redirect('/products');
         })},
     
     carrito: (req, res) => {
