@@ -3,20 +3,28 @@ const fs = require('fs');
 const { mainModule, nextTick } = require("process");
 const db = require("../database/models");
 const  Op  = db.Sequelize.Op;
-
+var sequelize = require('sequelize');
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 module.exports = {
     index: (req, res) => {
-
-		db.Product.findAll({
+		let minimos= db.Product.findAll({
+            attributes: [
+              [sequelize.fn("MIN", sequelize.col("price")), "price"],
+            ],
+            group: 'category.name',
+           
+            include: [{ association: "category" }]
+          });
+		let products=db.Product.findAll({
 			include: [{association: "saleCategory"},{association: "images"},{association: "category"}]
 		})
-		.then((products) => {
-			  res.render("index",{products});
-		})
+		Promise.all([products,minimos])
+            .then(([products,minimos]) => {
+                res.render('index', { products,minimos });
+            })
       
     },
   

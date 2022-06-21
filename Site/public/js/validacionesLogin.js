@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
     // e.preventDefault();
 
     let errores = [];
-    // let msgEmailBack = document.querySelector("#email-back");
+    let msgEmailBack = document.querySelector("#email-back");
     let msgEmail = document.querySelector("#container-email");
     let msgPassword = document.querySelector("#container-password");
     console.log(errores);
@@ -20,7 +20,6 @@ form.addEventListener('submit', (e) => {
     console.log(email.value);
 
     if (email.value == ''){
-        // msgEmailBack.innerHTML = '';
         console.log('entre aqui');
        errores.push('email vacio');
        msgEmail.innerHTML = 'El email no debe estar vacio';
@@ -40,6 +39,12 @@ form.addEventListener('submit', (e) => {
 
     if (errores.length > 0){
         e.preventDefault();
+<<<<<<< HEAD
+        msgEmailBack.innerHTML = '';
+=======
+       msgEmailBack.innerHTML = '';
+
+>>>>>>> b47acb2e07930c9f54c7f9053435974839d82e94
         console.log('hay errores mann');
     } else {
         console.log('Logeado bien')

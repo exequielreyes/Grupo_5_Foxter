@@ -62,18 +62,47 @@
                         <div class="product-description">
                             <p class="title"><%= product.name %></p>
                             <p>Item No. <%= product.idProduct %></p>
-                            <p class="price">$ <%= product.price %></p>
+
+
+                            <% if(product.discount>0){%>    
+                                    
+                                <p class="price-discount">$ <%= product.price %></p>
+                                <p class="price">$ <%= product.price-(product.discount* (product.price/100)) %></p>
+                          
+                                <%} 
+                                else{%>  
+                                    <p class="price">$ <%= product.price %></p>
+                                 
+                                    <%} %>
+
+
+
+                            <!-- <p class="price">$ <%= product.price %></p> -->
+
                             <div class="size">
                             <ul class="size-ul">
                                 <!-- <li class="size-li"><span>S</span> </li>
                                 <li class="size-li"><span>M</span></li>
                                 <li class="size-li"><span>L</span></li>
                                 <li class="size-li"><span>XL</span></li>  -->
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= product.sizes %>"  name="size" disabled checked>
-                                    <label class="form-check-label" for="inlineCheckbox1">S</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
+
+
+
+                    <% if(product.sizes.length > 0) { %>
+
+                        <% product.sizes.forEach(size => { %> 
+                                    <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= product.sizes %>"  name="size">
+                                    <label class="form-check-label" for="inlineCheckbox1"><%= size.name %></label>
+                                    </div>
+                        <% }) %> 
+
+                       <% }else { %>
+
+                            <p>No hay talles disponibles</p>
+
+                        <% } %>
+                                  <!-- <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="<%= product.sizes %>" name="size" disabled checked>
                                     <label class="form-check-label" for="inlineCheckbox2">M</label>
                                   </div>
@@ -88,9 +117,7 @@
                                   <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="<%= product.sizes %>"  name="size" disabled checked >
                                     <label class="form-check-label" for="inlineCheckbox4">XXL</label>
-                                  </div>
-
-
+                                  </div> -->
                             </ul>
                         </div>
 

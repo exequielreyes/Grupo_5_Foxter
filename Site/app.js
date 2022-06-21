@@ -8,6 +8,7 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
+const categoriasMiddleware = require("./src/middlewares/categoriasMiddleware");
 
 
 
@@ -27,6 +28,7 @@ app.use(session({
 	saveUninitialized: false,
 }))
 
+app.use(categoriasMiddleware);
 app.use(cookies());
 
 app.use(userLoggedMiddleware);

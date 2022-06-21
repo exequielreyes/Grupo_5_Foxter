@@ -135,6 +135,26 @@ module.exports = {
     res.render("usuario/profile", {user: req.session.userLogged});
   },
 
+  listar: (req, res) => {
+    db.User.findAll(
+    ).then(user=>{
+    res.render("usuario/list",{user});
+    })
+  },
+
+  updateAdmin: (req, res) => {
+    
+    db.User.update(
+      { rol: "admin" }, {
+      where: {
+        idUser: req.params.id
+      }
+    }).then((userToLogin) => {
+      return res.redirect('/user/list');
+    })
+  },
+
+
   logout: (req,res) => {
     res.clearCookie('userEmail');
     req.session.destroy();
