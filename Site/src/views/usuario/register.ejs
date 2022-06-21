@@ -3,7 +3,8 @@
   
 
   <%-include("../partials/head", {title: "Registro", css:"register.css"}) %>
- 
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
   <body>
 
 
@@ -11,7 +12,7 @@
 
 
     <main>
-      <form action="/user/register" method="post" class="form">
+      <form action="/user/register" method="post" class="form" id="formulario">
         <div class="form__title">
           <h3 class="title">Registrarme</h3>
         </div>
@@ -23,41 +24,62 @@
             </ul>
           </div>
 
-          <div class="errores">
+          <!-- <div class="errores">
             <ul></ul>
-          </div>
+          </div> -->
 
-          <div class="form__control">
-            <label for="text">Nombre</label>
-            <input
+          <div class="form__control "  class="formulario__grupo" id="grupo__nombre">
+            <label for="text" >Nombre</label>
+           
+            <div class="formulario__grupo-input">
+               <input
               type="text"
               name="name"
               id="name"
-              class="control"
+              class="control "
               value="<%= locals.oldData ? oldData.name : null %>"
             />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+
+            </div>
             <% if (locals.errors && errors.name) { %>
               <div class="text-danger errores">
                 <%= errors.name.msg %> 
               </div>
             <% } %>
+            <p class="formulario__input-error">El nombre tiene que ser de 3 a 40 dígitos y no puede contener numeros.</p>
+
+            <!-- <div class="text-danger" id="container-email">
+
+            </div> -->
             
           </div>
 
-          <div class="form__control">
-            <label for="text">Apellido</label>
+
+          <div class="form__control" id="grupo__apellido">
+            <label for="text" >Apellido</label>
+            <div class="formulario__grupo-input">
             <input
               type="text"
               name="lastName"
               id="lastName"
-              class="control"
+              class=" control"
               value="<%= locals.oldData ? oldData.lastName : null %>"
             />
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            
+          </div>
+
+            <p class="formulario__input-error">El apellido tiene que ser de 3 a 40 dígitos y solo puede contener letras.</p>
+
             <% if (locals.errors && errors.lastName) { %>
               <div class="text-danger">
                 <%= errors.lastName.msg %> 
               </div>
             <% } %>
+            <!-- <div class="text-danger" id="container-email">
+
+            </div> -->
           </div>
 
           <div class="form__control">
@@ -68,10 +90,11 @@
                 <%= errors.date.msg %> 
               </div>
             <% } %>
-          </div>
+          </div> 
 
-          <div class="form__control">
+          <div class="form__control" id="grupo__email">
             <label for="email">Email</label>
+            <div class="formulario__grupo-input">
             <input
               type="email"
               name="email"
@@ -79,22 +102,37 @@
               class="control"
               value="<%=locals.oldData ? oldData.email : null %>"
             />
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+
             <% if (locals.errors && errors.email) { %>
               <div class="text-danger">
                 <%= errors.email.msg %> 
               </div>
             <% } %>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+
+            <!-- <div class="text-danger" id="container-email">
+
+            </div> -->
+
+
             
           </div>
 
-          <div class="form__control">
+          <div class="form__control" id="grupo__password">
             <label for="password">Contraseña(minimo 8 caracteres)</label>
+            <div class="formulario__grupo-input">
             <input
               type="password"
               name="password"
               id="password"
               class="control"
             />
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 8 a 40 dígitos.</p> 
+
             <% if (locals.errors && errors.password) { %>
               <div class="text-danger">
                 <%= errors.password.msg %> 
@@ -102,8 +140,9 @@
             <% } %>
           </div>
 
-          <div class="form__control">
+          <div class="form__control" id="grupo__password2">
             <label for="password">Repita contraseña</label>
+            <div class="formulario__grupo-input">
             <input
               type="password"
               name="repassword"
@@ -111,6 +150,10 @@
               class="control"
               
             />
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+
             <% if (locals.errors && errors.password) { %>
               <div class="text-danger">
                 <%= errors.password.msg %> 
@@ -118,18 +161,25 @@
             <% } %>
           </div>
 
-          <div class="form__control-check">
-            <label
-              ><input
+          <div class="form__control-check" id="grupo__recordame">
+            <label>
+              <input
                 type="checkbox"
-                value="Si"
+               
                 name="recordame"
                 id="recordame"
-              />Acepto terminos y condiciones</label
-            >
+                class="formulario__checkbox"
+              />Acepto terminos y condiciones
+              </label>
           </div>
-          <div class="boton-control">
-            <button class="button-submit" type="submit" value="Iniciar Sesion">
+
+          <div class="form__control formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+          </div>
+
+          <div class="boton-control formulario__grupo formulario__grupo-btn-enviar">
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            <button class="button-submit " type="submit" >
               Crear mi cuenta
             </button>
           </div>
@@ -141,5 +191,8 @@
     <%-include("../partials/footer") %>
 
     <script src="/js/validacionesRegister.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script> -->
   </body>
 </html>

@@ -32,7 +32,9 @@ const validations = [
     body('password')
     .notEmpty({ignore_whitespace:true }).withMessage('Tienes que escribir una contraseña').bail()
     .isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
-  
+
+
+   
 ]
 
 module.exports =  validations;
