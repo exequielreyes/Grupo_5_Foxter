@@ -27,7 +27,7 @@
         </section>
         <div class="main-container">
         <section>
-            <div class="container">
+            <div class="container" id="lista-productos">
                 <div class="row">
                     <div class="col-lg-8  d-flex justify-content-center align-items-center">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -36,14 +36,14 @@
                                 <% if(product.images.length > 0){
                                     product.images.forEach((element, i) => { %>
                                     <div class="carousel-item <%= (i == 0) ? 'active' : '' %>">
-                                        <img src="/images/product/<%= element.name %>" class="d-block w-100" alt="...">
+                                        <img src="/images/product/<%= element.name %>" id="imageP" class="d-block w-100 image" data-name="<%= element.name %>" alt="...">
                                     </div>
                                     <% });
                                 }%>
 
                                 <% if(product.images.length == 0){ %>
                                     <div class="carousel-item active">
-                                        <img src="/images/product/default-image.png" class="d-block w-100" alt="...">
+                                        <img src="/images/product/default-image.png" class="d-block w-100 image" alt="...">
                                     </div>
                                 <% } %>
                             </div>
@@ -66,8 +66,8 @@
 
                             <% if(product.discount>0){%>    
                                     
-                                <p class="price-discount">$ <%= product.price %></p>
-                                <p class="price">$ <%= product.price-(product.discount* (product.price/100)) %></p>
+                                <p class="price-discount">$<span><%= product.price %></span> </p>
+                                <p class="price">$ <span><%= product.price-(product.discount* (product.price/100)) %></span></p>
                           
                                 <%} 
                                 else{%>  
@@ -81,10 +81,7 @@
 
                             <div class="size">
                             <ul class="size-ul">
-                                <!-- <li class="size-li"><span>S</span> </li>
-                                <li class="size-li"><span>M</span></li>
-                                <li class="size-li"><span>L</span></li>
-                                <li class="size-li"><span>XL</span></li>  -->
+                               
 
 
 
@@ -102,30 +99,14 @@
                             <p>No hay talles disponibles</p>
 
                         <% } %>
-                                  <!-- <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="<%= product.sizes %>" name="size" disabled checked>
-                                    <label class="form-check-label" for="inlineCheckbox2">M</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="<%= product.sizes %>" name="size" disabled checked>
-                                    <label class="form-check-label" for="inlineCheckbox3">L</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="<%= product.sizes %>"  name="size" disabled checked >
-                                    <label class="form-check-label" for="inlineCheckbox4">XL</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="<%= product.sizes %>"  name="size" disabled checked >
-                                    <label class="form-check-label" for="inlineCheckbox4">XXL</label>
-                                  </div> -->
+                                 
                             </ul>
                         </div>
 
 
 
 
-                            <a href="../products/cart" class="btn btn-primary"> Agregar al
-                                carrito</a>
+                        <a href="" class="btn btn-primary agregar-carrito" data-id="<%=product.idProduct%>" > Agregar al  carrito</a>
                         </div>
                         <div class="iconos my-5">
                             <p class="my-0">Compartilo vía</p>
@@ -166,7 +147,8 @@
     </main>
 
     <%-include("../partials/footer") %>
-
+    <script src="/js/carrito.js"></script>
+    <script src="/js/pedido.js"></script>
 
 </body>
 

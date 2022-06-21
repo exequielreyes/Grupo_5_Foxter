@@ -94,13 +94,12 @@ inputs.forEach((input) => {
 
 
 formulario.addEventListener('submit' , (e) =>{
-e.preventDefault();
 
 
 const recordame = document.getElementById("recordame");
 // const datos = document.getElementById("date");
 	if(campos.nombre && campos.apellido  && campos.email && campos.password && recordame.checked ){
-		formulario.reset();
+		//formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
@@ -112,6 +111,8 @@ const recordame = document.getElementById("recordame");
 		});
 	
 	} else {
+		e.preventDefault();
+
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 
