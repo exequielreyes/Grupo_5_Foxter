@@ -26,8 +26,8 @@
             </div>
         </section>
         <div class="main-container">
-        <section>
-            <div class="container" id="lista-productos">
+        <section id="lista-productos">
+            <div class="container" >
                 <div class="row">
                     <div class="col-lg-8  d-flex justify-content-center align-items-center">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -66,12 +66,12 @@
 
                             <% if(product.discount>0){%>    
                                     
-                                <p class="price-discount">$<span><%= product.price %></span> </p>
+                                <p class="price-discount">$<%= product.price %> </p>
                                 <p class="price">$ <span><%= product.price-(product.discount* (product.price/100)) %></span></p>
                           
                                 <%} 
                                 else{%>  
-                                    <p class="price">$ <%= product.price %></p>
+                                    <p class="price">$ <span><%= product.price %></span></p>
                                  
                                     <%} %>
 

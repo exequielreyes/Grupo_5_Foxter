@@ -5,7 +5,7 @@ class Carrito {
         e.preventDefault();
         //Delegado para agregar al carrito
         if(e.target.classList.contains('agregar-carrito')){
-            const producto = e.target.parentElement.parentElement;
+            const producto = e.target.parentElement.parentElement.parentElement;
             //Enviamos el producto seleccionado para tomar sus datos
            
             this.leerDatosProducto(producto);
@@ -17,10 +17,10 @@ class Carrito {
         alert("probando")
         console.log(producto)
         const infoProducto = {
-            //imagen : producto.querySelector('img .image').src,
-            imagen: producto.querySelector('.image').getElementById("imageP").src,
-            titulo: producto.querySelector('.title').innerText,
-            precio: producto.querySelector('.price span').innerText,
+             ZXimagen : producto.querySelector('img').src,
+           // imagen: producto.querySelector('.image').getAttribute('src'),
+            titulo: producto.querySelector('.title').textContent,
+            precio: producto.querySelector('.price span').textContent,
             id: producto.querySelector('.agregar-carrito').getAttribute('data-id'),
             cantidad: 1
         }
