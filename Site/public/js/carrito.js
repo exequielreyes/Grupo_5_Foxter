@@ -14,17 +14,15 @@ class Carrito {
 
     //Leer datos del producto
     leerDatosProducto(producto){
-        alert("probando")
-        console.log(producto)
+     
         const infoProducto = {
-             ZXimagen : producto.querySelector('img').src,
-           // imagen: producto.querySelector('.image').getAttribute('src'),
+            imagen : producto.querySelector('img').src,
             titulo: producto.querySelector('.title').textContent,
             precio: producto.querySelector('.price span').textContent,
             id: producto.querySelector('.agregar-carrito').getAttribute('data-id'),
             cantidad: 1
         }
-        alert(infoProducto)
+ 
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (productoLS){
