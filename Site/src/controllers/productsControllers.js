@@ -276,7 +276,15 @@ module.exports = {
         })},
     
     carrito: (req, res) => {
+
+        // db.Product.findByPk(req.params.id, {
+        //     include: [{association: "images"}]
+        // }).then(product =>{
+           
+        // })
+
         res.render("carrito/productCart");
+
     },
    
 }
