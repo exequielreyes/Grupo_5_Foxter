@@ -35,7 +35,7 @@ function procesarCompra() {
             showConfirmButton: false,
             timer: 2000
         }).then(function () {
-            window.location = "index.html";
+            window.location = "index";
         })
     }
     else if (cliente.value === '' || correo.value === '') {

@@ -22,5 +22,5 @@ function cargarEventos(){
     document.addEventListener('DOMContentLoaded', carro.leerLocalStorage());
 
     //Enviar pedido a otra pagina
-    procesarPedidoBtn.addEventListener('click', (e)=>{carro.procesarPedido(e)});
+    procesarPedidoBtn.addEventListener('click', (e)=>{  carro.procesarPedido(e)});
 }

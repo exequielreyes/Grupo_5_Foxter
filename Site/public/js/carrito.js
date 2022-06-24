@@ -32,6 +32,7 @@ class Carrito {
         });
 
         if(productosLS === infoProducto.id){
+            alert("Probando")
             Swal.fire({
                 type: 'info',
                 title: 'Oops...',
@@ -184,8 +185,13 @@ class Carrito {
     procesarPedido(e){
         e.preventDefault();
 
+        
+        
         if(this.obtenerProductosLocalStorage().length === 0){
+            alert("probando")
             Swal.fire({
+                imageUrl:'https://letrasrecortadas.com/carritoVacio.png' ,
+                imageHeight: 200,
                 type: 'error',
                 title: 'Oops...',
                 text: 'El carrito está vacío, agrega algún producto',
@@ -194,7 +200,7 @@ class Carrito {
             })
         }
         else {
-            location.href = "compra.html";
+            location.href = "../cart";
         }
     }
 
