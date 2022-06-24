@@ -37,7 +37,9 @@ router.get("/login", guestMiddleware,userControllers.login);
 router.post("/login", userControllers.loginProcess);
 
 //Perfil de usuario
-router.get("/profile", uploadFile.single('image'), authMiddleware,userControllers.profile);
+router.get("/profile", authMiddleware,userControllers.profile);
+router.put("/editProfile/:id", uploadFile.single('avatar'), authMiddleware,userControllers.editProfile);
+
 
 // Logout
 router.get('/logout', userControllers.logout);
