@@ -59,6 +59,7 @@
                         </div>
                         
                     </div>
+
                     <div class="col-lg-4">
                         <div class="product-description">
                             <p class="title"><%= product.name %></p>
@@ -74,40 +75,33 @@
                                 else{%>  
                                     <p class="price">$ <span><%= product.price %></span></p>
                                  
-                                    <%} %>
+                              <%} %>
 
-
-
-                            <!-- <p class="price">$ <%= product.price %></p> -->
-
-                            <div class="size">
-                            <ul class="size-ul">
-                               
-
-
-
-                    <% if(product.sizes.length > 0) { %>
-
-                        <% product.sizes.forEach(size => { %> 
-                                    <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= product.sizes %>"  name="size">
-                                    <label class="form-check-label" for="inlineCheckbox1"><%= size.name %></label>
-                                    </div>
-                        <% }) %> 
-
-                       <% }else { %>
-
-                            <p>No hay talles disponibles</p>
-
-                        <% } %>
-                                 
-                            </ul>
-                        </div>
+                            <p>Selecciona un talle: </p>
+                            <div class="row pb-3">
+                                <div class="col-lg-3">
+                                    <select class="form-select form-select-sm" name="talle" id="talle">
+                                        <% if(product.sizes.length> 0) { %>
+                            
+                                            <% product.sizes.forEach(size=> { %>
+                                                <option value="<%=size.name%>">
+                                                    <%=size.name%>
+                                                </option>
+                                                <% }) %>
+                            
+                                                    <% }else { %>
+                            
+                                                        <option>No hay talles disponibles</option>
+                            
+                                                        <% } %>
+                                    </select>
+                                </div>
+                            </div>
 
 
 
 
-                        <a href="" class="btn btn-primary agregar-carrito" data-id="<%=product.idProduct%>" > Agregar al  carrito</a>
+                            <a href="" class="btn btn-primary agregar-carrito" data-id="<%=product.idProduct%>" > Agregar al  carrito</a>
                         </div>
                         <div class="iconos my-5">
                             <p class="my-0">Compartilo vía</p>
