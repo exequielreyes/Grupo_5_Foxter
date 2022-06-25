@@ -63,6 +63,7 @@ module.exports = {
         password: bcryptjs.hashSync(req.body.password, 10),
         email: req.body.email,
         remember: req.body.recordame,
+       
       })
       .then((data) => { 
         return res.redirect("/");
