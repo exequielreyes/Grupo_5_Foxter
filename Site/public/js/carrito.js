@@ -155,27 +155,70 @@ class Carrito {
 
     //Mostrar los productos guardados en el LS en compra.html
     leerLocalStorageCompra() {
-        // console.log(productosLS);
         let productosLS;
+        //alert("hola")
         productosLS = this.obtenerProductosLocalStorage();
+        let subtotal=0;
         productosLS.forEach(function (producto) {
-            const row = document.createElement('tr');
+            const row = document.createElement('article');
             row.innerHTML = `
-                <td>
-                    <img src="${producto.imagen}" width=100>
-                </td>
-                <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
-                <td>
-                    <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
-                </td>
-                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
-                <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
-                </td>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="${producto.imagen}" class="img-fluid rounded-start"
+                    alt="${producto.titulo}" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="titulo-producto">
+                      <h5 class="card-title"> ${producto.titulo} </h5>
+                      <div>
+                        <i class="fas fa-edit"></i>
+                    <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt"></i></a>
+
+                        
+                      </div>
+                    </div>
+                    <p class="card-text">
+                    <p>Talle: ${producto.talle}</p>
+
+                    </p>
+
+                    <div class="container-cantidad-precio">
+                      <div class="container-cantidad-productos">
+                        <label class="cantidad-productos">Cantidad</label>
+                        <select name="cantidad">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                      <div class="container-precio">
+                        <label class="precio-total">Total</label>
+                        <p class="precio-product">${producto.precio}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+               
             `;
+         
+            subtotal=subtotal+(producto.precio*producto.cantidad);
+
             listaCompra.appendChild(row);
         });
+      
+       
+        document.getElementById('subtotall').innerHTML=subtotal;
+        document.getElementById('total').innerHTML=subtotal+200;
+
+
     }
 
     //Eliminar producto por ID del LS

@@ -1,218 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-   
-  <%-include("../partials/head", {title: "Carrito", css:"productCart.css"}) %>
- 
-  
+
+<%-include("../partials/head", {title: "Carrito" , css:"productCart.css"}) %>
+
+
   <body>
-   
+
     <%-include("../partials/header") %>
 
-    <main>
+      <main>
 
-      <div class="container-title">
-        <div class="titulo-carrito">
-          <h1>Mi Carrito</h1>
-        </div>
-        <div class="seguir-comprando">
-          <a class="link-seguir-comprando" href="/">Seguir Comprando </a>
-        </div>
-      </div>
-
-
-      <div class="main-container">
-
-       <div class="container-articles">
-       
-    <article>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="/images/product/default-image.png"
-              class="img-fluid rounded-start"
-              alt="Buzo Lotto Strike"
-            />
+        <div class="container-title">
+          <div class="titulo-carrito">
+            <h1>Mi Carrito</h1>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-            <div class="titulo-producto">
-              <h5 class="card-title"> Buzo Lotto Strike  </h5> 
-              <div>
-                <i class="fas fa-edit"></i>
-               <i class="fas fa-trash-alt"></i>
-              </div>
+          <div class="seguir-comprando">
+            <a class="link-seguir-comprando" href="/">Seguir Comprando </a>
+          </div>
+        </div>
+
+
+        <div class="main-container" id="lista">
+          
+          
+
+          <div class="container-articles" id="lista-productos">
+
+           
+
+          </div>
+
+
+
+
+          <div class="container-resumen">
+            <div class="titulo-envio">
+              <h3>Calculá el costo de envío</h3>
             </div>
-              <p class="card-text">
-                <p>Talle: L</p>
-                <p>Item No. NI_CW3411-006</p>
-                
-              </p>
-              
-                <div class="container-cantidad-precio">
-                  <div class="container-cantidad-productos">
-                    <label class="cantidad-productos">Cantidad</label>
-                    <select name="cantidad">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
-                  <div class="container-precio">
-                    <label class="precio-total">Total</label>
-                    <p class="precio-product">$3000</p>
-                  </div>
-                </div>
+
+            <div class="container-envio">
+              <form action="#" method="GET" class="calcular-envio">
+                <input type="text" placeholder="Codigo Postal" class="input-calcular-envio">
+
+                <button type="submit" class="btn-envio">Calcular</button>
+              </form>
+            </div>
+
+            <div class="titulo-pedido">
+              <h3>Resumen de pedido</h3>
+            </div>
+
+            <div class="container-pedido">
+              <div class="subtotal" >
+                <p>Subtotal</p>
+                <p> $ <span id="subtotall"></span></p>
               </div>
+              <div class="envio">
+                <p>Envio desde</p>
+                <p>$200</p>
+              </div>
+              <div class="total">
+                <p>Total</p>
+                <p> $ <span id="total"></span></p>
+
+              </div>
+
+              <button type="submit" class="btn-comprar">Comprar</button>
+            </div>
           </div>
-          </div>
-      </div>
-         </article> 
-         
-
-
-         <article>
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  src="/images/product/3.jpg"
-                  class="img-fluid rounded-start"
-                  alt="Buzo Lotto Strike"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                <div class="titulo-producto">
-                  <h5 class="card-title">Buzo Lotto Strike</h5> 
-                  <div>
-                    <i class="fas fa-edit"></i>
-                   <i class="fas fa-trash-alt"></i>
-                  </div>
-                </div>
-                  <p class="card-text">
-                    <p>Talle: L</p>
-                    <p>Item No. NI_CW3411-006</p>
-                    
-                  </p>
-                  
-                    <div class="container-cantidad-precio">
-                      <div class="container-cantidad-productos">
-                        <label class="cantidad-productos">Cantidad</label>
-                        <select name="cantidad">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="container-precio">
-                        <label class="precio-total">Total</label>
-                        <p class="precio-product">$3000</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-          </div>
-             </article> 
-
-             <article>
-              <div class="card mb-3">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="/images/product/2.jpg"
-                      class="img-fluid rounded-start"
-                      alt="Buzo Lotto Strike"
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                    <div class="titulo-producto">
-                      <h5 class="card-title">Buzo Lotto Strike</h5> 
-                      <div>
-                        <i class="fas fa-edit"></i>
-                       <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                      <p class="card-text">
-                        <p>Talle: L</p>
-                        <p>Item No. NI_CW3411-006</p>
-                        
-                      </p>
-                      
-                        <div class="container-cantidad-precio">
-                          <div class="container-cantidad-productos">
-                            <label class="cantidad-productos">Cantidad</label>
-                            <select name="cantidad">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                            </select>
-                          </div>
-                          <div class="container-precio">
-                            <label class="precio-total">Total</label>
-                            <p class="precio-product">$3000</p>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  </div>
-              </div>
-                 </article> 
-
-       </div>
-  
-
-
-
-        <div class="container-resumen">
-      <div class="titulo-envio">
-        <h3>Calculá el costo de envío</h3>
-      </div>
-
-      <div class="container-envio">
-        <form action="#" method="GET" class="calcular-envio">
-        <input type="text" placeholder="Codigo Postal" class="input-calcular-envio">
-        
-        <button type="submit" class="btn-envio">Calcular</button>
-        </form>
-      </div>
-
-      <div class="titulo-pedido">
-        <h3>Resumen de pedido</h3>
-      </div>
-
-      <div class="container-pedido">
-        <div class="subtotal">
-          <p>Subtotal</p>
-          <p>$3000</p>
-        </div>
-        <div class="envio">
-          <p>Envio desde</p>
-          <p>$1</p>
-        </div>
-        <div class="total">
-          <p>Total</p>
-          <p>$11.000</p>
         </div>
 
-        <button type="submit" class="btn-comprar">Comprar</button>
-      </div>
-     </div>
-      </div>
+      </main>
 
-  </main>
-
-  <%-include("../partials/footer") %>
-  <script src="/js/carrito.js"></script>
-  <script src="/js/pedido.js"></script>
+      <%-include("../partials/footer") %>
+      <script src="/js/compra.js"></script>
 
   </body>
+
 </html>

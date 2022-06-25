@@ -1,5 +1,5 @@
 const compra = new Carrito();
-const listaCompra = document.querySelector("#lista-compra tbody");
+const listaCompra = document.querySelector("#lista-productos");
 const carrito = document.getElementById('carrito');
 const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('cliente');
