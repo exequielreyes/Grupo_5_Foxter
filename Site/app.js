@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const webRoutes = require('./src/routes/webRoutes');
 const productsRoutes = require('./src/routes/productsRoutes');
+const apiProductsRoutes = require('./src/routes/api/productsRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const methodOverride =  require('method-override');
 const session = require('express-session');
@@ -39,6 +40,9 @@ app.use(express.static(pathStatic));
 app.use('/' ,webRoutes);
 app.use('/products' ,productsRoutes);
 app.use('/user' ,userRoutes);
+
+app.use('/api/products' ,apiProductsRoutes);
+
 
 
 // ******* Error 404*********
