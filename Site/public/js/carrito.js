@@ -74,14 +74,35 @@ class Carrito {
     //Eliminar el producto del carrito en el DOM
     eliminarProducto(e) {
         e.preventDefault();
+   
+        let producto, productoID;
+        if (e.target.parentElement.classList.contains('borrar-producto')) {
+             e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+            producto = e.target.parentElement.parentElement;
+         
+            productoID = producto.querySelector('a').getAttribute('data-id');
+       
+
+            this.eliminarProductoLocalStorage(productoID);
+        }
+        this.calcularTotal();
+
+    }
+    //Eliminar el producto del carrito en el DOM
+    eliminarProductoArriba(e) {
+        e.preventDefault();
+   
         let producto, productoID;
         if (e.target.classList.contains('borrar-producto')) {
-            e.target.parentElement.parentElement.remove();
+             e.target.parentElement.parentElement.remove();
             producto = e.target.parentElement.parentElement;
+         
             productoID = producto.querySelector('a').getAttribute('data-id');
+       
+
+            this.eliminarProductoLocalStorage(productoID);
         }
-        this.eliminarProductoLocalStorage(productoID);
-        this.calcularTotal();
+        //this.calcularTotal();
 
     }
 
@@ -133,7 +154,7 @@ class Carrito {
 
         }
         else {
-        listaProductos.innerHTML="";
+            listaProductos.innerHTML="";
 
             productosLS.forEach(function (producto) {
                 //Construir plantilla
@@ -156,28 +177,25 @@ class Carrito {
     //Mostrar los productos guardados en el LS en compra.html
     leerLocalStorageCompra() {
         let productosLS;
-        //alert("hola")
         productosLS = this.obtenerProductosLocalStorage();
-        let subtotal=0;
+     
         productosLS.forEach(function (producto) {
             const row = document.createElement('article');
             row.innerHTML = `
-            <div class="card mb-3">
+            <div class="card mb-3" id="product">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="${producto.imagen}" class="img-fluid rounded-start"
+                  <img src="${producto.imagen}"  class="img-fluid rounded-start"
                     alt="${producto.titulo}" />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <div class="titulo-producto">
                       <h5 class="card-title"> ${producto.titulo} </h5>
-                      <div>
+                     
                         <i class="fas fa-edit"></i>
-                    <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt"></i></a>
-
-                        
-                      </div>
+                        <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt"></i></a>                        
+                     
                     </div>
                     <p class="card-text">
                     <p>Talle: ${producto.talle}</p>
@@ -187,13 +205,7 @@ class Carrito {
                     <div class="container-cantidad-precio">
                       <div class="container-cantidad-productos">
                         <label class="cantidad-productos">Cantidad</label>
-                        <select name="cantidad">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
+                        <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                       </div>
                       <div class="container-precio">
                         <label class="precio-total">Total</label>
@@ -209,20 +221,20 @@ class Carrito {
                
             `;
          
-            subtotal=subtotal+(producto.precio*producto.cantidad);
+           
 
             listaCompra.appendChild(row);
         });
       
        
-        document.getElementById('subtotall').innerHTML=subtotal;
-        document.getElementById('total').innerHTML=subtotal+200;
+        this.calcularTotal();
 
 
     }
 
     //Eliminar producto por ID del LS
     eliminarProductoLocalStorage(productoID) {
+       
         let productosLS;
         //Obtenemos el arreglo de productos
         productosLS = this.obtenerProductosLocalStorage();
@@ -265,46 +277,51 @@ class Carrito {
             })
         }
         else {
-            location.href = "../cart";
+            location.href = "/products/cart";
         }
     }
 
     //Calcular montos
-    calcularTotal() {
+    calcularTotal(){
         let productosLS;
-        let total = 0, igv = 0, subtotal = 0;
+        let total = 0, totals = 0, subtotal = 0;
         productosLS = this.obtenerProductosLocalStorage();
-        for (let i = 0; i < productosLS.length; i++) {
+        for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
             total = total + element;
-
+            
         }
+        
+        subtotal = parseFloat(total).toFixed(2);
+         totals=parseFloat(total+200).toFixed(2);
 
-        igv = parseFloat(total * 0.18).toFixed(2);
-        subtotal = parseFloat(total - igv).toFixed(2);
-
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
+        document.getElementById('subtotal').innerHTML = subtotal;
+        document.getElementById('total').innerHTML = totals;
     }
 
+   
     obtenerEvento(e) {
+       
         e.preventDefault();
         let id, cantidad, producto, productosLS;
         if (e.target.classList.contains('cantidad')) {
-            producto = e.target.parentElement.parentElement;
+
+            producto = e.target.parentElement.parentElement.parentElement;
+            
             id = producto.querySelector('a').getAttribute('data-id');
             cantidad = producto.querySelector('input').value;
-            let actualizarMontos = document.querySelectorAll('#subtotales');
+           let actualizarMontos = document.querySelectorAll('.precio-product');
             productosLS = this.obtenerProductosLocalStorage();
             productosLS.forEach(function (productoLS, index) {
                 if (productoLS.id === id) {
-                    productoLS.cantidad = cantidad;
-                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
+                    productoLS.cantidad = Number(cantidad);
+                    actualizarMontos[index].innerHTML = cantidad * productosLS[index].precio;
                 }
+            
+
             });
             localStorage.setItem('productos', JSON.stringify(productosLS));
-
+            this.calcularTotal();
         }
         else {
             console.log("click afuera");

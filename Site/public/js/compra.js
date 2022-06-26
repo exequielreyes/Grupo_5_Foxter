@@ -9,17 +9,18 @@ const correo = document.getElementById('correo');
 cargarEventos();
 
 function cargarEventos() {
+   
     document.addEventListener('DOMContentLoaded', compra.leerLocalStorageCompra());
 
     //Eliminar productos del carrito
-    carrito.addEventListener('click', (e) => { compra.eliminarProducto(e) });
+    document.getElementById('product').addEventListener('click', (e) => {  compra.eliminarProducto(e) });
 
     compra.calcularTotal();
 
     //cuando se selecciona procesar Compra
-    procesarCompraBtn.addEventListener('click', procesarCompra);
+    //procesarCompraBtn.addEventListener('click', procesarCompra);
 
-    carrito.addEventListener('change', (e) => { compra.obtenerEvento(e) });
+    document.getElementById('product').addEventListener('change', (e) => { compra.obtenerEvento(e) });
     carrito.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
 
 

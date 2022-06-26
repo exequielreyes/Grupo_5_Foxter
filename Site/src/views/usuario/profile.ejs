@@ -122,6 +122,8 @@
 
 
 <%-include("../partials/footer") %>
+<script src="/js/pedido.js"></script>
+
 <script>
     function archivo(evt) {
         let files = evt.target.files; // FileList object
@@ -148,5 +150,6 @@
    
     document.getElementById('btn_enviar').addEventListener('change', archivo, false);
 </script>
+
 </body>
 </html>
