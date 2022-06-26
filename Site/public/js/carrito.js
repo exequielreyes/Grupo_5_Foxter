@@ -48,12 +48,7 @@ class Carrito {
     }
 
     //muestra producto seleccionado en carrito
-<<<<<<< HEAD
-    insertarCarrito(producto){
-        // const tomando = document.querySelector("h6").innerHTML = `${producto.titulo}`
-=======
     insertarCarrito(producto) {
->>>>>>> bda92f3f8a6db67f965a4d94f1e14874137dc7b4
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
