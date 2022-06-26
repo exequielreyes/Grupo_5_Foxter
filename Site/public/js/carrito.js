@@ -185,15 +185,13 @@ class Carrito {
             <div class="card mb-3" id="product">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="${producto.imagen}"  class="img-fluid rounded-start"
+                  <img src="${producto.imagen}"  class="img-fluid w-50 rounded-start"
                     alt="${producto.titulo}" />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <div class="titulo-producto">
                       <h5 class="card-title"> ${producto.titulo} </h5>
-                     
-                        <i class="fas fa-edit"></i>
                         <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt"></i></a>                        
                      
                     </div>
