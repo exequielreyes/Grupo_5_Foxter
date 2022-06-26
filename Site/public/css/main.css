@@ -127,11 +127,13 @@ text-decoration: none;
   color: #495057;
   cursor: pointer;
 }
-
-
-
-
-
+#carrito{
+  left: -230px;
+    z-index: 2000;
+}
+.nav-link{
+  padding: 0;
+}
 @media (min-width: 480px){
   h1.text-white{
     display: block !important;
@@ -146,3 +148,4 @@ text-decoration: none;
   }
   
 }
+
