@@ -41,16 +41,16 @@
          
 
         <div class="col-lg-3">
-          <div class="iconos d-flex justify-content-end">
+          <div class="iconos d-flex justify-content-end  icon-center">
             <% if(locals.isLogged) { %>   
             <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle p-0 px-3 text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                 <%= locals.userLogged.name %>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu nav-drop" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/user/login">Mi Perfil</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/user/logout">Logout</a>
+                <a class="dropdown-item" href="/user/logout">Cerrar Session</a>
               </div>
             </li>
             <% } else { %>
@@ -60,7 +60,7 @@
               </a>
               <%} %>
            
-            <li class="nav-item dropdown">
+            <li class="nav-item nav-edit dropdown">
               <i class="fas fa-cart-arrow-down nav-link dropdown-toggle img-fluid" 
                   width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false"></i>
@@ -77,8 +77,8 @@
                       <tbody></tbody>
                   </table>
 
-                  <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                  <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                  <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block btn-editado">Vaciar Carrito</a>
+                  <a href="#" id="procesar-pedido" class="btn btn-danger btn-block btn-editado">Procesar
                       Compra</a>
               </div>
           </li>

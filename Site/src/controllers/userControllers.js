@@ -4,6 +4,7 @@ const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require('../database/models');
+const { use } = require("../routes/userRoutes");
 
 
 module.exports = {
@@ -63,7 +64,7 @@ module.exports = {
         password: bcryptjs.hashSync(req.body.password, 10),
         email: req.body.email,
         remember: req.body.recordame,
-       
+        avatar: "default-image-user.png"
       })
       .then((data) => { 
         return res.redirect("/");
@@ -134,7 +135,42 @@ module.exports = {
 
   profile: (req, res) => {
     res.render("usuario/profile", {user: req.session.userLogged});
+    
+    // let userToEdit = db.User.findByPk(req.params.id)
+
+    // Promise.all([userToEdit, user])
+    // .then(([userToEdit, user])=> {
+
+    // })
+
   },
+
+  editProfile: (req,res) => {
+    
+    db.User.update({
+      name: req.body.name,
+      lastName: req.body.lastName,
+      avatar: req.file.filename
+},{
+where: {idUser: req.params.id}
+}).then(()=>{
+  res.clearCookie('userEmail');
+  req.session.destroy();
+  return res.redirect('/');
+})
+
+
+//  db.User.update({
+//   name: req.body.name,
+//   lastName: req.body.lastName
+// },{
+//             where: {idUser: req.params.id}
+//            }).then((data) => { 
+//   return res.redirect("usuario/profile");
+// })
+
+},
+
 
   listar: (req, res) => {
     db.User.findAll(

@@ -6,6 +6,8 @@ const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
 
 
+
+
 cargarEventos();
 
 function cargarEventos() {

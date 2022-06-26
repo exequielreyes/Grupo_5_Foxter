@@ -128,6 +128,10 @@ text-decoration: none;
   cursor: pointer;
 }
 
+
+
+
+
 @media (min-width: 480px){
   h1.text-white{
     display: block !important;
