@@ -59,29 +59,30 @@
                 
               </a>
               <%} %>
-           
-            <li class="nav-item dropdown">
-              <i class="fas fa-cart-arrow-down nav-link dropdown-toggle img-fluid" 
-                  width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false"></i>
-              <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle p-0 px-3 text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-cart-arrow-down"></i>
+                </a>
+                <div  id="carrito" class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <table id="lista-carrito" class="table">
-                      <thead>
-                          <tr>
-                              <th>Imagen</th>
-                              <th>Nombre</th>
-                              <th>Precio</th>
-                              <th></th>
-                          </tr>
-                      </thead>
-                      <tbody></tbody>
-                  </table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
 
-                  <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                  <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                      Compra</a>
-              </div>
-          </li>
+                <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar </a>
+                <a href="#" id="procesar-pedido" class="btn btn-success btn-block">Comprar</a>
+                </div>
+              </li>
+              
+           
           </div>
         </div>
          
@@ -89,7 +90,7 @@
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+  <nav class="navbar navbar-expand-lg navbar-light bg-purple py-3">
     <div class="container-fluid text-center">
       <div
         class="collapse navbar-collapse d-flex justify-content-center align-items-cente"
