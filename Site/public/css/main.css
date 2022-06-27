@@ -130,10 +130,43 @@ text-decoration: none;
 #carrito{
   left: -230px;
     z-index: 2000;
+    margin-top: 6px;
 }
 .nav-link{
   padding: 0;
 }
+
+/* -----------------Carrito---------------- */
+
+.fas.fa-user.me-3.icon-navBar, .fas.fa-shopping-cart.icon-navBar, .fa-cart-arrow-down:before {
+  margin-top: 0px !important;
+  }
+  
+   
+  .icon-center{
+display: contents;
+margin-top: 6px;
+  }
+
+.btn-editado{
+  padding: .375rem 1.50rem !important;
+  margin-left: 8px;
+  }
+
+
+  /* ---------------Usuario----------------- */
+  .item-user{
+display: flex !important;
+align-items: center !important;
+margin-right: -16px;
+  }
+
+ .drop-user{
+  margin-top: 131px;
+  margin-left: -33px !important;
+}
+
+
 @media (min-width: 480px){
   h1.text-white{
     display: block !important;
