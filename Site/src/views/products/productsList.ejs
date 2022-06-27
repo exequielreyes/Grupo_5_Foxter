@@ -18,13 +18,13 @@
                     <div class="col-lg-12 my-3">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">inicio</a></li>
-                                <li class="breadcrumb-item " aria-current="page"><a href="/products/">Productos</a></li>
+                                <li class="breadcrumb-item color-texto"><a href="/">Inicio</a></li>
+                                <li class="breadcrumb-item color-texto " aria-current="page"><a href="/products/">Productos</a></li>
                                 <% if(locals.category){ %>
-                                <li class="breadcrumb-item " aria-current="page"><a href="/products/<%=category%>"><%=category%></a></li>
+                                <li class="breadcrumb-item color-texto" aria-current="page"><a href="/products/<%=category%>"><%=category%></a></li>
                                 <% } %>
                                 <% if(locals.categorySex){ %>
-                                    <li class="breadcrumb-item " aria-current="page"><a href="/products/<%=category+"/"+categorySex%>"<%=categorySex%></a></li>
+                                    <li class="breadcrumb-item color-texto" aria-current="page"><a href="/products/<%=category+"/"+categorySex%>"<%=categorySex%></a></li>
                                     <% } %>
                             </ol>
                         </nav>
@@ -37,25 +37,25 @@
                         <div class="row">
                            
                             <p class="h5">Tipos de Productos</p>
-                            <a href="/products/"><i class="<%= !locals.category ? 'fas fa-square' : 'far fa-square' %>"> </i> Todos</a>
-                            <a href="/products/Remera"><i class="<%= locals.category && category=="Remera" ? 'fas fa-square' : 'far fa-square' %>"> </i> Remeras</a>
-                            <a href="/products/Musculosa"><i class="<%= locals.category && category=="Musculosa" ? 'fas fa-square' : 'far fa-square' %>"> </i> Musculosas</a>
-                            <a href="/products/Pantalon"><i class="<%= locals.category && category=="Pantalon" ? 'fas fa-square' : 'far fa-square' %>"> </i> Pantalones</a>
-                            <a href="/products/Campera"><i class="<%= locals.category && category=="Campera" ? 'fas fa-square' : 'far fa-square' %>"> </i> Camperas</a>
-                            <a href="/products/Short"><i class="<%= locals.category && category=="Short" ? 'fas fa-square' : 'far fa-square' %>"> </i> Shorts</a>
-                            <a href="/products/Buzo"><i class="<%= locals.category && category=="Buzo" ? 'fas fa-square' : 'far fa-square' %>"> </i> Buzos</a>
-                            <a href="/products/Calza"><i class="<%= locals.category && category=="Calza" ? 'fas fa-square' : 'far fa-square' %>"> </i> Calzas</a>
-                            <a href="/products/Malla"><i class="<%= locals.category && category=="Malla" ? 'fas fa-square' : 'far fa-square' %>"> </i> Mallas</a>
+                            <a href="/products/"><i class="<%= !locals.category ? 'fas fa-check-square' : 'far fa-square' %> "> </i> Todos</a>
+                            <a href="/products/Remera"><i class="<%= locals.category && category=="Remera" ? 'fas fa-check-square' : 'far fa-square' %> "> </i> Remeras</a>
+                            <a href="/products/Musculosa"><i class="<%= locals.category && category=="Musculosa" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Musculosas</a>
+                            <a href="/products/Pantalon"><i class="<%= locals.category && category=="Pantalon" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Pantalones</a>
+                            <a href="/products/Campera"><i class="<%= locals.category && category=="Campera" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Camperas</a>
+                            <a href="/products/Short"><i class="<%= locals.category && category=="Short" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Shorts</a>
+                            <a href="/products/Buzo"><i class="<%= locals.category && category=="Buzo" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Buzos</a>
+                            <a href="/products/Calza"><i class="<%= locals.category && category=="Calza" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Calzas</a>
+                            <a href="/products/Malla"><i class="<%= locals.category && category=="Malla" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Mallas</a>
                           
                              
                         </div>
                         <div class="row">
                             <% if(locals.category){ %>
-                            <p class="h5">Género</p>
-                            <a href="/products/<%=category%>"><i class="<%= !locals.categorySex  ? 'fas fa-square' : 'far fa-square' %>"> </i> Todos</a>
-                            <a href="/products/<%=category%>/Hombre"><i class="<%= locals.categorySex && categorySex=="Hombre" ? 'fas fa-square' : 'far fa-square' %>"> </i> Hombre</a>
-                            <a href="/products/<%=category%>/Mujer"><i class="<%= locals.categorySex && categorySex=="Mujer" ? 'fas fa-square' : 'far fa-square' %>"> </i> Mujer</a>
-                            <a href="/products/<%=category%>/Unisex"><i class="<%= locals.categorySex && categorySex=="Unisex" ? 'fas fa-square' : 'far fa-square' %>"> </i> Unisex</a>
+                            <p class="h5 title-genre">Género</p>
+                            <a href="/products/<%=category%>"><i class="<%= !locals.categorySex  ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Todos</a>
+                            <a href="/products/<%=category%>/Hombre"><i class="<%= locals.categorySex && categorySex=="Hombre" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Hombre</a>
+                            <a href="/products/<%=category%>/Mujer"><i class="<%= locals.categorySex && categorySex=="Mujer" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Mujer</a>
+                            <a href="/products/<%=category%>/Unisex"><i class="<%= locals.categorySex && categorySex=="Unisex" ? 'fas fa-check-square' : 'far fa-square' %>"> </i> Unisex</a>
                             
                            <% } %>
                              

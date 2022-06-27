@@ -22,6 +22,20 @@
   justify-content: space-between;
 }
 
+
+.imagen-centrada{
+  margin: auto ;
+}
+
+.icono-borrar{
+    transition: transform .2s; 
+}
+ 
+.icono-borrar:hover {
+    transform: scale(1.5); 
+}
+
+
 .mb-3 {
   margin: 15px;
 }

@@ -184,7 +184,7 @@ class Carrito {
             row.innerHTML = `
             <div class="card mb-3" id="product">
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-4 imagen-centrada">
                   <img src="${producto.imagen}"  class="img-fluid w-50 rounded-start"
                     alt="${producto.titulo}" />
                 </div>
@@ -192,7 +192,7 @@ class Carrito {
                   <div class="card-body">
                     <div class="titulo-producto">
                       <h5 class="card-title"> ${producto.titulo} </h5>
-                        <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt"></i></a>                        
+                        <a href="#" class="borrar-producto"  data-id="${producto.id}"><i class="fas fa-trash-alt icono-borrar"></i></a>                        
                      
                     </div>
                     <p class="card-text">

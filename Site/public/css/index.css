@@ -22,11 +22,15 @@ color: #111 !important;
 }
 /* -------------- */
 
+/* /--------Lista de producto----------- */
+.color-texto a{
+    color: #666;
+}
+.title-genre{
+    margin-top: 12px;
+}
 
-
-
-
-
+/* -------------- */
 
 
 
