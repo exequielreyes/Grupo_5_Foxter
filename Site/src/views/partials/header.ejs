@@ -43,11 +43,11 @@
         <div class="col-lg-3">
           <div class="iconos d-flex justify-content-end  icon-center">
             <% if(locals.isLogged) { %>   
-            <li class="nav-item dropdown ">
+            <li class="nav-item dropdown item-user ">
               <a class="nav-link dropdown-toggle p-0 px-3 text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                 <%= locals.userLogged.name %>
               </a>
-              <div class="dropdown-menu nav-drop" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu nav-drop drop-user" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/user/login">Mi Perfil</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/user/logout">Cerrar Session</a>
@@ -59,8 +59,8 @@
                 
               </a>
               <%} %>
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle p-0 px-3 text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item dropdown  ">
+                <a class="nav-link dropdown-toggle p-0 px-3 text-white icon-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-cart-arrow-down"></i>
                 </a>
                 <div  id="carrito" class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -77,8 +77,8 @@
                     </tbody>
                 </table>
 
-                <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar </a>
-                <a href="#" id="procesar-pedido" class="btn btn-success btn-block">Comprar</a>
+                <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block btn-editado">Vaciar </a>
+                <a href="#" id="procesar-pedido" class="btn btn-success btn-block btn-editado">Comprar</a>
                 </div>
               </li>
               

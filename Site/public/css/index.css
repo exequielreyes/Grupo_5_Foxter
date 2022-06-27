@@ -4,9 +4,32 @@
 } */
 
 
+/* -----------Precio minimo----------- */
 .bg-dark.p-3.ofert{
-    background-color: #706B6B !important;
+    /* background-color: #706B6B !important; */
+box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+  transition: all 454ms; 
+  background-color: rgba(255, 255, 255, 0.418) !important;
 }
+
+.bg-dark.p-3.ofert:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
+}
+
+.text-color{
+color: #111 !important;
+}
+/* -------------- */
+
+
+
+
+
+
+
+
+
 
 
 #ofertas .h4,
@@ -88,6 +111,7 @@ body{
 .price.text-center{
     text-align: left !important;
     margin-left: 12px;
+   
 }
 
 
