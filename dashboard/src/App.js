@@ -1,4 +1,8 @@
-import './App.css';
+// import './App.css';
+// import './styles/ContenRow.css';
+
+import './assets/css/app.css';
+
 import SideBar from './components/SideBar';
 import ContentWrapper from './components/ContentWrapper';
 
@@ -6,7 +10,7 @@ import ContentWrapper from './components/ContentWrapper';
 
 function App() {
   return (
-    <div>
+    <div id="wrapper">
         <SideBar />
         <ContentWrapper/>
     </div>

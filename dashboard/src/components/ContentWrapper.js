@@ -1,11 +1,7 @@
 import React from "react";
-// import TopBar from "./TopBar";
-// import ContenRowTop from "./ContenRowTop";
+import TopBar from "./TopBar";
+import ContenRowTop from "./ContenRowTop";
 import Footer from "./Footer";
-
-
-
-
 function ContentWrapper(){
     return(
        
@@ -13,9 +9,9 @@ function ContentWrapper(){
 
 			
 			<div id="content">
-                {/* <TopBar/> */}
+                <TopBar/>
             
-                {/* <ContenRowTop/> */}
+                <ContenRowTop/>
                 
                 <Footer/>                   
                    

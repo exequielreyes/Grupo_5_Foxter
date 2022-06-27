@@ -1,4 +1,5 @@
 import React from "react";
+// import logo from '../assets/img/logo-DH.png';
 
 function Footer(){
     return(
@@ -8,6 +9,12 @@ function Footer(){
 						<span>Copyright &copy; Dashboard 2020</span>
 					</div>
 				</div>
+
+				
+
+
+
+
 		</footer>
 
     );
