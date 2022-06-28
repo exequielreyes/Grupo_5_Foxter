@@ -1,20 +1,13 @@
 import React from "react";
-// import logo from '../assets/img/logo-DH.png';
 
 function Footer(){
     return(
         <footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Dashboard 2020</span>
+						<span>Copyright &copy; Dashboard 2022</span>
 					</div>
 				</div>
-
-				
-
-
-
-
 		</footer>
 
     );

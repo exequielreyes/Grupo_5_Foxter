@@ -1,24 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react"
 
-function ProductList({products}) {
-
-    // const [data, setData] = useState([]);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const res = await fetch(
-    //             "http://localhost:3000/api/products",
-    //         );
-    //         const data = await res.json();
-    //         setData(data.products);        
-    //     };
-    //     fetchData();
-    // }, []);
-
-    console.log(products);
+function ProductList({products, users}) {
 
     return (
+        <>
         <div className="col-lg-6 mb-4 ">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
@@ -35,9 +20,27 @@ function ProductList({products}) {
                     </ul>
                 </div>
             </div>
+            </div>
+
+        <div className="col-lg-6 mb-4 ">
+
+            <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
+                </div>
+                <div className="card-body">
+                    <ul>
+                        {users.users !== undefined && users.users.map(item => (
+                            
+                            <li key={item.idUser}>
+                                <p> Nombre: {item.name} | Apellido: {item.lastName} | Email: {item.email} </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
-
-
+</>
     );
 }
 
