@@ -2,6 +2,7 @@
 <html lang="es">
 
 <%-include("./partials/head", {title: 'Inicio' , css:'index.css'}) %>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
     <body>
@@ -144,6 +145,59 @@
                     </div>
                 </section>
             </main>
+
+
+        <div class="button-end" >
+            <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                
+                <i class="far fa-comments-alt icon-mesage"></i>
+  </button>
+        </div>
+    
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-pos">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Contactanos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+
+          <form class="formularioPerfil"  action="https://formspree.io/f/mgedbdwy"
+                          method="POST">
+
+           
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label>
+              <input type="text" name="Nombre" class="form-control" id="exampleFormControlInput1" >
+
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email </label>
+              <input type="email" name="Email" class="form-control" id="exampleFormControlInput1" >
+            </div>
+
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label ">Mensaje </label>
+            
+            <textarea name="message" id="exampleFormControlInput1" class="form-control text-edit" cols="2" rows="2"></textarea>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
 
             <%-include("./partials/footer") %>
              <script src="/js/pedido.js"></script>
