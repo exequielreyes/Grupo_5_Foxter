@@ -1,15 +1,14 @@
 const { body } = require('express-validator');
 const path = require('path');
 
-const validations= [
+const validationsEditP= [
     body('name').notEmpty().withMessage('Debe completar este campo').bail()
     .isLength({min: 5 }).withMessage('El campo nombre debe tener al menos 5 caracteres'),
 
     body('description').notEmpty().withMessage('Debe completar este campo').bail()
     .isLength({min: 20 }).withMessage('El campo descripción debe tener al menos 20 caracteres'),
 
-    // body('price').notEmpty().withMessage('Debe completar este campo').bail()
-    // .isNumeric().isLength({min: 5 }).withMessage('Debe ser mayor a 0'),
+   
 
     body('image').custom((value , {req})=>{
         let files = req.files;
@@ -42,4 +41,4 @@ const validations= [
     })
    
 ]
-module.exports =  validations;
+module.exports =  validationsEditP;

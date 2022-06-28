@@ -207,6 +207,7 @@ module.exports = {
         let categorias = db.Category.findAll();
         let sexCategorias = db.sexCategory.findAll()
         let saleCategorias = db.saleCategory.findAll()
+        
         let productToEdit = db.Product.findByPk(req.params.id ,{
                 include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]});
         Promise.all([sizes, categorias, sexCategorias, saleCategorias,productToEdit ])
@@ -220,6 +221,7 @@ module.exports = {
     actualizarProducto: (req , res) => {
     let images=[]
     for (i in req.files) {images.push({'name':req.files[i].filename}) }  
+    
         db.Product.update({
                     name: req.body.name,
                     price: req.body.price,
@@ -228,6 +230,7 @@ module.exports = {
                     description: req.body.description,
                     idSexCategory: req.body.sexCategory,
                     idSaleCategory: req.body.saleCategory,
+                    images:images,
            },{
             where: {idProduct: req.params.id}
            }).then(()=>{

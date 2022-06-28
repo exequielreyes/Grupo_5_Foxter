@@ -46,6 +46,7 @@ module.exports = {
                     products:prodAPi
                 }
                 res.json(respuesta);
+                console.log(respuesta);
             })
 
     },

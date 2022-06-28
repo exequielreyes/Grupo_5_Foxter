@@ -5,6 +5,8 @@ const multer= require('multer');
 const { body } = require("express-validator");
 const productsControllers = require('../controllers/productsControllers.js');
 const validations = require("../middlewares/validateCreateProductMiddleware.js");
+const validationsEditP = require("../middlewares/validateEditProductMiddleware.js");
+
 
 const storage = multer.diskStorage({
     destination: (req ,file, cb)=>{
@@ -54,7 +56,7 @@ router.get('/detail/:id' , productsControllers.detalleProducto);
 
 /*** Editar producto***/
 router.get('/edit/:id' , productsControllers.editarProducto);
-router.put('/edit/:id' ,  uploadFile.array('image'), productsControllers.actualizarProducto);
+router.put('/edit/:id' ,  uploadFile.array('image'),validationsEditP ,productsControllers.actualizarProducto);
 
 
 /*** Borrar Producto ***/
