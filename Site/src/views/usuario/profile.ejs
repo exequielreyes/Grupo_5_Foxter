@@ -69,20 +69,20 @@
             </div>
               <label for="formFile" class="form-label">Imagen de perfil</label>
               <input class="form-control" type="file" id="formFile" name="avatar" accept=".jpg, .png, .gif, .jpeg">
-              <div id="msgExtensiones" ></div>
+              <div class="text-danger" id="msgExtensiones" ></div>
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nombre </label>
               <input type="text" name="name" class="form-control" id="exampleFormControlInput1" value="<%= user.name%>">
-              <div id="msgName" ></div>
+              <div  class="text-danger" id="msgName" ></div>
 
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido </label>
               <input type="text" name="lastName" class="form-control" id="exampleFormControlInput1" value="<%= user.lastName%>">
-              <div id="msgLastName" ></div>
+              <div  class="text-danger" id="msgLastName" ></div>
             </div>
 
         </div>

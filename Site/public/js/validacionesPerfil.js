@@ -40,6 +40,7 @@ window.addEventListener("load" , () => {
             errores.push('name vacio')
            msgName.innerHTML = 'El nombre no debe estar vacio';
         }else if (name.value.length < 3){
+            errores.push('name menor a 3')
             msgName.innerHTML = 'El campo nombre debe tener al menos 3 caracteres'
         }else {
            msgName.innerHTML = '';
@@ -50,6 +51,7 @@ window.addEventListener("load" , () => {
             errores.push('lastName vacio')
            msgLastName.innerHTML = 'El apellido no debe estar vacio';
         } else if (lastName.value.length < 3){
+            errores.push('LastName menor a 3')
             msgLastName.innerHTML = 'El campo apellido debe tener al menos 3 caracteres'
         } 
         else {
