@@ -21,7 +21,7 @@ body{
 }
 
 .imagen{
-    width: 100px;
+    width: 80px;
 }
 
 
@@ -47,6 +47,14 @@ label{
     color: rgba(0, 0, 0, 0.747);
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+.label-sizes{
+    margin-top:5px !important;
+}
+
+
 
 input{
     outline: 0px;
