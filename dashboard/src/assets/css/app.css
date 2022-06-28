@@ -4,7 +4,7 @@
 }
 
 .bg-gradient-secondary{
-    background-color: purple !important;
+    background-color: #7900FF !important;
     background-image: linear-gradient(180deg,#7900FF 10%,rgba(34, 73, 190, 0.411) 100%) !important;
 }
 

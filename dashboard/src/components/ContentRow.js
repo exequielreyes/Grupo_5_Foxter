@@ -3,9 +3,8 @@ import { useState, useEffect} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClipboardList } from "@fortawesome/free-solid-svg-icons"
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons"
-// import { faUserCheck } from	"@fortawesome/free-solid-svg-icons"
 
-function ContentRow({dataProduct}){
+function ContentRow({dataProduct, dataUser}){
 
 	const [sumaPrecios, setSumaPrecios] = useState(0)
 
@@ -15,11 +14,11 @@ function ContentRow({dataProduct}){
 
 		const {products} = dataProduct;
 	
-		let preciosProd = products !== undefined && products.map((prod) => {
+		let preciosProd = products.map((prod) => {
 							return Number(prod.price)
 				})
 	
-		let suma = preciosProd !== undefined && preciosProd.reduce((a, b) => a + b, 0)
+		let suma = preciosProd.reduce((a, b) => a + b, 0)
 				setSumaPrecios(suma);
 
 }}, [dataProduct])
@@ -57,6 +56,23 @@ function ContentRow({dataProduct}){
 										</div>
 										<div className="col-auto" style={{fontSize: 20}}>
 											<FontAwesomeIcon icon={faDollarSign} />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+		
+						<div className="col-md-4 mb-4">
+							<div className="card border-left-primary shadow h-100 py-2">
+								<div className="card-body">
+									<div className="row no-gutters align-items-center">
+										<div className="col mr-2">
+											<div className="text-xs font-weight-bold text-primary text-uppercase mb-1"> Cantidad Total de usuarios </div>
+										<div className="h5 mb-0 font-weight-bold text-gray-800">{dataUser.count}</div>
+										</div>
+										<div className="col-auto" style={{fontSize: 20}}>
+											<FontAwesomeIcon icon={faClipboardList} />
 										</div>
 									</div>
 								</div>
