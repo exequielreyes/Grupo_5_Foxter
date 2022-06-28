@@ -179,3 +179,18 @@ function fileValidation() {
     }
 
 }
+document.getElementById('saleCategory').addEventListener('change', (e) => {
+    let saleCategory = document.querySelector("#saleCategory");
+    let discount = document.querySelector("#descuento");
+     if (saleCategory.value == 1) {
+            discount.disabled = false;
+        }
+        else {
+            discount.value='';
+            discount.classList.remove("is-invalid");
+            discount.disabled = true;
+            msgDiscount.innerHTML = '';
+        }
+});
+
+
