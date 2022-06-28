@@ -64,7 +64,9 @@
           <form action="/user/editProfile/<%= user.idUser %>?_method=PUT" class="formularioPerfil" method="POST" enctype="multipart/form-data">
 
             <div class="mb-3" id="avatar">
-              <img src="/images/user/<%= user.avatar%>" alt="imagen-perfil" width="80%">
+            <div class="text-center">
+              <img src="/images/user/<%= user.avatar%>" alt="imagen-perfil" class="img-thumbnail" width="50%">
+            </div>
               <label for="formFile" class="form-label">Imagen de perfil</label>
               <input class="form-control" type="file" id="formFile" name="avatar" accept=".jpg, .png, .gif, .jpeg">
               <div id="msgExtensiones" ></div>
