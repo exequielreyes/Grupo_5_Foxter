@@ -10,7 +10,9 @@ const session = require('express-session');
 const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
 const categoriasMiddleware = require("./src/middlewares/categoriasMiddleware");
+const cors = require("cors");
 
+app.use(cors());
 
 
 app.set('views', './src/views');

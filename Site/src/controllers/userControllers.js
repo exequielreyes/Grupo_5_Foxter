@@ -150,7 +150,7 @@ module.exports = {
     db.User.update({
       name: req.body.name,
       lastName: req.body.lastName,
-      avatar: req.file.filename
+      avatar: req.file ? req.file.filename : req.body.avatar,
 },{
 where: {idUser: req.params.id}
 }).then(()=>{
