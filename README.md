@@ -45,4 +45,9 @@ estéticamente agradable y fácil de usar.
 - Sprint 2: https://trello.com/b/ivu0fzHx/sprint2
 - Sprint 3: https://trello.com/b/hMhcyP7B/sprint3
 - Sprint 4: https://trello.com/b/4ztBVoaT/sprint4
+- Sprint 5: https://trello.com/b/UUWAGdYE/sprint5
+- Sprint 6: https://trello.com/b/xU6IcVpG/sprint6
+- Sprint 7: https://trello.com/b/Wh76d9MB/sprint7
+- Sprint 8: https://trello.com/b/ytRqIbYO/sprint8
+
 
