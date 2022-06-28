@@ -218,8 +218,15 @@ module.exports = {
 
 
     actualizarProducto: (req , res) => {
-    let images=[]
-    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
+        let images=[]
+        for (i in req.files) {images.push({'productId':req.params.id,'name':req.files[i].filename}) }  
+        if(images.length>0){
+            db.Image.destroy({where:{productId:req.params.id}}).then(()=>{
+                 db.Image.bulkCreate(images) .then(()=>{
+                   console.log("imagenes subidas")
+                   })
+            })
+        }
         db.Product.update({
                     name: req.body.name,
                     price: req.body.price,
@@ -230,36 +237,11 @@ module.exports = {
                     idSaleCategory: req.body.saleCategory,
            },{
             where: {idProduct: req.params.id}
-           }).then(()=>{
+           })
+       .then(()=>{
             return res.redirect('/products')
            })
-
-    //        id = req.params.id;
-    //        let productToEdit = products.find(product => product.id == id)
-    //    if(req.file){
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            image: req.file.filename
-    //        };
-    //    }else{
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            // image: req.body.image
-    //        };
-    //    }
-       
-      
-    //        let newProducts = products.map(product => {
-    //            if (product.id == productToEdit.id) {
-    //                return product = {...productToEdit};
-    //            }
-    //            return product;
-    //        })
-   
-    //        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-    //        res.redirect('../detail/'+ id);
+     
 
     },
 
