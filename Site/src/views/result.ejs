@@ -29,7 +29,12 @@
                                     <i class="fa fa-heart ps-2"></i>
                                 </a>
                                 <a href="/products/detail/<%= product.idProduct %>">
-                                    <img src="/images/product/<%= product.image %>" class="card-img-top" alt="...">
+                                    <%if(product.images.length>0){%>
+                                        <img src="/images/product/<%= product.images[0].name %>" class="card-img-top" alt="<%= product.name %>">
+                                        <%} else{ %>
+                                        <img src="/images/product/default-image.png" class="card-img-top" alt="imagen por defecto">
+
+                                            <%} %>
                                 </a>
                                 <a href="/products/detail/<%= product.idProduct %>">
                                     <div class="">

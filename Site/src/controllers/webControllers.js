@@ -36,6 +36,8 @@ module.exports = {
 			{ name: 
                 { [Op.like] : `%${search}%` } 
             },
+			include: [{association: "saleCategory"},{association: "images"},{association: "category"}]
+
 		}).then(productsToSearch =>{
 			res.render('../views/result', { 
 				products: productsToSearch, 

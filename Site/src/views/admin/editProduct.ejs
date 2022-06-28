@@ -73,10 +73,16 @@
                 <div class="formularioProducto__input">
                 <label for="size">Talle</label>
                 
-                <%sizes.forEach((talle)=>{ %>
-                                    
+                <%
+                console.log(productToEdit.sizes[0].idSize)
+                sizes.forEach((talle)=>{ %>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<%= talle.idSize %>" name="size">
+                        <input class="form-check-input" type="checkbox" 
+                   <% productToEdit.sizes.forEach((talledelproducto)=>{ %>
+                       <%= talle.idSize ==  talledelproducto.idSize ? "checked" : ""%>
+                    <% }) %> 
+                       
+                       id="inlineCheckbox1" value="<%= talle.idSize %>" name="size">
                         <label class="form-check-label" for="inlineCheckbox1"><%= talle.name %></label>
                       </div>
                 <%}) %>
@@ -139,7 +145,11 @@
     </form>
   
 </main>
+<<<<<<< HEAD
 <script src="/js/validacionesEditProducts.js"></script>
+=======
+<script src="/js/validacionesProducts.js"></script>
+>>>>>>> 6bfdb8b569115b147dcef7319e0ed2dfc034ae62
 
 </body>
 </html>

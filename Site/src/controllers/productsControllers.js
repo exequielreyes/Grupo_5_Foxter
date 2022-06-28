@@ -209,7 +209,7 @@ module.exports = {
         let saleCategorias = db.saleCategory.findAll()
         
         let productToEdit = db.Product.findByPk(req.params.id ,{
-                include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}]});
+                include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}, {association: "sizes"}]});
         Promise.all([sizes, categorias, sexCategorias, saleCategorias,productToEdit ])
         .then(([sizes ,categorias , sexCategorias,saleCategorias ,productToEdit  ]) => {
             res.render('admin/editProduct', {sizes ,categorias, sexCategorias,saleCategorias, productToEdit})
@@ -219,9 +219,15 @@ module.exports = {
 
 
     actualizarProducto: (req , res) => {
-    let images=[]
-    for (i in req.files) {images.push({'name':req.files[i].filename}) }  
-    
+        let images=[]
+        for (i in req.files) {images.push({'productId':req.params.id,'name':req.files[i].filename}) }  
+        if(images.length>0){
+            db.Image.destroy({where:{productId:req.params.id}}).then(()=>{
+                 db.Image.bulkCreate(images) .then(()=>{
+                   console.log("imagenes subidas")
+                   })
+            })
+        }
         db.Product.update({
                     name: req.body.name,
                     price: req.body.price,
@@ -233,36 +239,11 @@ module.exports = {
                     images:images,
            },{
             where: {idProduct: req.params.id}
-           }).then(()=>{
+           })
+       .then(()=>{
             return res.redirect('/products')
            })
-
-    //        id = req.params.id;
-    //        let productToEdit = products.find(product => product.id == id)
-    //    if(req.file){
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            image: req.file.filename
-    //        };
-    //    }else{
-    //        productToEdit = {
-    //            id: productToEdit.id,
-    //            ...req.body,
-    //            // image: req.body.image
-    //        };
-    //    }
-       
-      
-    //        let newProducts = products.map(product => {
-    //            if (product.id == productToEdit.id) {
-    //                return product = {...productToEdit};
-    //            }
-    //            return product;
-    //        })
-   
-    //        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-    //        res.redirect('../detail/'+ id);
+     
 
     },
 
