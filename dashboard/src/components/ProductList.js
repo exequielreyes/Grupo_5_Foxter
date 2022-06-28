@@ -1,20 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react"
 
-function ProductList() {
+function ProductList({products}) {
 
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch(
-                "http://localhost:3000/products/detail/",
-            );
-            const json = await res.json();
-            setData(json.products);
-        };
-        fetchData();
-    }, [setData]);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const res = await fetch(
+    //             "http://localhost:3000/api/products",
+    //         );
+    //         const data = await res.json();
+    //         setData(data.products);        
+    //     };
+    //     fetchData();
+    // }, []);
+
+    console.log(products);
 
     return (
         <div className="col-lg-6 mb-4 ">
@@ -24,9 +26,10 @@ function ProductList() {
                 </div>
                 <div className="card-body">
                     <ul>
-                        {data.map(item => (
-                            <li key={item.id}>
-                                <p> Titulo: "{item.titulo}" | Precio: $ {item.precio} | Artista: {item.nombre_artista} </p>
+                        { products !== undefined && products.map(item => (
+                            
+                            <li key={item.idProduct}>
+                                <p> Titulo: "{item.name}" | Precio: $ {item.price} | Descripcion: {item.description} </p>
                             </li>
                         ))}
                     </ul>

@@ -64,22 +64,25 @@
           <form action="/user/editProfile/<%= user.idUser %>?_method=PUT" class="formularioPerfil" method="POST" enctype="multipart/form-data">
 
             <div class="mb-3" id="avatar">
+            <div class="text-center">
+              <img src="/images/user/<%= user.avatar%>" alt="imagen-perfil" class="img-thumbnail" width="50%">
+            </div>
               <label for="formFile" class="form-label">Imagen de perfil</label>
               <input class="form-control" type="file" id="formFile" name="avatar" accept=".jpg, .png, .gif, .jpeg">
-              <div id="msgExtensiones" class="text-danger"></div>
+              <div id="msgExtensiones" ></div>
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nombre </label>
               <input type="text" name="name" class="form-control" id="exampleFormControlInput1" value="<%= user.name%>">
-              <div id="msgName" class="text-danger"></div>
+              <div id="msgName" ></div>
 
             </div>
 
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Apellido </label>
               <input type="text" name="lastName" class="form-control" id="exampleFormControlInput1" value="<%= user.lastName%>">
-              <div id="msgLastName" class="text-danger"></div>
+              <div id="msgLastName" ></div>
             </div>
 
         </div>
@@ -100,33 +103,5 @@
 <script src="/js/validacionesPerfil.js"></script>
 
 <script src="/js/pedido.js"></script>
-
-<script>
-    function archivo(evt) {
-        let files = evt.target.files; // FileList object
-   
-        // Obtenemos la imagen del campo "file".
-        for (let i = 0, f; f = files[i]; i++) {
-          //Solo admitimos imágenes.
-          if (!f.type.match('image.*')) {
-              continue;
-          }
-   
-          let reader = new FileReader();
-   
-          reader.onload = (function(theFile) {
-              return function(e) {
-                // Insertamos la imagen
-               document.getElementById("seccion-perfil-avatar").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-              };
-          })(f);
-   
-          reader.readAsDataURL(f);
-        }
-    }
-   
-    document.getElementById('btn_enviar').addEventListener('change', archivo, false);
-</script>
-
 </body>
 </html>

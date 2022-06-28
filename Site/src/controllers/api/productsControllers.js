@@ -42,7 +42,7 @@ module.exports = {
 
                 let respuesta={
                     count:products.length,
-                    countByCategoy:categorias,
+                    countByCategory:categorias,
                     products:prodAPi
                 }
                 res.json(respuesta);
@@ -51,6 +51,88 @@ module.exports = {
 
     },
 
+
+    productById: (req, res) => {
+        db.Product.findByPk(req.params.id, {  include: [{ association: "images" }, {association: "category"},{association: "sexCategory"},{association: "saleCategory"}, {association: "sizes"}] }) 
+        .then((product) => {
+
+           return  res.json(product);
+        })
    
    
 }
+}
+
+
+
+
+
+
+
+
+
+    // // let categorias = db.Product.findAll({
+    //     //     where:{idProduct: req.params.id} ,
+    //     //     include: [{ association: "category" }]
+    //     //   });
+
+    //     //   let saleCategories = db.Product.findAll({
+    //     //     where:{idProduct: req.params.id} ,
+    //     //     include: [{ association: "category" }]
+    //     //   });
+
+    //     //   let sexCategories = db.Product.findAll({
+    //     //     where:{idProduct: req.params.id} ,
+    //     //     include: [{ association: "category" }]
+    //     //   });
+    //     let allProductCategories = [];
+
+    //     db.Product.findByPk(req.params.id, {  include: [{ association: "images" }, {association: "category"},{association: "sexCategory"},{association: "saleCategory"}, {association: "sizes"}] }) 
+    //     .then((product) => {
+            
+    //         console.log("Prueba" + product.category);
+
+
+    //         db.product.findByPk(product.id)
+
+
+    //         // let firstImage = product.images[0].name;
+
+           
+    //         // product.category.forEach(category => {
+    //         //     allProductCategories.push(category.name);
+    //         // });
+
+    //         // let allSaleCategories = [];
+    //         // product.saleCategory.forEach(saleCategory => {
+    //         //     allSaleCategories.push(saleCategory.name);
+    //         // });
+
+    //         // let allSexCategories = [];
+    //         // product.sexCategory.forEach(sexCategory => {
+    //         //     allSexCategories.push(sexCategory.name);
+    //         // });
+
+    //         // let allProductSizes = [];
+    //         // product.sizes.forEach(size => {
+    //         //     allProductSizes.push(size.name);
+    //         // });
+
+    //         // let response = {
+    //         //     meta: {
+    //         //          status: 200
+    //         //     },
+    //         //     data:{
+    //         //          name: product.name,
+    //         //          description: product.description,
+    //         //          price: product.price,
+    //         //          discount: product.discount,
+    //         //          url_image: `http://localhost:3000/images/product/${firstImage}`,
+    //         //          category: allProductCategories,
+    //         //          sexCategory: allSexCategories,
+    //         //          saleCategory: allSaleCategories,
+    //         //          size: allProductSizes
+    //         //      }
+    //         //  }
+
+    //         // return res.json(response);

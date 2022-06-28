@@ -1,21 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react"
 
-function CategoriInDb() {
+function CategoriInDb({categories}) {
 
-    const [category, setCategory] = useState([])
-    useEffect(() => {
-      fetch("http://localhost:3000/products/detail/")
-        .then((respuestaApi)=>{
-          return respuestaApi.json()
-        })
-        .then((category)=>{
-          let arrayCategory = category.countByCategory
-          setCategory(arrayCategory)
-        })
-    },[])
-
-    console.log(category)
 
     return (
         <div class="col-lg-6 mb-4">
@@ -25,14 +12,13 @@ function CategoriInDb() {
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        {
-                            category.map((elemento) => {
+                        {categories !== undefined && categories.map((elemento) => {
                                 return (
                                     <div class="col-lg-6 mb-4">
                                         <div class="card bg-info text-white shadow">
                                             <div class="card-body">
-                                               categoria: {elemento.categoria} {" "} <br />
-                                               cantidad: {elemento.count}
+                                               Categoria: {elemento.category.name} {" "} <br />
+                                               Cantidad: {elemento.total}
                                             </div>
 
                                         </div>
