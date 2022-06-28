@@ -50,7 +50,6 @@ module.exports = {
 
     },
 
-<<<<<<< HEAD
     detalleProducto: (req, res) => {
         db.Product.findByPk(req.params.id, {
             include: [{association: "category"},{association: "sexCategory"},{association: "images"}, {association: "sizes"}]
@@ -59,18 +58,8 @@ module.exports = {
         })
     },
 
-=======
-
-    productById: (req, res) => {
-        db.Product.findByPk(req.params.id, {  include: [{ association: "images" }, {association: "category"},{association: "sexCategory"},{association: "saleCategory"}, {association: "sizes"}] }) 
-        .then((product) => {
-
-           return  res.json(product);
-        })
->>>>>>> 17bfee54ba15169fc21b96141a3e96b272f5437f
    
    
-}
 }
 
 
