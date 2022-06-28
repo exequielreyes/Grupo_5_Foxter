@@ -46,7 +46,7 @@ function SideBar(){
 
 			{/*<!-- Nav Item - Charts -->*/}
 			<li className="nav-item">
-				<a className="nav-link" href="/">
+				<a className="nav-link" href="../usuarios.js">
 					<i className="fas fa-fw fa-chart-area"></i>
 					<span>Usuarios</span></a>
 			</li>

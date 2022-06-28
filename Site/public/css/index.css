@@ -9,7 +9,7 @@
     /* background-color: #706B6B !important; */
 box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
   transition: all 454ms; 
-  background-color: rgba(255, 255, 255, 0.418) !important;
+  background-color: #548CFF !important;
 }
 
 .bg-dark.p-3.ofert:hover{
@@ -33,6 +33,49 @@ color: #111 !important;
 /* -------------- */
 
 
+/* ----contacto------ */
+.button-end
+{
+display: flex;
+justify-content: end;
+margin-right: 8px;
+margin-bottom: 15px;
+/* position:static; */
+}
+
+
+.modal-pos{
+   
+    width: 350px !important;
+    
+    left: 433px !important;
+    top: 40px !important;
+}
+
+.icon-mesage{
+    font-size: 25px;
+    transition: transform .2s; 
+}
+
+ 
+.icon-mesage:hover {
+    transform: scale(1.2); 
+}
+
+
+
+
+
+.boton{
+border: none;
+}
+
+textarea.form-control.text-edit{
+    resize: none !important;
+}
+
+
+/* --------------- */
 
 
 

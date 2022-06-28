@@ -207,6 +207,7 @@ module.exports = {
         let categorias = db.Category.findAll();
         let sexCategorias = db.sexCategory.findAll()
         let saleCategorias = db.saleCategory.findAll()
+        
         let productToEdit = db.Product.findByPk(req.params.id ,{
                 include: [{association: "category"},{association: "sexCategory"}, {association: "saleCategory"}, {association: "sizes"}]});
         Promise.all([sizes, categorias, sexCategorias, saleCategorias,productToEdit ])
@@ -235,6 +236,7 @@ module.exports = {
                     description: req.body.description,
                     idSexCategory: req.body.sexCategory,
                     idSaleCategory: req.body.saleCategory,
+                    images:images,
            },{
             where: {idProduct: req.params.id}
            })

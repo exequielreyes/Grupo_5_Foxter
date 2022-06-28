@@ -20,20 +20,41 @@
         <div class="formularioProducto__contenedor">
             <div class="FormularioProducto__control">
                 <label for="name">Nombre del producto</label>
-                <input type="text" name="name" id="name" class="formularioProducto__input" value="<%=productToEdit.name%>">
+                <input type="text" name="name" id="name" class="formularioProducto__input <%= locals.errors && errors.name ? 'is-invalid' : '' %>"   value="<%=productToEdit.name%>">
+                <% if(locals.errors && errors.name){%>
+                    <div class="small text-danger" id="msg-name-back">
+                       <%= errors.name.msg %>
+                       </div>
+            
+                 <%  } %>
+                 <div class="small text-danger" id="msg-name"></div>
+
+            
+            
             </div>
             <div class="FormularioProducto__control">
                
                 <div class="inline-block">
-                    <label  class="probandoLabel" for="price">Precio</label>
+                    <label  class="probandoLabel" for="price">Precio</label>                   
                     <label  class="probandoLabel" for="Discount">Descuento</label>
                 </div>
                 <div class="separarInput">
 
                 
-                <input type="number" name="price" id="price" min="0" class="formularioProducto__input-price" value="<%=productToEdit.price%>">
-                <input type="number" name="discount" id="descuento" min="0" max="100" class="formularioProducto__input-price" value="<%=productToEdit.discount%>">
+                <input type="number" name="price" id="price"  class="formularioProducto__input-price <%= locals.errors && errors.price ? 'is-invalid' : '' %>" value="<%=productToEdit.price%>">
+                <% if(locals.errors && errors.price){%>
+                    <div class="small text-danger">
+                       <%= errors.price.msg %>
+                       </div>
+            
+                 <%  } %>
+
+                <input type="number" name="discount" id="discount" min="0"  class="formularioProducto__input-price"  value="<%=productToEdit.discount%>">
+            
             </div>
+            <div class="small text-danger" id="msg-price"></div>
+            <div class="small text-danger" id="msg-discount"></div>
+
             </div>
             
             <div class="FormularioProducto__control">
@@ -97,12 +118,19 @@
         </div>
         
         <div class="FormularioProducto__control-file">
-            <input value="<%=productToEdit.image %>" type="file" name="image" multiple id="imagen" class="formularioProducto__input-file"  >
+            <input value="<%=productToEdit.image %>" type="file" name="image" multiple id="imagen" class="formularioProducto__input-file <%= locals.errors && errors.image ? 'is-invalid' : '' %>" onchange="return fileValidation()"  >
+            <% if(locals.errors && errors.image){%>
+                <div class="small text-danger">
+                   <%= errors.image.msg %>
+                   </div>
+        
+             <%  } %>
+             <div class="small text-danger" id="msg-image"></div>
         </div>
                     <div class="form-group  col-lg-12">
                     <label class="label-description" for="description">Descipción</label>
-					<textarea name="description" id="description" class="textarea"  rows="4"><%= productToEdit.description %></textarea>
-
+					<textarea name="description" id="description" class="textarea <%= locals.errors && errors.description ? 'is-invalid' : '' %>  rows="4"><%= productToEdit.description %></textarea>
+                    <div class="small text-danger" id="msg-description"></div>
                 </div>
                
             <div class="FormularioProducto__control">
